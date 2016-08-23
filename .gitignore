@@ -1,10 +1,8 @@
-/node_modules
 /dist
 /.tmp
 /.sass-cache
-/bower_components
-/nwjs-v*
-/nwjs-sdk-*
+web/bower_components
+web/node_modules
 /test
 Makefile
 Makefile.in
