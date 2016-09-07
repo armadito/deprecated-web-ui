@@ -1,8 +1,8 @@
 /dist
 /.tmp
 /.sass-cache
-bower_components
-node_modules
+web/bower_components
+web/node_modules
 /test
 Makefile
 Makefile.in
