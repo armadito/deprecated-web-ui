@@ -71,15 +71,15 @@
 				<thead class="analyse">
 				  <tr class="analyse">
 				     <th class="analyse" style="width:10%"></th>
-				     <th class="analyse" style="width:30%"><h4><i>Menaces</i></h4></th>
-				     <th class="analyse" style="width:60%"><h4><i>Fichiers</i></h4></th>
+				     <th class="analyse" style="width:30%"><h4><i>{{ 'analyse_view.Threat' | translate}}</i></h4></th>
+				     <th class="analyse" style="width:60%"><h4><i>{{ 'analyse_view.Files' | translate}}</i></h4></th>
 				  </tr>
 				 </thead>
-			    <tbody class="analyse" id="ex3" style="-webkit-app-region: no-drag;"> <!-- scroll-bottom="scan_files" -->
+			    <tbody class="analyse" id="ex3" style="-webkit-app-region: no-drag;" scroll-bottom="scan_files"> <!-- scroll-bottom="scan_files" -->
 			      <tr class="analyse" ng-repeat="file in scan_files">
 			      	<td style="width:10%" ng-if="file.scan_status === 'malware'" class="analyse redCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>
-			      	<td style="width:10%" ng-if="file.scan_status === 'suspicious'"class="analyse orangeCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>
-			        <td style="width:30%" title="{{file.mod_report}}" class="analyse" ><h7>{{file.mod_report | characters: 17}}</h7></td>
+			      	<td style="width:10%" ng-if="file.scan_status === 'suspicious'" class="analyse orangeCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>
+			        <td style="width:30%" title="{{file.module_report}}" class="analyse" ><h7>{{file.module_report | characters: 17}}</h7></td>
 			        <td style="width:60%" title="{{file.path}}" class="analyse"><h7>{{file.path | characters: 40}}</h7></td>
 			      </tr>
 			    </tbody>

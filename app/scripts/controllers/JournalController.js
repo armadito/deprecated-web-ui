@@ -29,7 +29,7 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * Controller of the armaditoApp
  */
 angular.module('armaditoApp')
-  .controller('JournalController', ['$scope', '$uibModal', 'ArmaditoSVC','ArmaditoIPC','toastr', function ($scope, $uibModal, ArmaditoSVC, ArmaditoIPC, toastr) {
+  .controller('JournalController', ['$scope', '$uibModal','toastr', function ($scope, $uibModal, toastr) {
 	  
     var Noms = ['Malware1', 'Malware2', 'Malware3', 'Malware4'];
     var Emplacements = ['/home/userName/...', '/home/Desktop/folder/...', '/home/userName/...', '/home/userName/...'];

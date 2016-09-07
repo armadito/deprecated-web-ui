@@ -11,7 +11,7 @@
     "Scan_in_progress" : "A scan is in progress. Do you want to exit anyway ?" 
   },
   "information_view" : {
-  	"General" : "General",
+  	"General" : "GENERAL",
   	"Real_time_analyse" : "Real time analysis",
   	"Analyse_service" : "Analysis service",
   	"Update_bases" : "Databases Update",
@@ -25,7 +25,7 @@
 	"Status_unavailable" : "unavailable"
   },
   "analyse_view" : {
-    "Scan" : "Scan",
+    "Scan" : "SCAN",
     "Scan_title" : "Analyse",
     "Start" : "Start",
     "Scanning_file" : "Scanning file",
@@ -37,6 +37,8 @@
     "Scanned" : "Scanned",
     "Malicious" : "Malicious",
     "Suspects" : "Suspects",
+    "Threat" : "Threat",
+    "Files" : "Files",
     "No_file_scanned_yet" : "No file scanned yet",
     "Custom_scan_title" : "Custom scan",
     "Select_folder" : "Select a folder",
@@ -47,7 +49,7 @@
     "Excluded_files" : "Excluded files"
   },
   "history_view" : {
-  	"History" : "History",
+  	"History" : "HISTORY",
     "history_tab" : {
       "History" : "History",
       "Search" : "Search...",

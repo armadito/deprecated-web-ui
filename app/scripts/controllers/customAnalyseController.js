@@ -60,6 +60,9 @@ angular.module('armaditoApp')
       }, false);
     };
 
+    $scope.$watch('pathToScan', function() {
+        console.log('hey, pathToScan has changed!', $scope.pathToScan);
+    });
     
      $scope.excludedFolders = [];
 
@@ -80,4 +83,26 @@ angular.module('armaditoApp')
       }, false);
     };
 
+
+    $scope.file_changed = function(element) { 
+      console.log('element changed ', element);
+         /*$scope.$apply(function(scope) {
+             var photofile = element.files[0];
+             var reader = new FileReader();
+             reader.onload = function(e) {
+                // handle onload
+             };
+             reader.readAsDataURL(photofile);
+         });*/
+    };
+
+
+    function selectFolder(e) {
+      console.log('e', e);
+        /*var theFiles = e.target.files;
+        var relativePath = theFiles[0].webkitRelativePath;
+        var folder = relativePath.split("/");
+        alert(folder[0]);*/
+    };
+    
   }]);

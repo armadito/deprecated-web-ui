@@ -29,10 +29,10 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * Controller of the armaditoApp
  */
  
-var sprintf = require("sprintf-js").sprintf;
+//var sprintf = require("sprintf-js").sprintf;
 
 angular.module('armaditoApp')
-  .controller('InformationController', ['$scope','ArmaditoSVC','ArmaditoIPC', function ($scope,ArmaditoSVC,ArmaditoIPC) {
+  .controller('InformationController', ['$scope', function ($scope) {
 
 		
 		$scope.rowCollection = [];
@@ -110,7 +110,7 @@ angular.module('armaditoApp')
 				// unused : json_object.info.update['last-update'];
 				
 				$scope.state.last_update_timestamp = json_object.info.update.timestamp;
-				$scope.state.last_update = $scope.timeConverter(json_object.info.update.timestamp);
+				//$scope.state.last_update = $scope.timeConverter(json_object.info.update.timestamp);
 				
 
 				//console.log('[+] Debug :: threatDataFromAv :: av last-update :: ',json_object.info.update['last-update']);
@@ -122,7 +122,7 @@ angular.module('armaditoApp')
 				$scope.state.modules = json_object.info.modules;				
 				for (var i = 0; i< $scope.state.modules.length ; i++){
 
-					$scope.state.modules[i].update.date = $scope.timeConverter($scope.state.modules[i].update.timestamp);
+					//$scope.state.modules[i].update.date = $scope.timeConverter($scope.state.modules[i].update.timestamp);
 					
 					//console.log('[+] Debug :: threatDataFromAv :: module name :: ',$scope.state.modules[i].name);
 					//console.log('[+] Debug :: threatDataFromAv :: module timestamp :: ',$scope.state.modules[i].timestamp);	
@@ -161,7 +161,7 @@ angular.module('armaditoApp')
 			//$scope.state.service = "2";
 			//$scope.state.service = ArmaditoIPC.av_response;
 			//$scope.state.last_update = ArmaditoIPC.av_response;
-			ArmaditoSVC.requestAVstatus($scope.threatDataFromAv);
+			//ArmaditoSVC.requestAVstatus($scope.threatDataFromAv);
 			
 			// console.log('[+] Debug :: Refreshing antivirus status ::' + ArmaditoIPC.client_socket);
 		}

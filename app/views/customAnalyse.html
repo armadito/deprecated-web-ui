@@ -8,7 +8,7 @@
 		<div class="input-group">
 		  <input type="text" class="form-control form-control-modal" ng-model="optionScan.pathToScan" translate translate-attr-placeholder="analyse_view.Select_folder">
 		  <span class="input-group-addon .input-group-addon-customAnalyse btn btn-default btn-file" ng-click="chooseFile()">
-		  	<i class="fa fa-angle-down fa-lg"></i> <input id="pathToScan" nwdirectory type="file">
+		  	<i class="fa fa-angle-down fa-lg"></i> <input type="file" id="FileUpload" onchange="selectFolder(event)" webkitdirectory mozdirectory msdirectory odirectory directory multiple >
 		  </span>
 		</div>
 		<!--

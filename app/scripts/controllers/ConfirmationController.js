@@ -29,7 +29,7 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * Controller of the armaditoApp
  */
 angular.module('armaditoApp')
-  .controller('ConfirmationController',['$scope', '$uibModalInstance', 'data', 'ArmaditoSVC', function ($scope, $uibModalInstance, data, ArmaditoSVC) {
+  .controller('ConfirmationController',['$scope', '$uibModalInstance', 'data', function ($scope, $uibModalInstance, data) {
 
          $scope.threatDataFromAv = function(data){
 

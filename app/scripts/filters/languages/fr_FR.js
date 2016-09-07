@@ -19,10 +19,10 @@
   	"Modules" : "Module",
   	"Date" : "Date",
   	"Status" : "Statut",        
-	"Status_up_to_date" : "à jour",
-	"Status_critical" : "critique",
-	"Status_late" : "tardif",
-	"Status_unavailable" : "indisponible"
+	  "Status_up_to_date" : "à jour",
+	  "Status_critical" : "critique",
+	  "Status_late" : "tardif",
+	  "Status_unavailable" : "indisponible"
   },
   "analyse_view" : {
     "Scan" : "ANALYSE",
@@ -37,6 +37,8 @@
     "Scanned" : "Analysés",
     "Malicious" : "Malveillants",
     "Suspects" : "Suspects",
+    "Threat" : "Menaces",
+    "Files" : "Fichiers",
     "No_file_scanned_yet" : "Aucun fichier analysé",
     "Custom_scan_title" : "Analyse personnalisée",
     "Select_folder" : "Sélectionnez un dossier",
