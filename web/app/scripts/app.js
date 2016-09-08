@@ -45,7 +45,8 @@ var a6oApp = angular
     'toastr',
     'ngTagsInput',
     'pascalprecht.translate',
-    'truncate'
+    'truncate',
+    'angularMoment'
   ])
   .config(function ($stateProvider, $urlRouterProvider, toastrConfig, $translateProvider) {
 	  

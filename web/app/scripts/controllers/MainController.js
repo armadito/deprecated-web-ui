@@ -34,8 +34,8 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 
 angular.module('armaditoApp')
   .controller('MainController', 
-  			[ '$rootScope', '$scope', '$state','$uibModal', '$translate', 'toastr', 'StatusService',
-  	function ( $rootScope,   $scope,   $state,  $uibModal,   $translate,   toastr,   StatusService) {
+  			[ '$rootScope', '$scope', '$state','$uibModal', '$translate', 'toastr',
+  	function ( $rootScope,   $scope,   $state,  $uibModal,   $translate,   toastr) {
 
   	//Buttons
   	$scope.buttons = [
@@ -167,9 +167,5 @@ angular.module('armaditoApp')
   	//ArmaditoSVC.startNotificationServer($scope.processDataFromAV);
 
   	$scope.refresh();
-
-  	$scope.getAntivirusStatus = function(){
-  		StatusService.getAntivirusStatus()
-  	};
 
   }]);

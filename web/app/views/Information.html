@@ -18,10 +18,10 @@
 		  	<input type="checkbox"  ng-model="state.realtime" disabled ng-change="testfunc()" name="checkbox1" id="checkbox1" class="ios-toggle" checked/>
 			<label for="checkbox1" class="checkbox-label"></label>
 		  </li>
-		  <li class="information2"><h5><i ng-class="state.service ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></i></h5></li>
+		  <li class="information2"><h5><i ng-class="service === 'ok' ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></i></h5></li>
 		  
-		  <li class="information2"><h5><i ng-class="state.upToDate ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></i>&nbsp;&nbsp;&nbsp;<i style="-webkit-app-region: no-drag;" ng-click="update_db()" class="fa fa-refresh"></i></li></h5></li>
-		  <li class="information2"><h5>{{state.last_update}}</h5></li>
+		  <li class="information2"><h5><i ng-class="databases_update === 'up-to-date' ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></i>&nbsp;&nbsp;&nbsp;<i style="-webkit-app-region: no-drag;" ng-click="update_db()" class="fa fa-refresh"></i></li></h5></li>
+		  <li class="information2"><h5>{{last_update | amFromUnix | amCalendar}}</h5></li>
 		</ul>
 	  </div>
 	</div>
@@ -36,14 +36,14 @@
 			      </tr>
 			    </thead>
 			    <tbody class="information" id="ex3" >
-			      <tr class="information" ng-repeat="module in state.modules">
-			        <td style="width:40%" class="information"><h7>{{module.name}}</h7></td>
-			        <td style="width:60%"class="information"><h7>{{module.update.date}}</h7></td>
+			      <tr class="information" ng-repeat="module in modules">
+			        <td style="width:40%" class="information"><h7>{{module.name | uppercase}}</h7></td>
+			        <td style="width:60%"class="information"><h7>{{module.mod_update_timestamp | amFromUnix | amCalendar}}</h7></td>
 			        <td style="width:60%"class="information">
-					  <h7 ng-if="module.update.status==='up-to-date'" >{{'information_view.Status_up_to_date' | translate}}</h7>
-					  <h7 ng-if="module.update.status==='critical'" >{{'information_view.Status_critical' | translate}}</h7>
-					  <h7 ng-if="module.update.status==='late'" >{{'information_view.Status_late' | translate}}</h7>
-					  <h7 ng-if="module.update.status==='unavailable'" >{{'information_view.Status_unavailable' | translate}}</h7>
+					  <h7 ng-if="module.mod_status ==='up-to-date'" >{{'information_view.Status_up_to_date' | translate}}</h7>
+					  <h7 ng-if="module.mod_status ==='critical'" >{{'information_view.Status_critical' | translate}}</h7>
+					  <h7 ng-if="module.mod_status ==='late'" >{{'information_view.Status_late' | translate}}</h7>
+					  <h7 ng-if="module.mod_status ==='unavailable'" >{{'information_view.Status_unavailable' | translate}}</h7>
 					</td>
 			      </tr>
 			    </tbody>

@@ -19,10 +19,10 @@
   	"Modules" : "Module",
   	"Date" : "Date",
   	"Status" : "Status",
-        "Status_up_to_date" : "up-to-date",
-	"Status_critical" : "critical",
-	"Status_late" : "late",
-	"Status_unavailable" : "unavailable"
+    "Status_up_to_date" : "Up-to-date",
+	  "Status_critical" : "critical",
+	  "Status_late" : "late",
+	  "Status_unavailable" : "unavailable"
   },
   "analyse_view" : {
     "Scan" : "SCAN",

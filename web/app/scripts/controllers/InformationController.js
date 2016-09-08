@@ -32,7 +32,7 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 //var sprintf = require("sprintf-js").sprintf;
 
 angular.module('armaditoApp')
-  .controller('InformationController', ['$scope', function ($scope) {
+  .controller('InformationController', ['$rootScope', '$scope', 'StatusService', function ($rootScope, $scope, StatusService) {
 
 		
 		$scope.rowCollection = [];
@@ -179,6 +179,24 @@ angular.module('armaditoApp')
     	$scope.testfunc = function () {
     		console.log($scope.state.realtime);
     	};
+
+    	//-----------
+	    StatusService.getStatus();
+	    //-----------
+
+	    $rootScope.$on('StatusEvent', function(event, data) {
+	      console.log("StatusEvent : ", data);
+	      $scope.databases_update = data.global_status;
+	      $scope.last_update = data.global_update_timestamp;
+	      $scope.modules = data.modules;
+	      $scope.$apply();
+	    });
+
+	    $rootScope.$on('PingEvent', function(event, data) {
+	      console.log("PingEvent : ", data);
+	      $scope.service = data.status;
+	      $scope.$apply();
+	    });
 
   }]);
 
