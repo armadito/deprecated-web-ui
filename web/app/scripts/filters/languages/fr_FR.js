@@ -41,7 +41,7 @@
     "Files" : "Fichiers",
     "No_file_scanned_yet" : "Aucun fichier analysé",
     "Custom_scan_title" : "Analyse personnalisée",
-    "Select_folder" : "Sélectionnez un dossier",
+    "Select_folder" : "Chemin selectionné",
     "Choose_scan_options" : "Choisissez vos options :",
     "Heuristic_mode" : "Mode heuristique",
     "Scan_archive" : "Scan d'archives",

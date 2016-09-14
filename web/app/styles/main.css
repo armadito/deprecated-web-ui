@@ -551,6 +551,15 @@
       background-color:#CCCCCC;
       border-radius:10px;
     }
+    /*ScrollBar trick 2*/
+    #ex4::-webkit-scrollbar{
+      width:10px;
+      background-color: white;
+    }
+    #ex4::-webkit-scrollbar-thumb{
+      background-color:#CCCCCC;
+      border-radius:10px;
+    }
     /*ScrollBar trick*/
     .informationBackground{
       background-color: #F2F2F2 !important;
@@ -956,8 +965,8 @@
     }
     .modal-content {
       border-radius: 5px !important;
-      width: 500px !important;
-      height: 340px !important;
+      width: 700px !important;
+      height: 600px !important;
     }
     .modal-body-analyse {
       padding: 5px 30px !important;
@@ -969,7 +978,7 @@
     }
     .footerModal {
       border-top: 1px solid #FFFFFF !important;
-      padding: 0px 40px 20px 0px !important;
+      padding: 5px 40px 20px 0px !important;
     }
     /* Modal*/
     .form-control-modal {
@@ -1110,4 +1119,11 @@
     }
     .paddingApp {
       padding-top: 30px !important;
+    }
+    .inputPathScan {
+      width: 100% !important;
+    }
+    .treeScroll {
+      max-height: 360px !important; 
+      overflow-y:scroll !important;
     }

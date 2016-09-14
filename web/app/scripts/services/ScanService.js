@@ -18,7 +18,6 @@ angular.module('armaditoApp')
 	      	xmlhttp.onreadystatechange = function() {
 	          	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 	            	var ev = JSON.parse(xmlhttp.responseText);
-	            	console.log('ev', ev);
 	            	if (ev.event_type === "OnDemandProgressEvent") {
 	            		$rootScope.$broadcast( "OnDemandProgressEvent", ev );
 	            		long_polling();
@@ -46,17 +45,14 @@ angular.module('armaditoApp')
 	            	}
 	          }
 	      	};
-	      	console.log("sending request");
 	      	xmlhttp.open("GET", "/api/event", true);
 	      	xmlhttp.setRequestHeader("X-Armadito-Token", token);
 	      	xmlhttp.send(null);
 	  	};
 
 	  	factory.scan = function(pathToScan){
-		  	console.log("scan");
 		  	var path_to_scan = pathToScan;
 		  	//var path_to_scan = document.getElementById("path").value;
-		  	console.log("path to scan: " + path_to_scan);
 		  	var data = {path: path_to_scan};
 		  	var xmlhttp = new XMLHttpRequest();
 		  	xmlhttp.open("POST", "/api/scan", true);
@@ -73,7 +69,6 @@ angular.module('armaditoApp')
 	  	    	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 	  	        	var obj = JSON.parse(xmlhttp.responseText);
 	  	        	token = obj.token;
-	  	        	console.log("token is now: " + token);
 	  	    	}
 	  		};
 	  		xmlhttp.open("GET", "/api/register", true);

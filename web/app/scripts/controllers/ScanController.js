@@ -38,19 +38,16 @@ angular.module('armaditoApp')
     function ($rootScope,   $scope,   $uibModal,   ScanService) {
 
       $scope.type = "analyse_view.Choose_analyse_type";
-      $scope.pathToScan = "/var/tmp/foobar";
       $scope.scan_progress = 0;
       $scope.scan_files = [];
 
       $scope.updateScope = function(data){
         // Get from factory
-        console.log('data', data);
         if(data.event_type === "DetectionEvent"){
           //console.log("updateScope : ", data);
           $scope.scan_files.push(data);
           $scope.$apply();
         }else if (data.event_type === "OnDemandProgressEvent") {
-          console.log(data.progress);
           $scope.displayed_file = data.path;
           $scope.scan_progress = data.progress;
           $scope.scanned_count = data.scanned_count;
@@ -72,8 +69,10 @@ angular.module('armaditoApp')
       
       };
 
-      $scope.StartScan = function(){
-        ScanService.scan($scope.pathToScan);
+      $scope.StartScan = function(pathToScan){
+        console.log("pathToScan : ", pathToScan);
+        $scope.scan_files = [];
+        ScanService.scan(pathToScan);
       };
 
       $scope.configureScan = function(){
@@ -98,8 +97,8 @@ angular.module('armaditoApp')
         var size = 'sm';
         var modalInstance = $uibModal.open({
           animation: $scope.animationsEnabled,
-          templateUrl: 'views/customAnalyse.html',
-          controller: 'customAnalyseController',
+          templateUrl: 'views/CustomAnalyse.html',
+          controller: 'CustomAnalyseController',
           size: size,
           resolve: {
               items: function () {
@@ -110,9 +109,8 @@ angular.module('armaditoApp')
 
         modalInstance.result.then(function (scanOptions) {
           $scope.scanOptions = scanOptions;
-          //console.log("Scan options : ", $scope.scanOptions);
           $scope.path_to_scan = $scope.scanOptions.pathToScan;
-          $scope.StartScan();
+          $scope.StartScan($scope.path_to_scan);
         }, function () {
           console.log('Modal dismissed at: ' + new Date());
         });

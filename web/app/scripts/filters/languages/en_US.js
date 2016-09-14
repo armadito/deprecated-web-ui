@@ -41,7 +41,7 @@
     "Files" : "Files",
     "No_file_scanned_yet" : "No file scanned yet",
     "Custom_scan_title" : "Custom scan",
-    "Select_folder" : "Select a folder",
+    "Select_Path" : "Selected path",
     "Choose_scan_options" : "Choose scan options :",
     "Heuristic_mode" : "Heuristic mode",
     "Scan_archive" : "Scan archive",

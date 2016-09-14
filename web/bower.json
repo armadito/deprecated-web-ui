@@ -24,7 +24,10 @@
     "font-awesome": "fontawesome#^4.6.1",
     "angular-truncate-2": "^0.4.2",
     "jquery": "2.2.4",
-    "angular-moment": "1.0.0-beta.3"
+    "angular-moment": "1.0.0-beta.3",
+    "angular-tree-widget": "https://github.com/AlexSuleap/angular-tree-widget.git#^1.1.0",
+    "angular-recursion": "^1.0.5",
+    "angular-tree-view": "https://github.com/axel-zarate/angular-tree-view.git"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

@@ -18,13 +18,11 @@ angular.module('armaditoApp')
 	      	xmlhttp.onreadystatechange = function() {
 	          	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 	            	var ev = JSON.parse(xmlhttp.responseText);
-	            	console.log('ev', ev);
 	            	if (ev.event_type === "StatusEvent") {
 	            		$rootScope.$broadcast( "StatusEvent", ev );
 	            	}
 	          }
 	      	};
-	      	console.log("sending request");
 	      	xmlhttp.open("GET", "/api/event", true);
 	      	xmlhttp.setRequestHeader("X-Armadito-Token", token);
 	      	xmlhttp.send(null);
@@ -39,7 +37,6 @@ angular.module('armaditoApp')
 	  	    	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 	  	        	var obj = JSON.parse(xmlhttp.responseText);
 	  	        	token = obj.token;
-	  	        	console.log("token is now: " + token);
 	  	        	deferred.resolve('Token is now OK');
 	  	    	}
 	  		};
@@ -50,7 +47,6 @@ angular.module('armaditoApp')
   		  	var promise = deferred.promise;
   		  	promise.then (function(result){
   		  		if(token !== null){
-  				  	console.log("getting Status");
   				  	var xmlhttp = new XMLHttpRequest();
   				  	xmlhttp.open("GET", "/api/status", true);
   				  	xmlhttp.setRequestHeader("X-Armadito-Token", token);
@@ -61,7 +57,6 @@ angular.module('armaditoApp')
 		  				xmlhttp.onreadystatechange = function() {
 		  			    	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		  			        	var obj = JSON.parse(xmlhttp.responseText);
-		  			        	console.log("object after ping is now: " , obj);
 		  			        	$rootScope.$broadcast( "PingEvent", obj );
 		  			    	}
 		  				};

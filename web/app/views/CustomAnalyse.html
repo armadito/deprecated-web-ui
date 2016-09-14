@@ -5,12 +5,9 @@
 	    <hr>
 	</div>
 	<div class="modal-body modal-body-analyse">
-		<div class="input-group">
-		  <input type="text" class="form-control form-control-modal" ng-model="optionScan.pathToScan" translate translate-attr-placeholder="analyse_view.Select_folder">
-		  <span class="input-group-addon .input-group-addon-customAnalyse btn btn-default btn-file" ng-click="chooseFile()">
-		  	<i class="fa fa-angle-down fa-lg"></i> <input type="file" id="FileUpload" onchange="selectFolder(event)" webkitdirectory mozdirectory msdirectory odirectory directory multiple >
-		  </span>
-		</div>
+		<!--<div class="input-group inputPathScan">
+		  <input type="text" class="form-control form-control-modal" ng-model="pathToScan" translate translate-attr-placeholder="analyse_view.Select_Path">
+		</div>-->
 		<!--
 		<h4 class="chooseOptionAnalyse">{{ 'analyse_view.Choose_scan_options' | translate}}</h4>
 		<form role="form" class="formOptionScan">
@@ -36,6 +33,18 @@
 			</div>		    
 		</form>
 		-->
+		<ol class="breadcrumb">
+			<li><a href=""> /root </a></li>
+		    <li ng-repeat="bread in breadcrums"ng-class="{active: $last}">
+		    	<a ng-if="!$last" href="">{{bread}}</a>
+		    	<b ng-if="$last">{{bread}}</b>
+		    </li>
+		</ol>
+		<p ng-show="showError" class="text-danger" ng-bind-html="error"></p>
+
+		<div class="treeScroll" id="ex4">
+			<tree nodes='tree' options="optionsTreeWidget"></tree>
+		</div>
 	</div>
 	<div class="modal-footer footerModal">
 	    <button type="button" class="btn startButtonModal" ng-click="ok();">{{ 'analyse_view.Start' | translate}}</button>

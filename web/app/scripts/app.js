@@ -46,7 +46,8 @@ var a6oApp = angular
     'ngTagsInput',
     'pascalprecht.translate',
     'truncate',
-    'angularMoment'
+    'angularMoment',
+    'TreeWidget'
   ])
   .config(function ($stateProvider, $urlRouterProvider, toastrConfig, $translateProvider) {
 	  
