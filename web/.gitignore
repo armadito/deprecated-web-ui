@@ -1,0 +1,11 @@
+bower_components
+node_modules
+Makefile
+Makefile.in
+autom4te.cache
+configure
+aclocal.m4
+install-sh
+missing
+config.guess
+config.sub
