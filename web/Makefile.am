@@ -1,3 +1,8 @@
+# currently broken, no dependency between 'install' and bower_components, which makes
+# that 'make dist' works, but 'make' or 'make install' are broken
+# problem: avoid at all cost the execution of npm or bower on launchpad (no network access
+# on build farm)
+
 NPM_INSTALL_FLAGS= --no-color --no-spin --production
 BOWER=$(top_builddir)/node_modules/bower/bin/bower
 BOWER_INSTALL_FLAGS=--no-color --no-spin
@@ -12,7 +17,7 @@ $(BOWER):
 	$(NPM) install $(NPM_INSTALL_FLAGS) bower
 
 clean-local:
-	-rm -rf node_modules .node_modules.timestamp
+	-rm -rf node_modules
 	-rm -rf bower_components .bower_components.timestamp
 
 webguidir=$(datadir)/armadito
