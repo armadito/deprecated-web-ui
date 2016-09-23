@@ -32,9 +32,9 @@ install-data-hook:
 	cp -r $(srcdir)/app $(webguidir)
 
 EXTRA_DIST=\
-COPYING \
-README.md \
 bower.json \
-package.json \
 app 
+
+dist-hook: $(noinst_DATA)
+	cp -r bower_components $(distdir)
 

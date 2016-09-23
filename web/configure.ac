@@ -1,5 +1,5 @@
 AC_INIT(armadito-gui,0.10.1,fdechelle@teclib.com)
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([tar-ustar])
 
 # checks for programs.
 AC_PATH_PROG(NPM, npm)
