@@ -4,7 +4,7 @@ AM_INIT_AUTOMAKE([tar-ustar])
 # checks for programs.
 AC_PATH_PROG(NPM, npm)
 if test ! -x "$NPM" ; then
-   AC_MSG_ERROR("cannot find npm")
+   AC_MSG_WARN("cannot find npm")
 fi
 
 # make symbolic links
