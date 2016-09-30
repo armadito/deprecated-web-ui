@@ -31,120 +31,145 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 
 angular.module('armaditoApp')
   .controller('ScanController', 
-            ['$rootScope', '$scope', '$uibModal', 'ScanService',
-    function ($rootScope,   $scope,   $uibModal,   ScanService) {
+            ['$rootScope', '$scope', '$uibModal', 'ScanService', 'ScanDataFactory',
+    function ($rootScope,   $scope,   $uibModal,   ScanService,   ScanDataFactory)
+    {
 
-      $scope.type = "analyse_view.Choose_analyse_type";
-      $scope.scan_progress = 0;
-      $scope.scan_files = [];
+        $scope.synchronizeScopeWithFactory = function ()
+        {
+            $scope.type = ScanDataFactory.data.type;
+            $scope.scan_progress = ScanDataFactory.data.progress;
+            $scope.scan_files = ScanDataFactory.data.files;
+            $scope.scanned_count = ScanDataFactory.data.scanned_count;
+            $scope.suspicious_count = ScanDataFactory.data.suspicious_count;
+            $scope.malware_count = ScanDataFactory.data.malware_count;
+            $scope.displayed_file = ScanDataFactory.data.displayed_file;
+            $scope.path_to_scan = ScanDataFactory.data.path_to_scan;
+            $scope.canceled = ScanDataFactory.data.canceled;
+        };
 
-      $scope.updateScope = function(data){
-        if(data.event_type === "DetectionEvent"){
-          $scope.scan_files.push(data);
-          $scope.$apply();
-        }else if (data.event_type === "OnDemandProgressEvent") {
-          $scope.displayed_file = data.path;
-          $scope.scan_progress = data.progress;
-          $scope.scanned_count = data.scanned_count;
-          $scope.suspicious_count = data.suspicious_count;
-          $scope.malware_count = data.malware_count;
-          $scope.$apply();
-        }
-        //console.log('$scope.scan_files', $scope.scan_files);
-        //
-        //
-        //
-        //$scope.displayed_file = ;
-        //$scope.canceled = ;
-      };
-
-      // This function refresh structure values from data receive from AV. 
-      // callback function
-      $scope.threatDataFromAv = function(json_object){
-      
-      };
-
-      $scope.StartScan = function(pathToScan){
-        console.log("pathToScan : ", pathToScan);
-        $scope.scan_files = [];
-        ScanService.scan(pathToScan);
-      };
-
-      $scope.configureScan = function(){
-
-      };
-
-      $scope.CancelScan = function(){
-
-      };
-
-
-      $scope.fullScan = function () {
-         $scope.type = "analyse_view.Full_scan";
-      };
-
-      $scope.quickScan = function () {
-        $scope.type = "analyse_view.Quick_scan";
-      };
-
-      $scope.customScan = function () {
-        $scope.type = "analyse_view.Custom_scan";
-        var size = 'sm';
-        var modalInstance = $uibModal.open({
-          animation: $scope.animationsEnabled,
-          templateUrl: 'views/CustomAnalyse.html',
-          controller: 'CustomAnalyseController',
-          size: size,
-          resolve: {
-              items: function () {
-              return $scope.items;
+        $scope.updateScanDataFactory = function (data)
+        {
+            if(data.event_type === "DetectionEvent")
+            {
+                $scope.scan_files.push(data);
             }
-          }
+            else if (data.event_type === "OnDemandProgressEvent")
+            {
+                $scope.displayed_file = data.path;
+                $scope.scan_progress = data.progress;
+                $scope.scanned_count = data.scanned_count;
+                $scope.suspicious_count = data.suspicious_count;
+                $scope.malware_count = data.malware_count;
+            }
+            else if (data.event_type === "OnDemandCompletedEvent")
+            {
+                // TODO
+            }
+
+            $scope.$apply();
+        }
+
+        $scope.configureScan = function ()
+        {
+            // TODO
+        };
+
+        $scope.cancelScan = function ()
+        {
+            if($scope.canceled == 0)
+            {
+                ScanDataFactory.setCanceled();
+            }
+        };
+
+        $scope.startScan = function ()
+        {
+            ScanDataFactory.reset();
+            $scope.scan_files = [];
+
+            $scope.configureScan();
+            ScanDataFactory.setScanConf($scope.path_to_scan, $scope.type);
+            $scope.synchronizeScopeWithFactory();
+
+            console.log("[+] Debug :: Start scan ::\n");
+            ScanService.scan(path_to_scan);
+        };
+
+        $scope.fullScan = function ()
+        {
+            $scope.type = "analyse_view.Full_scan";
+        };
+
+        $scope.quickScan = function ()
+        {
+            $scope.type = "analyse_view.Quick_scan";
+        };
+
+        $scope.customScan = function ()
+        {
+            $scope.type = "analyse_view.Custom_scan";
+
+            var size = 'sm';
+            var modalInstance = $uibModal.open({
+              animation: $scope.animationsEnabled,
+              templateUrl: 'views/CustomAnalyse.html',
+              controller: 'CustomAnalyseController',
+              size: size,
+              resolve: {
+                  items: function () {
+                  return $scope.items;
+                }
+              }
+            });
+
+            modalInstance.result.then(
+                function (scanOptions)
+                {
+                    $scope.scanOptions = scanOptions;
+                    $scope.path_to_scan = $scope.scanOptions.pathToScan;
+                    $scope.StartScan($scope.path_to_scan);
+                },
+                function ()
+                {
+                    console.log('Modal dismissed at: ' + new Date());
+                }
+            );
+        };
+
+        $scope.truncateString = function (string, max_length)
+        {
+            if (string.length <= max_length){
+                return string;
+            }
+
+            var separator = '...',
+                chars_to_show = max_length - separator.length,
+                front_chars = Math.ceil(chars_to_show/2),
+                back_chars = Math.floor(chars_to_show/2);
+
+            return string.substr(0, front_chars) +
+                 separator + string.substr(string.length - back_chars);
+        };
+
+        $rootScope.$on('OnDemandProgressEvent', function(event, data)
+        {
+            $scope.updateScanDataFactory(data);
+            console.log("OnDemandProgressEvent : ", data);
         });
 
-        modalInstance.result.then(function (scanOptions) {
-          $scope.scanOptions = scanOptions;
-          $scope.path_to_scan = $scope.scanOptions.pathToScan;
-          $scope.StartScan($scope.path_to_scan);
-        }, function () {
-          console.log('Modal dismissed at: ' + new Date());
+        $rootScope.$on('DetectionEvent', function(event, data)
+        {
+            $scope.updateScanDataFactory(data);
+            console.log("DetectionEvent : ", data);
         });
 
-      };
+        $rootScope.$on('OnDemandCompletedEvent', function(event, data)
+        {
+            $scope.updateScanDataFactory(data);
+            console.log("OnDemandCompletedEvent : ", data);
+        });
 
-      $scope.truncate = function (fullStr, strLen) {
-          if (fullStr.length <= strLen){
-            return fullStr;
-          }
-          var separator = '...';
-          
-          var sepLen = separator.length,
-              charsToShow = strLen - sepLen,
-              frontChars = Math.ceil(charsToShow/2),
-              backChars = Math.floor(charsToShow/2);
-          
-          return fullStr.substr(0, frontChars) + 
-                 separator + 
-                 fullStr.substr(fullStr.length - backChars);
-      };
-
-      $rootScope.$on('OnDemandProgressEvent', function(event, data) { 
-        $scope.updateScope(data);
-        //console.log("OnDemandProgressEvent : ", data);
-
-      });
-
-      $rootScope.$on('DetectionEvent', function(event, data) {
-        $scope.updateScope(data);
-        //console.log("DetectionEvent : ", data);
-      });
-
-      $rootScope.$on('OnDemandCompletedEvent', function(event, data) {
-        //If we want to notify the user that the scan is finished
-        //$scope.updateScope(data);
-        //console.log("DetectionEvent : ", data);
-      });
-
-      ScanService.register();
-
-  }]);
+        ScanService.register();
+    }
+]);
