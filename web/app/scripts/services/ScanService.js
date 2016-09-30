@@ -50,18 +50,17 @@ angular.module('armaditoApp')
 	      	xmlhttp.send(null);
 	  	};
 
-	  	factory.scan = function(pathToScan){
-		  	var path_to_scan = pathToScan;
-		  	//var path_to_scan = document.getElementById("path").value;
-		  	var data = {path: path_to_scan};
-		  	var xmlhttp = new XMLHttpRequest();
-		  	xmlhttp.open("POST", "/api/scan", true);
-		  	xmlhttp.setRequestHeader("X-Armadito-Token", token);
-		  	xmlhttp.setRequestHeader("Content-TYpe", "application/json");
-		  	xmlhttp.send(JSON.stringify(data));
-	  	
-	  		return long_polling();
-	  	};
+        factory.scan = function(path_to_scan)
+        {
+            var data = {path: path_to_scan};
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("POST", "/api/scan", true);
+            xmlhttp.setRequestHeader("X-Armadito-Token", token);
+            xmlhttp.setRequestHeader("Content-TYpe", "application/json");
+            xmlhttp.send(JSON.stringify(data));
+
+            return long_polling();
+        };
 
 	  	factory.register = function(){
 	  		var xmlhttp = new XMLHttpRequest();
