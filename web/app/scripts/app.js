@@ -113,7 +113,7 @@ a6oApp.factory('ScanDataFactory', function () {
             files: []
 	    },
 
-	    update_counters: function (_scanned_count, _suspicious_count, _malware_count, _progress )
+	    updateCounters: function (_scanned_count, _suspicious_count, _malware_count, _progress )
 	    {
             this.data.suspicious_count = _suspicious_count;
             this.data.scanned_count = _scanned_count;
@@ -121,12 +121,12 @@ a6oApp.factory('ScanDataFactory', function () {
             this.data.progress = _progress;
 	    },
 
-	    set_displayed_file: function (_displayed_file)
+	    setDisplayedFile: function (_displayed_file)
 	    {
             this.data.displayed_file = _displayed_file;
 	    },
 
-	    add_scanned_file: function (_file_path, _file_scan_status, _file_scan_action , _file_mod_name, _file_mod_report)
+	    addScannedFile: function (_file_path, _file_scan_status, _file_scan_action , _file_mod_name, _file_mod_report)
 	    {
             var file = {
 		        path: _file_path,
@@ -140,7 +140,7 @@ a6oApp.factory('ScanDataFactory', function () {
             file = null;
 	    },
 
-	    set_scan_conf: function (_path_to_scan, _type)
+	    setScanConf: function (_path_to_scan, _type)
 	    {
             this.data.path_to_scan =  _path_to_scan;
             this.data.type = _type;
