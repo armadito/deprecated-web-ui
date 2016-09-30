@@ -28,9 +28,6 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * # ScanController
  * Controller of the Armadito-av
  */
- 
- //var os = require('os');
- //var homedir = require('homedir');
 
 angular.module('armaditoApp')
   .controller('ScanController', 
@@ -42,9 +39,7 @@ angular.module('armaditoApp')
       $scope.scan_files = [];
 
       $scope.updateScope = function(data){
-        // Get from factory
         if(data.event_type === "DetectionEvent"){
-          //console.log("updateScope : ", data);
           $scope.scan_files.push(data);
           $scope.$apply();
         }else if (data.event_type === "OnDemandProgressEvent") {
@@ -133,33 +128,23 @@ angular.module('armaditoApp')
                  fullStr.substr(fullStr.length - backChars);
       };
 
-      // updateScope
-
       $rootScope.$on('OnDemandProgressEvent', function(event, data) { 
         $scope.updateScope(data);
-        //console.log("OnDemandProgressEvent : ", data); 
+        //console.log("OnDemandProgressEvent : ", data);
 
       });
 
       $rootScope.$on('DetectionEvent', function(event, data) {
         $scope.updateScope(data);
-        //console.log("DetectionEvent : ", data); 
+        //console.log("DetectionEvent : ", data);
       });
 
       $rootScope.$on('OnDemandCompletedEvent', function(event, data) {
         //If we want to notify the user that the scan is finished
         //$scope.updateScope(data);
-        //console.log("DetectionEvent : ", data); 
+        //console.log("DetectionEvent : ", data);
       });
 
-
-
-      //-----------
       ScanService.register();
 
-      //-----------
-
   }]);
-
-  
- 
