@@ -19,8 +19,8 @@
 				    </div>
 	            </div>
 	            <div class="col-xs-3 col-sm-3 col-md-3">
-                    <button style="-webkit-app-region: no-drag;" type="button" class="btn stopButton" ng-click="CancelScan()" ng-if="scan_progress && scan_progress < 100" >{{ 'analyse_view.Stop' | translate}}</button>
-                    <button style="-webkit-app-region: no-drag;" type="button" class="btn startButton" ng-click="StartScan()" ng-if="!scan_progress || scan_progress === 100" >{{ 'analyse_view.Start' | translate}}</button>
+                    <button style="-webkit-app-region: no-drag;" type="button" class="btn stopButton" ng-click="cancelScan()" ng-if="scan_progress && scan_progress < 100" >{{ 'analyse_view.Stop' | translate}}</button>
+                    <button style="-webkit-app-region: no-drag;" type="button" class="btn startButton" ng-click="startScan()" ng-if="!scan_progress || scan_progress === 100" >{{ 'analyse_view.Start' | translate}}</button>
 	            </div>
 	        </div>
 	    </form>

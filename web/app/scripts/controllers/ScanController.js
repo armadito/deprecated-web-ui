@@ -92,8 +92,8 @@ angular.module('armaditoApp')
             ScanDataFactory.setScanConf($scope.path_to_scan, $scope.type);
             $scope.synchronizeScopeWithFactory();
 
-            console.log("[+] Debug :: Start scan ::\n");
-            ScanService.scan(path_to_scan);
+            console.log("[+] Debug :: New Scan ::\n");
+            ScanService.newScan(path_to_scan);
         };
 
         $scope.fullScan = function ()
@@ -169,7 +169,5 @@ angular.module('armaditoApp')
             $scope.updateScanDataFactory(data);
             console.log("OnDemandCompletedEvent : ", data);
         });
-
-        ScanService.register();
     }
 ]);
