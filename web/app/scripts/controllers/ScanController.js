@@ -52,7 +52,15 @@ angular.module('armaditoApp')
         {
             if(data.event_type === "DetectionEvent")
             {
-                $scope.scan_files.push(data);
+                if(data.scan_status === 'malware'
+                || data.scan_status === 'suspicious')
+                {
+                    ScanDataFactory.addScannedFile(data.path,
+                                                   data.scan_status,
+                                                   data.scan_action,
+                                                   data.module_name,
+                                                   data.module_report);
+                }
             }
             else if (data.event_type === "OnDemandProgressEvent")
             {
@@ -62,20 +70,10 @@ angular.module('armaditoApp')
                     $scope.displayed_file = ScanDataFactory.data.displayed_file;
                 }
 
-                if(data.scan_status === 'malware'
-                || data.scan_status === 'suspicious')
-                {
-                    ScanDataFactory.addScannedFile(data.path,
-                                                   data.scan_status,
-                                                   data.scan_action,
-                                                   data.mod_name,
-                                                   data.mod_report);
-
-                    ScanDataFactory.updateCounters(data.scanned_count,
-                                                   data.suspicious_count,
-                                                   data.malware_count,
-                                                   data.progress);
-                }
+                ScanDataFactory.updateCounters(data.scanned_count,
+                               data.suspicious_count,
+                               data.malware_count,
+                               data.progress);
             }
             else if (data.event_type === "OnDemandCompletedEvent")
             {
