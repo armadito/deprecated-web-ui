@@ -58,13 +58,6 @@
 	    	</uib-progressbar>   
 	  	</div>
 	</div>
-	<!--<div class="row" ng-if="!scan_progress">
-		<br>
-		<br>
-		<div class=" col-sm-4 col-md-4 col-sm-offset-4 col-md-offset-4">
-			{{ 'analyse_view.No_file_scanned_yet' | translate}}
-		</div>
-	</div>-->
 	<div class="row pullBottom">
 		<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-xs-11 col-sm-11 col-md-11">
 			<table class="table analyse" >
@@ -75,7 +68,7 @@
 				     <th class="analyse" style="width:60%"><h4><i>{{ 'analyse_view.Files' | translate}}</i></h4></th>
 				  </tr>
 				 </thead>
-			    <tbody class="analyse" id="ex3" style="-webkit-app-region: no-drag;"> <!-- scroll-bottom="scan_files" -->
+			    <tbody class="analyse" id="ex3" style="-webkit-app-region: no-drag;">
 			      <tr class="analyse" ng-repeat="file in scan_files">
 			      	<td style="width:10%" ng-if="file.scan_status === 'malware'" class="analyse redCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>
 			      	<td style="width:10%" ng-if="file.scan_status === 'suspicious'" class="analyse orangeCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>
