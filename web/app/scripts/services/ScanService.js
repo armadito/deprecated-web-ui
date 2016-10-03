@@ -25,7 +25,7 @@ angular.module('armaditoApp')
             return parsed;
         };
 
-        facotry.handleEvent = function (receivedEvent)
+        factory.handleEvent = function (receivedEvent)
         {
             if (receivedEvent.event_type === "OnDemandProgressEvent")
             {

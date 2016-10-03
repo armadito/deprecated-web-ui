@@ -75,6 +75,7 @@ angular.module('armaditoApp')
                                                 data.suspicious_count,
                                                 data.malware_count,
                                                 data.progress);
+                }
             }
             else if (data.event_type === "OnDemandCompletedEvent")
             {
