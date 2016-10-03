@@ -67,7 +67,6 @@ angular.module('armaditoApp')
                 if(data.path)
                 {
                     ScanDataFactory.setDisplayedFile(data.path);
-                    $scope.displayed_file = ScanDataFactory.data.displayed_file;
                 }
 
                 ScanDataFactory.updateCounters(data.scanned_count,
