@@ -48,35 +48,45 @@ angular.module('armaditoApp')
             $scope.canceled = ScanDataFactory.data.canceled;
         };
 
+        $scope.updateProgress = function (data)
+        {
+            if(data.path)
+            {
+                ScanDataFactory.setDisplayedFile(data.path);
+            }
+
+            ScanDataFactory.updateCounters(data.scanned_count,
+                           data.suspicious_count,
+                           data.malware_count,
+                           data.progress);
+        }
+
+        $scope.addScannedFile = function (data)
+        {
+            if(data.scan_status === 'malware'
+            || data.scan_status === 'suspicious')
+            {
+                ScanDataFactory.addScannedFile(data.path,
+                                               data.scan_status,
+                                               data.scan_action,
+                                               data.module_name,
+                                               data.module_report);
+            }
+        }
+
         $scope.updateScanDataFactory = function (data)
         {
             if(data.event_type === "DetectionEvent")
             {
-                if(data.scan_status === 'malware'
-                || data.scan_status === 'suspicious')
-                {
-                    ScanDataFactory.addScannedFile(data.path,
-                                                   data.scan_status,
-                                                   data.scan_action,
-                                                   data.module_name,
-                                                   data.module_report);
-                }
+                $scope.addScannedFile(data);
             }
             else if (data.event_type === "OnDemandProgressEvent")
             {
-                if(data.path)
-                {
-                    ScanDataFactory.setDisplayedFile(data.path);
-                }
-
-                ScanDataFactory.updateCounters(data.scanned_count,
-                               data.suspicious_count,
-                               data.malware_count,
-                               data.progress);
+                $scope.updateProgress(data);
             }
             else if (data.event_type === "OnDemandCompletedEvent")
             {
-                // TODO
+                $scope.updateProgress(data);
             }
 
             $scope.synchronizeScopeWithFactory();
