@@ -164,7 +164,7 @@ angular.module('armaditoApp')
             );
         };
 
-        $scope.truncateString = function (string, max_length)
+        $scope.truncate = function (string, max_length)
         {
             if (string.length <= max_length){
                 return string;
