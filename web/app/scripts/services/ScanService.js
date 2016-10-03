@@ -29,19 +29,16 @@ angular.module('armaditoApp')
         {
             if (receivedEvent.event_type === "OnDemandProgressEvent")
             {
-                console.log("[+] OnDemandProgressEvent");
                 $rootScope.$broadcast( "OnDemandProgressEvent", receivedEvent );
                 factory.pollEvents();
             }
             else if (receivedEvent.event_type === "DetectionEvent")
             {
-                console.log("[+] DetectionEvent");
                 $rootScope.$broadcast( "DetectionEvent", receivedEvent );
                 factory.pollEvents();
             }
             else if (receivedEvent.event_type === "OnDemandCompletedEvent")
             {
-                console.log("[+] OnDemandCompletedEvent, we unregister to api, token was : " + factory.token);
                 factory.apiUnregister();
                 $rootScope.$broadcast( "OnDemandCompletedEvent", receivedEvent );
             }
