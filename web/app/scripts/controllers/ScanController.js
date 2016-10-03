@@ -185,5 +185,6 @@ angular.module('armaditoApp')
             $scope.updateScanDataFactory(data);
         });
 
+        $scope.synchronizeScopeWithFactory();
     }
 ]);
