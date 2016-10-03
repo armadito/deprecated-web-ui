@@ -86,7 +86,6 @@ angular.module('armaditoApp')
             }
             else if (data.event_type === "OnDemandCompletedEvent")
             {
-                $scope.updateProgress(data);
             }
 
             $scope.synchronizeScopeWithFactory();
