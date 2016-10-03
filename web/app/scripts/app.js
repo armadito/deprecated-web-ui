@@ -132,8 +132,8 @@ a6oApp.factory('ScanDataFactory', function () {
 		        path: _file_path,
 		        scan_status: _file_scan_status,
 		        scan_action: _file_scan_action,
-		        mod_name: _file_mod_name,
-                mod_report: _file_mod_report
+                module_name: _file_mod_name,
+                module_report: _file_mod_report
 	        };
 
             this.data.files.push(file);
