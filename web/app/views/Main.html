@@ -36,11 +36,11 @@
         </div>
     </div>
   </div>
-  <div class="row">
-  	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-  	    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ahuru-tab-menu">
+  <div class="row" style="height: 100%">
+  	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 100%">
+  	    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ahuru-tab-menu" >
   	      <div class="list-group" ng-repeat="item in buttons" style="-webkit-app-region: no-drag;">
-  	        <a  ui-sref="{{item.button.view}}" style="height: 145px;"
+  	        <a  ui-sref="{{item.button.view}}"
                 ng-click="activeButton(item.button)"
                 class="list-group-item backgroundColumn text-center {{item.button.backgroundColor}}"
                 ng-class="{'active': item.button.isActive,  'list-group-item-firstChild' : $first, 'list-group-item-lastChild' : $last}">
