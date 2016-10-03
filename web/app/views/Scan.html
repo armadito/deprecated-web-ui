@@ -19,8 +19,8 @@
 				    </div>
 	            </div>
 	            <div class="col-xs-3 col-sm-3 col-md-3">
-                    <button style="-webkit-app-region: no-drag;" type="button" class="btn stopButton" ng-click="cancelScan()" ng-if="scan_progress && scan_progress < 100" >{{ 'analyse_view.Stop' | translate}}</button>
-                    <button style="-webkit-app-region: no-drag;" type="button" class="btn startButton" ng-click="startScan()" ng-if="!scan_progress || scan_progress === 100" >{{ 'analyse_view.Start' | translate}}</button>
+                    <button type="button" class="btn stopButton" ng-click="cancelScan()" ng-if="scan_progress && scan_progress < 100" >{{ 'analyse_view.Stop' | translate}}</button>
+                    <button type="button" class="btn startButton" ng-click="startScan()" ng-if="!scan_progress || scan_progress === 100" >{{ 'analyse_view.Start' | translate}}</button>
 	            </div>
 	        </div>
 	    </form>
@@ -68,7 +68,7 @@
 				     <th class="analyse" style="width:60%"><h4><i>{{ 'analyse_view.Files' | translate}}</i></h4></th>
 				  </tr>
 				 </thead>
-			    <tbody class="analyse" id="ex3" style="-webkit-app-region: no-drag;">
+			    <tbody class="analyse" id="ex3" style="-webkit-user-select: text;">
 			      <tr class="analyse" ng-repeat="file in scan_files">
 			      	<td style="width:10%" ng-if="file.scan_status === 'malware'" class="analyse redCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>
 			      	<td style="width:10%" ng-if="file.scan_status === 'suspicious'" class="analyse orangeCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>

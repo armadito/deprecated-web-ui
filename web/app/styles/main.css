@@ -6,7 +6,6 @@
       padding-right: 0;
       padding-left: 0;
       padding-bottom: 0;
-      width: 155px !important;
     }
     div.ahuru-tab-menu div.list-group{
       margin-bottom: 0;
@@ -1109,6 +1108,9 @@
     }
     .tableOfScannedFiles {
       top: -40px !important;
+    }
+    .canSelect {
+      -webkit-user-select: text;
     }
     .pullTop {
       margin-top: -10px !important;
