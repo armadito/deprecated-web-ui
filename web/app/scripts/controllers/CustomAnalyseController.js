@@ -29,10 +29,10 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * Controller of the armaditoApp
  */
 angular.module('armaditoApp')
-  .controller('CustomAnalyseController', 
-            ['$scope', '$uibModalInstance', 'items', 'BrowseService', 
+  .controller('CustomAnalyseController',
+            ['$scope', '$uibModalInstance', 'items', 'BrowseService',
     function ($scope,   $uibModalInstance,   items,   BrowseService) {
-    
+
         $scope.items = items;
 
         $scope.optionScan = {
@@ -71,7 +71,7 @@ angular.module('armaditoApp')
         {
             //console.log('hey, pathToScan has changed!', $scope.pathToScan);
         });
-        
+
         $scope.excludedFolders = [];
 
         $scope.chooseFileToExclude = function ()
@@ -90,13 +90,13 @@ angular.module('armaditoApp')
                     };
                     $scope.excludedFolders.push(optionScan);
                     console.log($scope.excludedFolders);
-                }) 
+                })
             }, false);
         };
 
 
         $scope.file_changed = function(element)
-        { 
+        {
           console.log('element changed ', element);
         };
 
@@ -110,10 +110,10 @@ angular.module('armaditoApp')
                 full_path: "/",
                 type : "root"
         }];
-        
+
         $scope.optionsTreeWidget = { expandOnClick: true, showIcon : true};
-        
-        $scope.$on('selection-changed', function (e, node) 
+
+        $scope.$on('selection-changed', function (e, node)
         {
             $scope.breadcrums = [];
             var testBread = node.full_path.split("/");
@@ -139,15 +139,15 @@ angular.module('armaditoApp')
                             successData.content[i].image = "/app/images/folder-open.png";
                         }
                         node.children.push(successData.content[i]);
-                    }            
-                }, 
+                    }
+                },
                 function(error)
                 {
                     $scope.showError = true;
                     $scope.error = "Error cannot access to path : " + "<b>"+ error.data.data.path + "</b> " + " reason : " + "<b>" + error.data.data.error + "</b>";
                     console.error('Error : ' + $scope.error);
-                    
-                }, 
+
+                },
                 function (progress)
                 {
                     console.info('Progress : ' + progress);

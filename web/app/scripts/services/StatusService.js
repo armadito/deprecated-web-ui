@@ -11,7 +11,7 @@ angular.module('armaditoApp')
 	.service('StatusService', ['$rootScope','$q', '$interval', function ($rootScope, $q, $interval) {
 
 	  	var factory = {};
-	  	var token = null;	  	
+	  	var token = null;
 
 	  	function long_polling()
 	  	{
@@ -56,11 +56,11 @@ angular.module('armaditoApp')
   				  	xmlhttp.setRequestHeader("X-Armadito-Token", token);
   				  	xmlhttp.setRequestHeader("Content-Type", "application/json");
   			  		xmlhttp.send(null);
-  			  		
+
   			  		return long_polling();
   		  		}
   		  	})
-	  	};	  	
+	  	};
 
 	  	return factory;
 	}]);

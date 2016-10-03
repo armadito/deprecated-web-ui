@@ -11,7 +11,7 @@ angular.module('armaditoApp')
 	.service('ScanService', ['$rootScope', function ($rootScope) {
 
 	  	var factory = {};
-        
+
         function parseJson(json)
         {
             var parsed;
@@ -48,7 +48,7 @@ angular.module('armaditoApp')
         {
 	     	var xmlhttp = new XMLHttpRequest();
 
-	      	xmlhttp.onreadystatechange = function () 
+	      	xmlhttp.onreadystatechange = function ()
 	      	{
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                 {
@@ -61,12 +61,12 @@ angular.module('armaditoApp')
 	      	xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
 	      	xmlhttp.send(null);
 	  	};
-	  	
+
 	  	factory.AskForNewScan = function ()
 	  	{
             var data = {path: factory.path_to_scan},
                 xmlhttp = new XMLHttpRequest();
-                
+
             xmlhttp.onreadystatechange = function ()
             {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200)

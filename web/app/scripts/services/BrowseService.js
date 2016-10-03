@@ -11,13 +11,13 @@ angular.module('armaditoApp')
 	.service('BrowseService', function ($http)
 	{
 	  	var BrowseService = {
-	  		browse: 
+	  		browse:
 	  		function(path)
 	  		{
 		     	var promise = $http(
 			    {
-		      		method: 'GET', 
-		      		url: '/api/browse', 
+		      		method: 'GET',
+		      		url: '/api/browse',
 		      		headers: {
     					"Content-Type": "application/json"
     				},

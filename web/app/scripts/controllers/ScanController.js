@@ -30,7 +30,7 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 angular.module('armaditoApp')
-  .controller('ScanController', 
+  .controller('ScanController',
             ['$rootScope', '$scope', '$uibModal', 'ScanService', 'ScanDataFactory',
     function ($rootScope,   $scope,   $uibModal,   ScanService,   ScanDataFactory)
     {
@@ -61,8 +61,8 @@ angular.module('armaditoApp')
                     ScanDataFactory.setDisplayedFile(data.path);
                     $scope.displayed_file = ScanDataFactory.data.displayed_file;
                 }
-                
-                if(json_object.params.scan_status === 'malware' 
+
+                if(json_object.params.scan_status === 'malware'
                 || json_object.params.scan_status === 'suspicious')
                 {
                     ScanDataFactory.addScannedFile(data.path,
@@ -101,7 +101,7 @@ angular.module('armaditoApp')
         $scope.startScan = function ()
         {
             console.log("[+] New Scan ::\n");
-        
+
             ScanDataFactory.reset();
             $scope.scan_files = [];
 
@@ -133,7 +133,7 @@ angular.module('armaditoApp')
               templateUrl: 'views/CustomAnalyse.html',
               controller: 'CustomAnalyseController',
               size: size,
-              resolve: 
+              resolve:
               {
                 items: function ()
                 {
