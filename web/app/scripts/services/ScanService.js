@@ -11,73 +11,106 @@ angular.module('armaditoApp')
 	.service('ScanService', ['$rootScope', function ($rootScope) {
 
 	  	var factory = {};
-	  	var token = null;
-
-        function handleEvent(received_event)
+        
+        function parseJson(json)
         {
-            if (received_event.event_type === "OnDemandProgressEvent")
-            {
-                $rootScope.$broadcast( "OnDemandProgressEvent", received_event );
-                pollEvents();
+            var parsed;
+            try {
+                parsed = JSON.parse(json);
             }
-            else if (received_event.event_type === "DetectionEvent")
+            catch(e)
             {
-                $rootScope.$broadcast( "DetectionEvent", received_event );
-                pollEvents();
+                console.error("Error when parsing JSON : "+e);
             }
-            else if (received_event.event_type === "OnDemandCompletedEvent")
-            {
-                $rootScope.$broadcast( "OnDemandCompletedEvent", received_event );
-            }
-        }
+            return parsed;
+        };
 
-        function pollEvents()
+        facotry.handleEvent = function (receivedEvent)
+        {
+            if (receivedEvent.event_type === "OnDemandProgressEvent")
+            {
+                $rootScope.$broadcast( "OnDemandProgressEvent", receivedEvent );
+                pollEvents();
+            }
+            else if (receivedEvent.event_type === "DetectionEvent")
+            {
+                $rootScope.$broadcast( "DetectionEvent", receivedEvent );
+                pollEvents();
+            }
+            else if (receivedEvent.event_type === "OnDemandCompletedEvent")
+            {
+                $rootScope.$broadcast( "OnDemandCompletedEvent", receivedEvent );
+                factory.apiUnregister();
+            }
+        };
+
+        factory.pollEvents = function ()
         {
 	     	var xmlhttp = new XMLHttpRequest();
 
-	      	xmlhttp.onreadystatechange = function() {
+	      	xmlhttp.onreadystatechange = function () 
+	      	{
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                 {
-	                var event = JSON.parse(xmlhttp.responseText);
-	                handleEvent(event);
+	                var jobj = parseJson(xmlhttp.responseText);
+	                factory.handleEvent(jobj);
                  }
 	      	};
 
 	      	xmlhttp.open("GET", "/api/event", true);
-	      	xmlhttp.setRequestHeader("X-Armadito-Token", token);
+	      	xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
 	      	xmlhttp.send(null);
 	  	};
-
-        factory.newScan = function(path_to_scan)
-        {
-            apiRegister();
-
-            var data = {path: path_to_scan},
+	  	
+	  	factory.AskForNewScan = function ()
+	  	{
+            var data = {path: factory.path_to_scan},
                 xmlhttp = new XMLHttpRequest();
-
-            xmlhttp.open("POST", "/api/scan", true);
-            xmlhttp.setRequestHeader("X-Armadito-Token", token);
-            xmlhttp.setRequestHeader("Content-TYpe", "application/json");
-            xmlhttp.send(JSON.stringify(data));
-
-            pollEvents();
-        };
-
-        factory.apiRegister = function()
-        {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function()
+                
+            xmlhttp.onreadystatechange = function ()
             {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                 {
-                    var obj = JSON.parse(xmlhttp.responseText);
-                    token = obj.token;
+                    factory.pollEvents();
+	            }
+            };
+
+            xmlhttp.open("POST", "/api/scan", true);
+            xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+            xmlhttp.setRequestHeader("Content-Type", "application/json");
+            xmlhttp.send(JSON.stringify(data));
+	  	}
+
+	  	factory.apiUnregister = function ()
+        {
+            var xmlhttp = new XMLHttpRequest();
+	  		xmlhttp.open("GET", "/api/unregister", true);
+	  		xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+	  		xmlhttp.send(null);
+	  		factory.token = null;
+	  	};
+
+        factory.apiRegister = function ()
+        {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function ()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                {
+                    var jobj = parseJson(xmlhttp.responseText);
+                    factory.token = jobj.token;
+                    factory.AskForNewScan();
 	            }
             };
 
 	  		xmlhttp.open("GET", "/api/register", true);
 	  		xmlhttp.send(null);
 	  	};
+
+        factory.newScan = function (path_to_scan)
+        {
+            factory.path_to_scan = path_to_scan;
+        };
 
 	  	return factory;
 	}

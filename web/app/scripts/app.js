@@ -148,7 +148,7 @@ a6oApp.factory('ScanDataFactory', function () {
 
         setCanceled: function ()
         {
-              this.data.canceled = 1;
+            this.data.canceled = 1;
 	    },
 
 	    reset: function ()

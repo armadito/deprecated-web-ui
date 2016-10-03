@@ -56,17 +56,32 @@ angular.module('armaditoApp')
             }
             else if (data.event_type === "OnDemandProgressEvent")
             {
-                $scope.displayed_file = data.path;
-                $scope.scan_progress = data.progress;
-                $scope.scanned_count = data.scanned_count;
-                $scope.suspicious_count = data.suspicious_count;
-                $scope.malware_count = data.malware_count;
+                if(data.path)
+                {
+                    ScanDataFactory.setDisplayedFile(data.path);
+                    $scope.displayed_file = ScanDataFactory.data.displayed_file;
+                }
+                
+                if(json_object.params.scan_status === 'malware' 
+                || json_object.params.scan_status === 'suspicious')
+                {
+                    ScanDataFactory.addScannedFile(data.path,
+                                                     data.scan_status,
+                                                     data.scan_action,
+                                                     data.mod_name,
+                                                     data.mod_report);
+
+                ScanDataFactory.updateCounters(data.scanned_count,
+                                                data.suspicious_count,
+                                                data.malware_count,
+                                                data.progress);
             }
             else if (data.event_type === "OnDemandCompletedEvent")
             {
                 // TODO
             }
 
+            $scope.synchronizeScopeWithFactory();
             $scope.$apply();
         }
 
@@ -85,6 +100,8 @@ angular.module('armaditoApp')
 
         $scope.startScan = function ()
         {
+            console.log("[+] New Scan ::\n");
+        
             ScanDataFactory.reset();
             $scope.scan_files = [];
 
@@ -93,7 +110,7 @@ angular.module('armaditoApp')
             $scope.synchronizeScopeWithFactory();
 
             console.log("[+] Debug :: New Scan ::\n");
-            ScanService.newScan(path_to_scan);
+            ScanService.newScan($scope.path_to_scan);
         };
 
         $scope.fullScan = function ()
@@ -116,9 +133,11 @@ angular.module('armaditoApp')
               templateUrl: 'views/CustomAnalyse.html',
               controller: 'CustomAnalyseController',
               size: size,
-              resolve: {
-                  items: function () {
-                  return $scope.items;
+              resolve: 
+              {
+                items: function ()
+                {
+                    return $scope.items;
                 }
               }
             });
@@ -128,7 +147,7 @@ angular.module('armaditoApp')
                 {
                     $scope.scanOptions = scanOptions;
                     $scope.path_to_scan = $scope.scanOptions.pathToScan;
-                    $scope.StartScan($scope.path_to_scan);
+                    $scope.startScan();
                 },
                 function ()
                 {
@@ -169,5 +188,6 @@ angular.module('armaditoApp')
             $scope.updateScanDataFactory(data);
             console.log("OnDemandCompletedEvent : ", data);
         });
+
     }
 ]);

@@ -13,15 +13,19 @@ angular.module('armaditoApp')
 	  	var factory = {};
 	  	var token = null;	  	
 
-	  	function long_polling() {
+	  	function long_polling()
+	  	{
 	     	var xmlhttp = new XMLHttpRequest();
-	      	xmlhttp.onreadystatechange = function() {
-	          	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+	      	xmlhttp.onreadystatechange = function()
+	      	{
+	          	if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+	          	{
 	            	var ev = JSON.parse(xmlhttp.responseText);
-	            	if (ev.event_type === "StatusEvent") {
+	            	if (ev.event_type === "StatusEvent")
+	            	{
 	            		$rootScope.$broadcast( "StatusEvent", ev );
 	            	}
-	          }
+	            }
 	      	};
 	      	xmlhttp.open("GET", "/api/event", true);
 	      	xmlhttp.setRequestHeader("X-Armadito-Token", token);
@@ -50,26 +54,9 @@ angular.module('armaditoApp')
   				  	var xmlhttp = new XMLHttpRequest();
   				  	xmlhttp.open("GET", "/api/status", true);
   				  	xmlhttp.setRequestHeader("X-Armadito-Token", token);
-  				  	xmlhttp.setRequestHeader("Content-TYpe", "application/json");
+  				  	xmlhttp.setRequestHeader("Content-Type", "application/json");
   			  		xmlhttp.send(null);
-  			  		var pingAV = function (){
-  			  			var xmlhttp = new XMLHttpRequest();
-		  				xmlhttp.onreadystatechange = function() {
-		  			    	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-		  			        	var obj = JSON.parse(xmlhttp.responseText);
-		  			        	$rootScope.$broadcast( "PingEvent", obj );
-		  			    	}
-		  				};
-		  				xmlhttp.open("GET", "/api/ping", true);
-		  				xmlhttp.setRequestHeader("X-Armadito-Token", token);
-  				  		xmlhttp.setRequestHeader("Content-TYpe", "application/json");
-		  				xmlhttp.send(null);
-  			  		};
-  			  		pingAV();
-  			  		$interval(function() {
-		  				pingAV();
-				    }, 5000);
-
+  			  		
   			  		return long_polling();
   		  		}
   		  	})
