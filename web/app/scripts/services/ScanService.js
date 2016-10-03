@@ -29,18 +29,21 @@ angular.module('armaditoApp')
         {
             if (receivedEvent.event_type === "OnDemandProgressEvent")
             {
+                console.log("[+] OnDemandProgressEvent");
                 $rootScope.$broadcast( "OnDemandProgressEvent", receivedEvent );
-                pollEvents();
+                factory.pollEvents();
             }
             else if (receivedEvent.event_type === "DetectionEvent")
             {
+                console.log("[+] DetectionEvent");
                 $rootScope.$broadcast( "DetectionEvent", receivedEvent );
-                pollEvents();
+                factory.pollEvents();
             }
             else if (receivedEvent.event_type === "OnDemandCompletedEvent")
             {
-                $rootScope.$broadcast( "OnDemandCompletedEvent", receivedEvent );
+                console.log("[+] OnDemandCompletedEvent, we unregister to api, token was : " + factory.token);
                 factory.apiUnregister();
+                $rootScope.$broadcast( "OnDemandCompletedEvent", receivedEvent );
             }
         };
 
@@ -99,6 +102,7 @@ angular.module('armaditoApp')
                 {
                     var jobj = parseJson(xmlhttp.responseText);
                     factory.token = jobj.token;
+                    console.log("[+] Registred with token : " + factory.token);
                     factory.AskForNewScan();
 	            }
             };
@@ -110,6 +114,7 @@ angular.module('armaditoApp')
         factory.newScan = function (path_to_scan)
         {
             factory.path_to_scan = path_to_scan;
+            factory.apiRegister();
         };
 
 	  	return factory;
