@@ -1,6 +1,6 @@
 <br>
-<div class="container-fluid">
-	<div class="row pullTop">
+<div class="container-fluid" style="height: 100%">
+	<div class="row pullTop" style="height: 10%">
 		<form class="form-horizontal">
 	        <div class="col-xs-12 col-sm-12 col-md-12 form-group">
 	            <label class="control-label col-xs-3 col-sm-3 col-md-3"><i class="analyseTitle">{{ 'analyse_view.Scan_title' | translate}} </i></label>
@@ -25,7 +25,7 @@
 	        </div>
 	    </form>
 	</div>
-	<div class="row pullTop">
+	<div class="row pullTop" style="height: 10%">
 		<div class="col-sm-offset-1 col-md-offset-1 col-xs-12 col-sm-10 col-md-10 text-center ">
 			<div class="col-xs-4 col-sm-4 col-md-4">
 				<h1><b class="fileAnalyse" ng-bind="scanned_count" ></b></h1>
@@ -38,7 +38,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row pullTop">
+	<div class="row pullTop" style="height: 10%">
 		<div class="col-sm-offset-1 col-md-offset-1 col-xs-12 col-sm-10 col-md-10 text-center ">
 			<div class="col-xs-4 col-sm-4 col-md-4">
 				<h5 class="numberOfAnalyseFile">{{ 'analyse_view.Scanned' | translate}}</h5>
@@ -51,16 +51,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="row pullTop" >
+	<div class="row pullTop" style="height: 10%">
 	  	<div class="col-sm-offset-1 col-md-offset-1 col-xs-10 col-sm-10 col-md-10" >
 		    <h6 ng-if="displayed_file" > &nbsp;&nbsp;&nbsp;&nbsp;{{ 'analyse_view.Scanning_file' | translate}} : <b>{{truncate(displayed_file,50)}}</b></h6>
 		    <uib-progressbar max="max" class="progressBar" value="scan_progress"><span class="progressBarPercent"><span ng-if="scan_progress > 0 || scan_progress === 0">{{scan_progress}}%</span></span>
 	    	</uib-progressbar>   
 	  	</div>
 	</div>
-	<div class="row pullBottom">
-		<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-xs-11 col-sm-11 col-md-11">
-			<table class="table analyse" >
+	<div class="row pullBottom" style="height: 60%">
+		<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-xs-11 col-sm-11 col-md-11 fullHeight">
+			<table class="table analyse fullHeight" >
 				<thead class="analyse">
 				  <tr class="analyse">
 				     <th class="analyse" style="width:10%"></th>
