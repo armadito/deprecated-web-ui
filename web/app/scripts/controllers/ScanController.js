@@ -92,11 +92,6 @@ angular.module('armaditoApp')
             $scope.$apply();
         }
 
-        $scope.configureScan = function ()
-        {
-            // TODO
-        };
-
         $scope.cancelScan = function ()
         {
             if($scope.canceled == 0)
@@ -105,18 +100,37 @@ angular.module('armaditoApp')
             }
         };
 
-        $scope.startScan = function ()
+        $scope.addEventListeners = function()
         {
-            console.log("[+] New Scan ::\n");
+            $rootScope.$on('OnDemandProgressEvent', function(event, data)
+            {
+                $scope.updateScanDataFactory(data);
+            });
 
+            $rootScope.$on('DetectionEvent', function(event, data)
+            {
+                $scope.updateScanDataFactory(data);
+            });
+
+            $rootScope.$on('OnDemandCompletedEvent', function(event, data)
+            {
+                $scope.updateScanDataFactory(data);
+            });
+        }
+
+        $scope.prepareFactoryForScan = function()
+        {
             ScanDataFactory.reset();
-            $scope.scan_files = [];
-
-            $scope.configureScan();
             ScanDataFactory.setScanConf($scope.path_to_scan, $scope.type);
             $scope.synchronizeScopeWithFactory();
+        }
 
-            console.log("[+] Debug :: New Scan " + $scope.path_to_scan);
+        $scope.startScan = function ()
+        {
+            console.log("[+] New Scan - " + $scope.path_to_scan);
+
+            $scope.prepareFactoryForScan();
+            $scope.addEventListeners();
             ScanService.newScan($scope.path_to_scan);
         };
 
@@ -177,21 +191,6 @@ angular.module('armaditoApp')
             return string.substr(0, front_chars) +
                  separator + string.substr(string.length - back_chars);
         };
-
-        $rootScope.$on('OnDemandProgressEvent', function(event, data)
-        {
-            $scope.updateScanDataFactory(data);
-        });
-
-        $rootScope.$on('DetectionEvent', function(event, data)
-        {
-            $scope.updateScanDataFactory(data);
-        });
-
-        $rootScope.$on('OnDemandCompletedEvent', function(event, data)
-        {
-            $scope.updateScanDataFactory(data);
-        });
 
         $scope.synchronizeScopeWithFactory();
     }
