@@ -100,6 +100,13 @@ angular.module('armaditoApp')
             }
         };
 
+        $scope.removeEventListeners = function()
+        {
+            $rootScope.$$listeners.OnDemandProgressEvent=[];
+            $rootScope.$$listeners.DetectionEvent=[];
+            $rootScope.$$listeners.OnDemandCompletedEvent=[];
+        }
+
         $scope.addEventListeners = function()
         {
             $rootScope.$on('OnDemandProgressEvent', function(event, data)
@@ -130,6 +137,7 @@ angular.module('armaditoApp')
             console.log("[+] New Scan - " + $scope.path_to_scan);
 
             $scope.prepareFactoryForScan();
+            $scope.removeEventListeners();
             $scope.addEventListeners();
             ScanService.newScan($scope.path_to_scan);
         };
