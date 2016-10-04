@@ -8,7 +8,7 @@
     "Minimize" : "Réduire",
     "Leave" : "Quitter",
     "Are_you_sur_you_want_to_leave_Armadito" : "Êtes-vous sûr de vouloir quitter Armadito ?",
-    "Scan_in_progress" : "Un scan est en cours. Souhaitez-vous tout de même quitter Armadito ?" 
+    "Scan_in_progress" : "Un scan est en cours. Souhaitez-vous tout de même quitter Armadito ?"
   },
   "information_view" : {
   	"Status" : "STATUT",
@@ -18,7 +18,7 @@
   	"Last_update" : "Dernière mise à jour",
   	"Modules" : "Module",
   	"Date" : "Date",
-  	"Status" : "Statut",        
+  	"Status" : "Statut",
 	  "Status_up_to_date" : "à jour",
 	  "Status_critical" : "critique",
 	  "Status_late" : "tardif",

@@ -32,12 +32,12 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 //global.scan_in_progress = 0;
 
 angular.module('armaditoApp')
-  .controller('MainController', 
+  .controller('MainController',
   			[ '$rootScope', '$scope', '$state','$uibModal', '$translate', 'toastr',
   	function ( $rootScope,   $scope,   $state,  $uibModal,   $translate,   toastr) {
 
   	$scope.buttons = [
-  			{ 
+  			{
   				button : {
 		  			isActive : true,
 		  			tittle : 'information_view.Status',
@@ -66,7 +66,7 @@ angular.module('armaditoApp')
 	  		}
 	];
 
-	$rootScope.$on('$stateChangeStart', 
+	$rootScope.$on('$stateChangeStart',
 		function(event, toState, toParams, fromState, fromParams)
         {
 		    if(toState.url === '/Parameters'){
