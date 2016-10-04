@@ -299,6 +299,7 @@
     }
 
     th.information, tbody.information td.information {
+        text-align: center;
         width: 100%; /* this can vary */
         overflow-x: hidden;
         text-overflow: ellipsis;
