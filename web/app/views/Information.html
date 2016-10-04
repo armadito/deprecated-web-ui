@@ -30,7 +30,7 @@
 			<table class="table information">
 			    <thead class="information">
 			      <tr class="information">
-			        <th clas="information" style="width:40%"><h4><i class="informationTitle">{{ 'information_view.Modules' | translate}}</i></h4></th>
+			        <th class="information" style="width:40%"><h4><i class="informationTitle">{{ 'information_view.Modules' | translate}}</i></h4></th>
 			        <th class="information" style="width:60%"><h4><i class="informationTitle">{{ 'information_view.Date' | translate}}</i></h4></th>
 			        <th class="information" style="width:60%"><h4><i class="informationTitle">{{ 'information_view.Status' | translate}}</i></h4></th>
 			      </tr>
@@ -38,8 +38,8 @@
 			    <tbody class="information" id="ex3" >
 			      <tr class="information" ng-repeat="module in modules">
 			        <td style="width:40%" class="information"><h7>{{module.name | uppercase}}</h7></td>
-			        <td style="width:60%"class="information"><h7>{{module.mod_update_timestamp | amFromUnix | amCalendar}}</h7></td>
-			        <td style="width:60%"class="information">
+			        <td style="width:60%" class="information"><h7>{{module.mod_update_timestamp | amFromUnix | amCalendar}}</h7></td>
+			        <td style="width:60%" class="information">
 					  <h7 ng-if="module.mod_status ==='up-to-date'" >{{'information_view.Status_up_to_date' | translate}}</h7>
 					  <h7 ng-if="module.mod_status ==='critical'" >{{'information_view.Status_critical' | translate}}</h7>
 					  <h7 ng-if="module.mod_status ==='late'" >{{'information_view.Status_late' | translate}}</h7>
