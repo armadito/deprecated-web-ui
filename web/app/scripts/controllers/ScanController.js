@@ -31,31 +31,31 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 
 angular.module('armaditoApp')
   .controller('ScanController',
-            ['$rootScope', '$scope', '$uibModal', 'ScanService', 'ScanDataFactory',
-    function ($rootScope,   $scope,   $uibModal,   ScanService,   ScanDataFactory)
+            ['$rootScope', '$scope', '$uibModal', 'ScanService', 'ScanData',
+    function ($rootScope,   $scope,   $uibModal,   ScanService,   ScanData)
     {
 
         $scope.synchronizeScopeWithFactory = function ()
         {
-            $scope.type = ScanDataFactory.data.type;
-            $scope.scan_progress = ScanDataFactory.data.progress;
-            $scope.scan_files = ScanDataFactory.data.files;
-            $scope.scanned_count = ScanDataFactory.data.scanned_count;
-            $scope.suspicious_count = ScanDataFactory.data.suspicious_count;
-            $scope.malware_count = ScanDataFactory.data.malware_count;
-            $scope.displayed_file = ScanDataFactory.data.displayed_file;
-            $scope.path_to_scan = ScanDataFactory.data.path_to_scan;
-            $scope.canceled = ScanDataFactory.data.canceled;
+            $scope.type = ScanData.data.type;
+            $scope.scan_progress = ScanData.data.progress;
+            $scope.scan_files = ScanData.data.files;
+            $scope.scanned_count = ScanData.data.scanned_count;
+            $scope.suspicious_count = ScanData.data.suspicious_count;
+            $scope.malware_count = ScanData.data.malware_count;
+            $scope.displayed_file = ScanData.data.displayed_file;
+            $scope.path_to_scan = ScanData.data.path_to_scan;
+            $scope.canceled = ScanData.data.canceled;
         };
 
         $scope.updateProgress = function (data)
         {
             if(data.path)
             {
-                ScanDataFactory.setDisplayedFile(data.path);
+                ScanData.setDisplayedFile(data.path);
             }
 
-            ScanDataFactory.updateCounters(data.scanned_count,
+            ScanData.updateCounters(data.scanned_count,
                            data.suspicious_count,
                            data.malware_count,
                            data.progress);
@@ -66,7 +66,7 @@ angular.module('armaditoApp')
             if(data.scan_status === 'malware'
             || data.scan_status === 'suspicious')
             {
-                ScanDataFactory.addScannedFile(data.path,
+                ScanData.addScannedFile(data.path,
                                                data.scan_status,
                                                data.scan_action,
                                                data.module_name,
@@ -74,7 +74,7 @@ angular.module('armaditoApp')
             }
         }
 
-        $scope.updateScanDataFactory = function (data)
+        $scope.updateScanData = function (data)
         {
             if(data.event_type === "DetectionEvent")
             {
@@ -96,7 +96,7 @@ angular.module('armaditoApp')
         {
             if($scope.canceled == 0)
             {
-                ScanDataFactory.setCanceled();
+                ScanData.setCanceled();
             }
         };
 
@@ -111,24 +111,24 @@ angular.module('armaditoApp')
         {
             $rootScope.$on('OnDemandProgressEvent', function(event, data)
             {
-                $scope.updateScanDataFactory(data);
+                $scope.updateScanData(data);
             });
 
             $rootScope.$on('DetectionEvent', function(event, data)
             {
-                $scope.updateScanDataFactory(data);
+                $scope.updateScanData(data);
             });
 
             $rootScope.$on('OnDemandCompletedEvent', function(event, data)
             {
-                $scope.updateScanDataFactory(data);
+                $scope.updateScanData(data);
             });
         }
 
         $scope.prepareFactoryForScan = function()
         {
-            ScanDataFactory.reset();
-            ScanDataFactory.setScanConf($scope.path_to_scan, $scope.type);
+            ScanData.reset();
+            ScanData.setScanConf($scope.path_to_scan, $scope.type);
             $scope.synchronizeScopeWithFactory();
         }
 
