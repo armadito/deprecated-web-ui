@@ -8,59 +8,100 @@
  * Service in the armaditoApp.
  */
 angular.module('armaditoApp')
-	.service('StatusService', ['$rootScope','$q', '$interval', function ($rootScope, $q, $interval) {
+	.service('StatusService', ['$rootScope', '$interval', function ($rootScope, $interval) {
 
 	  	var factory = {};
-	  	var token = null;
 
-	  	function long_polling()
-	  	{
+        function parseJson(json)
+        {
+            var parsed;
+            try {
+                parsed = JSON.parse(json);
+            }
+            catch(e)
+            {
+                console.error("Error when parsing JSON : "+e);
+            }
+            return parsed;
+        };
+
+        factory.handleEvent = function (receivedEvent)
+        {
+            if (receivedEvent.event_type === "StatusEvent")
+        	{
+        		$rootScope.$broadcast( "StatusEvent", receivedEvent );
+                factory.apiUnregister();
+        	}
+        };
+
+        factory.pollEvents = function ()
+        {
 	     	var xmlhttp = new XMLHttpRequest();
-	      	xmlhttp.onreadystatechange = function()
+
+	      	xmlhttp.onreadystatechange = function ()
 	      	{
-	          	if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-	          	{
-	            	var ev = JSON.parse(xmlhttp.responseText);
-	            	if (ev.event_type === "StatusEvent")
-	            	{
-	            		$rootScope.$broadcast( "StatusEvent", ev );
-	            	}
-	            }
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                {
+	                var jobj = parseJson(xmlhttp.responseText);
+	                factory.handleEvent(jobj);
+                 }
 	      	};
+
 	      	xmlhttp.open("GET", "/api/event", true);
-	      	xmlhttp.setRequestHeader("X-Armadito-Token", token);
+	      	xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
 	      	xmlhttp.send(null);
 	  	};
 
-	  	factory.getStatus = function(){
-	  		var deferred = $q.defer();
+	  	factory.apiUnregister = function ()
+        {
+            var xmlhttp = new XMLHttpRequest();
+	  		xmlhttp.open("GET", "/api/unregister", true);
+	  		xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+	  		xmlhttp.send(null);
+	  		factory.token = null;
+	  	};
 
-	  		////// REGISTERING /////////
-	  		var xmlhttp = new XMLHttpRequest();
-	  		xmlhttp.onreadystatechange = function() {
-	  	    	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-	  	        	var obj = JSON.parse(xmlhttp.responseText);
-	  	        	token = obj.token;
-	  	        	deferred.resolve('Token is now OK');
-	  	    	}
-	  		};
+        factory.AskForStatus = function()
+        {
+		  	var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function ()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                {
+                    factory.pollEvents();
+	            }
+            };
+
+		  	xmlhttp.open("GET", "/api/status", true);
+		  	xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+		  	xmlhttp.setRequestHeader("Content-Type", "application/json");
+	  		xmlhttp.send(null);
+        }
+
+        factory.apiRegister = function ()
+        {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function ()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                {
+                    var jobj = parseJson(xmlhttp.responseText);
+                    factory.token = jobj.token;
+                    console.log("[+] Registred with token : " + factory.token);
+                    factory.AskForStatus();
+	            }
+            };
+
 	  		xmlhttp.open("GET", "/api/register", true);
 	  		xmlhttp.send(null);
+	  	};
 
-	  		////// GETTING STATUS /////////
-  		  	var promise = deferred.promise;
-  		  	promise.then (function(result){
-  		  		if(token !== null){
-  				  	var xmlhttp = new XMLHttpRequest();
-  				  	xmlhttp.open("GET", "/api/status", true);
-  				  	xmlhttp.setRequestHeader("X-Armadito-Token", token);
-  				  	xmlhttp.setRequestHeader("Content-Type", "application/json");
-  			  		xmlhttp.send(null);
-
-  			  		return long_polling();
-  		  		}
-  		  	})
+	  	factory.getStatus = function()
+        {
+            factory.apiRegister();
 	  	};
 
 	  	return factory;
-	}]);
+	}
+]);

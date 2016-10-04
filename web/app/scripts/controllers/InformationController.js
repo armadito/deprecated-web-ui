@@ -32,7 +32,6 @@ angular.module('armaditoApp')
   .controller('InformationController', ['$rootScope', '$scope', 'StatusService', 
     function ($rootScope, $scope, StatusService)
     {
-
 		$scope.state = {
 			status : 0,
 			service : false,
@@ -44,32 +43,29 @@ angular.module('armaditoApp')
 			version : "Not determined"
 		};
 
-		$scope.timeConverter = function(timestamp){
-		  var a = new Date(timestamp * 1000);
-		  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-		  var year = a.getFullYear();
-		  var month = months[a.getMonth()];
-		  var date = a.getDate();
-		  var hour = a.getHours();
-		  var min = a.getMinutes();
-		  var sec = a.getSeconds();
+		$scope.timeConverter = function(timestamp)
+        {
+            var a = new Date(timestamp * 1000);
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            var year = a.getFullYear();
+            var month = months[a.getMonth()];
+            var date = a.getDate();
+            var hour = a.getHours();
+            var min = a.getMinutes();
+            var sec = a.getSeconds();
 
-		  return sprintf("%02d %s %d %02d:%02d:%02d", date, month, year, hour, min, sec);
+            return sprintf("%02d %s %d %02d:%02d:%02d", date, month, year, hour, min, sec);
 		};
 
 		$scope.state.modules = [];
 	    StatusService.getStatus();
 
-	    $rootScope.$on('StatusEvent', function(event, data) {
-	      $scope.databases_update = data.global_status;
-	      $scope.last_update = data.global_update_timestamp;
-	      $scope.modules = data.modules;
-	      $scope.$apply();
-	    });
-
-	    $rootScope.$on('PingEvent', function(event, data) {
-	      $scope.service = data.status;
-	      $scope.$apply();
+	    $rootScope.$on('StatusEvent', function(event, data)
+        {
+            $scope.databases_update = data.global_status;
+            $scope.last_update = data.global_update_timestamp;
+            $scope.modules = data.modules;
+            $scope.$apply();
 	    });
     }
 ]);
