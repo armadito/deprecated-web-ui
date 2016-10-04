@@ -50,13 +50,13 @@ tfoot.analyse td.analyse {
 }
 
 .modal-dialog {
-  width: 600px !important;
-  margin: 130px 30px 50px 195px !important;
+  width: 70% !important;
+  margin: 15% 5% 7% 20% !important;
 }
 .modal-content {
   border-radius: 5px !important;
-  width: 700px !important;
-  height: 600px !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 .modal-body-analyse {
   padding: 5px 30px !important;
