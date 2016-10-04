@@ -1,12 +1,11 @@
-<div class="container-fluid">
-	<div class="row">
+<div class="container-fluid" style="height: 100%">
+	<div class="row" style="height: 100%">
 		<br>
-		<!--
 		<div class="col-md-10 col-md-offset-1 journal">
 			<uib-tabset>
 				<uib-tab >
-					<uib-tab-heading style="-webkit-app-region: no-drag;" >
-				    	{{'history_view.history_tab.History' | translate}}
+					<uib-tab-heading class="journalTabHeader" >
+				    	{{'history_view.history_tab.Title' | translate}}
 				  	</uib-tab-heading>
 				  	<br/>
 				  	<div class="row">
@@ -110,9 +109,9 @@
 						</div>
 					</div>
 				</uib-tab>
-				<uib-tab>
-					<uib-tab-heading style="-webkit-app-region: no-drag;" >
-				    	{{'history_view.Scan_on_demand_tab.Scan_on_demand' | translate}}
+			<!-- <uib-tab>
+					<uib-tab-heading class="journalTabHeader" >
+				    	{{'history_view.Scan_on_demand_tab.Title' | translate}}
 				  	</uib-tab-heading>
 				  	<br/>
 				  	<div class="row">
@@ -313,10 +312,10 @@
 							</uib-accordion>
 					  </div>
 					</div>
-				</uib-tab>
+				</uib-tab> -->
 				<uib-tab >
-					<uib-tab-heading style="-webkit-app-region: no-drag;">
-				    	{{'history_view.Threat_detected_tab.Threat_detected' | translate}}
+					<uib-tab-heading class="journalTabHeader">
+				    	{{'history_view.Threat_detected_tab.Title' | translate}}
 				  	</uib-tab-heading>
 				  	<br/>
 				  	<div class="row">
@@ -394,8 +393,8 @@
 					</div>
 				</uib-tab>			
 				<uib-tab >
-					<uib-tab-heading ng-click="query_quarantine()" style="-webkit-app-region: no-drag;" >
-				    	{{'history_view.Quarantine_tab.Quarantine' | translate}} 
+					<uib-tab-heading ng-click="query_quarantine()" class="journalTabHeader">
+				    	{{'history_view.Quarantine_tab.Title' | translate}} 
 				  	</uib-tab-heading>
 					<br/>
 					<div class="row">
@@ -435,7 +434,6 @@
 					</div>	
 				</uib-tab>
 			</uib-tabset>
-			
-		</div> -->
+		</div>
 	</div>
 </div>

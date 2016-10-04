@@ -51,7 +51,7 @@
   "history_view" : {
     "ButtonTitle" : "JOURNAL",
     "history_tab" : {
-      "History" : "JOURNAL",
+      "Title" : "JOURNAL",
       "Search" : "Rechercher...",
       "Date" : "Date",
       "Type" : "Type",

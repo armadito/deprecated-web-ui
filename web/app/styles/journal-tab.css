@@ -164,6 +164,14 @@ tfoot.quarantine td.quarantine {
     width: 100%;
     display: inline-block;
 }
+.journalTabHeader {
+    -webkit-app-region: no-drag;
+}
+
+div.journal .nav-tabs > li {
+    width: 33.3333%;
+    -webkit-app-region: no-drag;
+}
 
 .refreshButton {
   background-color: #32BEF0 !important;

@@ -51,7 +51,7 @@
   "history_view" : {
   	"ButtonTitle" : "JOURNAL",
     "history_tab" : {
-      "History" : "History",
+      "Title" : "JOURNAL",
       "Search" : "Search...",
       "Date" : "Date",
       "Type" : "Type",
@@ -61,7 +61,7 @@
       "Refresh" : "REFRESH"
     },
     "Scan_on_demand_tab" : {
-      "Scan_on_demand" : "ON DEMAND SCAN",
+      "Title" : "ON DEMAND SCAN",
       "Today": "Today",
       "This_week" : "This week",
       "This_month": "This month",
@@ -72,14 +72,14 @@
 
     },
     "Threat_detected_tab" : {
-      "Threat_detected" : "THREAT DETECTED",
+      "Title" : "ALERTS",
       "Search" : "Search...",
       "Name" : "Name",
       "Path" : "Path",
       "Date" : "Date"
     },
     "Quarantine_tab" : {
-      "Quarantine" : "QUARANTINE",
+      "Title" : "QUARANTINE",
       "Search" : "Search...",
       "Name" : "Name",
       "Path" : "Path",
