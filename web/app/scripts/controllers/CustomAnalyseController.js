@@ -31,8 +31,8 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 angular.module('armaditoApp')
   .controller('CustomAnalyseController',
             ['$scope', '$uibModalInstance', 'items', 'BrowseService',
-    function ($scope,   $uibModalInstance,   items,   BrowseService) {
-
+    function ($scope,   $uibModalInstance,   items,   BrowseService)
+    {
         $scope.items = items;
 
         $scope.optionScan = {
@@ -54,8 +54,7 @@ angular.module('armaditoApp')
 
         $scope.chooseFile = function ()
         {
-            var name = '#pathToScan';
-            var chooser = document.querySelector(name);
+            var chooser = document.querySelector('#pathToScan');
             chooser.addEventListener("change", function(evt)
             {
                 var path = this.value;
@@ -67,13 +66,7 @@ angular.module('armaditoApp')
             }, false);
         };
 
-        $scope.$watch('pathToScan', function()
-        {
-            //console.log('hey, pathToScan has changed!', $scope.pathToScan);
-        });
-
         $scope.excludedFolders = [];
-
         $scope.chooseFileToExclude = function ()
         {
             var name = '#fileToExclude';
@@ -94,16 +87,6 @@ angular.module('armaditoApp')
             }, false);
         };
 
-
-        $scope.file_changed = function(element)
-        {
-          console.log('element changed ', element);
-        };
-
-        function selectFolder(e){
-          console.log('e', e);
-        };
-
         $scope.tree = [{
                 name: "/",
                 image: "/app/images/disk.png",
@@ -121,38 +104,39 @@ angular.module('armaditoApp')
             $scope.breadcrums = testBread;
             $scope.optionScan.pathToScan = node.full_path;
 
-            if((node.type === "folder") || (node.type === "root"))
+            if(node.type === "folder" || node.type === "root")
             {
                 BrowseService.browse(node.full_path).then(
-                function (successData)
-                {
-                    $scope.showError = false;
-                    node.children = [];
-                    for (var i = 0; i < successData.content.length; i++)
+                    function (successData)
                     {
-                        if((successData.content[i].type === "folder") && (!successData.content[i].expanded))
+                        $scope.showError = false;
+                        node.children = [];
+                        for (var i = 0; i < successData.content.length; i++)
                         {
-                            successData.content[i].image = "/app/images/folder.png";
+                            if((successData.content[i].type === "folder") && (!successData.content[i].expanded))
+                            {
+                                successData.content[i].image = "/app/images/folder.png";
+                            }
+                            else if ((successData.content[i].type === "folder") && (successData.content[i].expanded))
+                            {
+                                successData.content[i].image = "/app/images/folder-open.png";
+                            }
+                            node.children.push(successData.content[i]);
                         }
-                        else if ((successData.content[i].type === "folder") && (successData.content[i].expanded))
-                        {
-                            successData.content[i].image = "/app/images/folder-open.png";
-                        }
-                        node.children.push(successData.content[i]);
-                    }
-                },
-                function(error)
-                {
-                    $scope.showError = true;
-                    $scope.error = "Error cannot access to path : " + "<b>"+ error.data.data.path + "</b> " + " reason : " + "<b>" + error.data.data.error + "</b>";
-                    console.error('Error : ' + $scope.error);
+                    },
+                    function(error)
+                    {
+                        $scope.showError = true;
+                        $scope.error = "Error cannot access to path : " + "<b>"+ error.data.data.path + "</b> " + " reason : " + "<b>" + error.data.data.error + "</b>";
+                        console.error('Error : ' + $scope.error);
 
-                },
-                function (progress)
-                {
-                    console.info('Progress : ' + progress);
-                }
+                    },
+                    function (progress)
+                    {
+                        console.info('Progress : ' + progress);
+                    }
                 );
             }
         });
-  }]);
+    }
+]);
