@@ -11,7 +11,7 @@
     "Scan_in_progress" : "A scan is in progress. Do you want to exit anyway ?" 
   },
   "information_view" : {
-  	"General" : "GENERAL",
+    "General" : "STATUS",
   	"Real_time_analyse" : "Real time analysis",
   	"Analyse_service" : "Analysis service",
   	"Update_bases" : "Databases Update",
