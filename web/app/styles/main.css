@@ -66,17 +66,17 @@
         color: #CCCCCC !important;
     }
     .generalActive.active, .generalActive:hover, .generalActive:focus {
-      color: #FFFFFF !important; 
+      color: #FFFFFF !important;
       background-color: #0AC99E !important;
       border-color: #0AC99E !important;
     }
     .analyseActive.active, .analyseActive:hover, .analyseActive:focus {
-      color: #FFFFFF !important; 
+      color: #FFFFFF !important;
       background-color: #F8AA00 !important;
       border-color: #F8AA00 !important;
     }
     .journalActive.active, .journalActive:hover, .journalActive:focus {
-      color: #FFFFFF !important; 
+      color: #FFFFFF !important;
       background-color: #32BEF0 !important;
       border-color: #32BEF0 !important;
     }
@@ -110,10 +110,10 @@
       border: 0px solid #dddddd !important;
     }
     .list-group-item-firstChild {
-      border-top-left-radius : 4px !important;  
+      border-top-left-radius : 4px !important;
     }
     .list-group-item-lastChild {
-      border-bottom-left-radius : 4px !important;  
+      border-bottom-left-radius : 4px !important;
     }
     .generalActive {
       background-color: #0AC99E;
@@ -150,7 +150,7 @@
       width: 100%;
       left: 0;
       margin: auto;
-      color : balck !important;  
+      color : balck !important;
     }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
         color: #ffffff;
@@ -213,8 +213,8 @@
       max-height: 220px;
       overflow: auto;
     }
-    .borderless th, .borderless td { 
-     border-top: none !important; 
+    .borderless th, .borderless td {
+     border-top: none !important;
     }
     .btn-file {
         position: relative;
@@ -616,8 +616,8 @@
       -moz-box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
       box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
     }
-    #checkbox1:checked + .checkbox-label:after { 
-      color: rgba(10, 201, 158, 1); 
+    #checkbox1:checked + .checkbox-label:after {
+      color: rgba(10, 201, 158, 1);
     }
     .checkbox-label-parameters {
       display: block;
@@ -762,7 +762,7 @@
       font-size: 15px;
     }
     .analyseTitle {
-      font-weight: 500 !important; 
+      font-weight: 500 !important;
       line-height: 19px !important;
     }
     .typeAnalyse {
@@ -929,8 +929,8 @@
       height: 35px !important;
       padding-top: 6px !important;
     }
-    div.journal .nav-tabs > li.active > a, 
-    div.journal .nav-tabs > li.active > a:hover, 
+    div.journal .nav-tabs > li.active > a,
+    div.journal .nav-tabs > li.active > a:hover,
     div.journal .nav-tabs > li.active > a:focus {
       color: #FFFFFF !important;
       background-color: #32BEF0 !important;
@@ -979,8 +979,8 @@
       background-color: #E6E6E6 !important;
       border-radius: 25px !important;
     }
-    div.parameters .nav-tabs > li.active > a, 
-    div.parameters .nav-tabs > li.active > a:hover, 
+    div.parameters .nav-tabs > li.active > a,
+    div.parameters .nav-tabs > li.active > a:hover,
     div.parameters .nav-tabs > li.active > a:focus {
       color: #FFFFFF !important;
       background-color: #F8AA00 !important;
@@ -1038,6 +1038,6 @@
       width: 100% !important;
     }
     .treeScroll {
-      max-height: 360px !important; 
+      max-height: 360px !important;
       overflow-y:scroll !important;
     }
