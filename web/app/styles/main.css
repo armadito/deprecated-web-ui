@@ -1,12 +1,12 @@
     html,
     body {
-      /*overflow:hidden;*/
       height: 100%;
     }
     .container {
       height: 100%;
     }
-    /*  ahuru tab */
+
+    /*  Left panel menus */
     div.ahuru-tab-menu{
       height: 100%;
       padding-right: 0;
@@ -80,10 +80,8 @@
       background-color: #32BEF0 !important;
       border-color: #32BEF0 !important;
     }
-
     div.ahuru-tab-content{
       background-color: #ffffff;
-      /* border: 1px solid #eeeeee; */
       padding-left: 220px;
       padding-top: 10px;
     }
@@ -103,8 +101,37 @@
     .arrow-journalActive {
       color: #32BEF0 !important;
     }
+    .backgroundColumn {
+      position: relative;
+      display: block;
+      padding: 20% 15% 15% 20%;
+      margin-bottom: -1px;
+      background-color: #333333 !important;
+      border: 0px solid #dddddd !important;
+    }
+    .list-group-item-firstChild {
+      border-top-left-radius : 4px !important;  
+    }
+    .list-group-item-lastChild {
+      border-bottom-left-radius : 4px !important;  
+    }
+    .generalActive {
+      background-color: #0AC99E;
+      border-color: #0AC99E !important;
+    }
+    .analyseActive {
+      background-color: #F8AA00;
+      border-color: #F8AA00 !important;
+    }
+    .journalActive {
+      background-color: #32BEF0;
+      border-color: #32BEF0 !important;
+    }
+    .titleGroupItem{
+      font-size: 16px;
+    }
 
-    /*Nav bar*/
+    /*  Top navigation bar */
     .navbar-brand {
         float: left;
         padding: 0px 27px !important;
@@ -208,45 +235,10 @@
         cursor: inherit;
         display: block;
     }
-    .backgroundColumn {
-      position: relative;
-      display: block;
-      padding: 20% 15% 15% 20%;
-      margin-bottom: -1px;
-      background-color: #333333 !important;
-      border: 0px solid #dddddd !important;
-    }
-
-    .list-group-item-firstChild {
-      border-top-left-radius : 4px !important;  
-    }
-
-    .list-group-item-lastChild {
-      border-bottom-left-radius : 4px !important;  
-    }
-
-    .generalActive {
-      background-color: #0AC99E;
-      border-color: #0AC99E !important;
-    }
-
-    .analyseActive {
-      background-color: #F8AA00;
-      border-color: #F8AA00 !important;
-    }
-
-    .journalActive {
-      background-color: #32BEF0;
-      border-color: #32BEF0 !important;
-    }
-    .titleGroupItem{
-      font-size: 16px;
-    }
     nav.information {
       margin-bottom: 15px;
       margin-top: 10px;
     }
-    
     .status{
       font-family: Arial;
       letter-spacing: 1px;
@@ -257,34 +249,31 @@
     .circleInterrogation {
       color: #F2F2F2 !important;
     }
-    /*Information view*/
+
+
     table.information {
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        max-height: 230px; /* this can vary */
+        max-height: 230px;
         font-size: 13px;
         color: #525659;
     }
-
     table.information * {
         box-sizing: inherit;
         -moz-box-sizing: inherit;
     }
-
     thead.information {
         display: flex;
         flex-direction: column;
         align-items: stretch;
     }
-
     tbody.information {
         overflow-y: scroll;
         display: inline-block;
     }
-
     thead.information > tr.information, tbody.information > tr.information, tfoot.information > tr.information {
         display: flex;
         flex-direction: row;
@@ -293,57 +282,49 @@
     .informationTitle {
         font-weight: 500;
     }
-
     thead.information, tfoot.information {
         flex-shrink: 0;
     }
-
     th.information, tbody.information td.information {
         text-align: center;
-        width: 100%; /* this can vary */
+        width: 100%;
         overflow-x: hidden;
         text-overflow: ellipsis;
         display: inline-block;
     }
-
     tfoot.information {
         display: inline-block;
     }
-
     tfoot.information td.information {
         width: 100%;
         display: inline-block;
     }
-    /*information view*/
-    /*analyse view*/
+
+
     table.analyse {
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        max-height: 90%; /* this can vary */
+        max-height: 90%;
         font-size: 12px;
         color: #525659;
         margin-top: -25px !important;
     }
-
     table.analyse * {
         box-sizing: inherit;
         -moz-box-sizing: inherit;
     }
-
     thead.analyse {
         display: flex;
         flex-direction: column;
         align-items: stretch;
     }
-
     tbody.analyse {
         overflow-y: scroll;
         display: inline-block;
     }
-
     thead.analyse > tr.analyse, tbody.analyse > tr.analyse, tfoot.analyse > tr.analyse {
         display: flex;
         flex-direction: row;
@@ -353,13 +334,12 @@
         font-weight: 500;
         font-size: 20px;
     }
-
     thead.analyse, tfoot.analyse {
         flex-shrink: 0;
     }
-
     th.analyse, tbody.analyse td.analyse {
-        width: 100%; /* this can vary */
+        text-align: center;
+        width: 100%;
         overflow-x: hidden;
         text-overflow: ellipsis;
         display: inline-block;
@@ -367,40 +347,35 @@
     tfoot.analyse {
         display: inline-block;
     }
-
     tfoot.analyse td.analyse {
         width: 100%;
         display: inline-block;
     }
-    /*analyse view*/
-    /*journal view*/
+
+
     table.journal {
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        max-height: 250px; /* this can vary */
+        max-height: 250px;
         font-size: 13px;
         color: #525659;
     }
-
     table.journal * {
         box-sizing: inherit;
         -moz-box-sizing: inherit;
     }
-
     thead.journal {
         display: flex;
         flex-direction: column;
         align-items: stretch;
     }
-
     tbody.journal {
         overflow-y: scroll;
         display: inline-block;
     }
-
     thead.journal > tr.journal, tbody.journal > tr.journal, tfoot.journal > tr.journal {
         display: flex;
         flex-direction: row;
@@ -410,55 +385,45 @@
         font-weight: 500;
         font-size: 20px;
     }
-
     thead.journal, tfoot.journal {
         flex-shrink: 0;
     }
-
     th.journal, tbody.journal td.journal {
-        width: 100%; /* this can vary */
+        width: 100%;
         overflow-x: hidden;
         text-overflow: ellipsis;
         display: inline-block;
     }
-
     tfoot.journal {
         display: inline-block;
     }
-
     tfoot.journal td.journal {
         width: 100%;
         display: inline-block;
     }
-    /*journal view*/
-    /*journal-threats-detected view*/
     table.journal-threats-detected {
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        max-height: 300px; /* this can vary */
+        max-height: 300px;
         font-size: 13px;
         color: #525659;
     }
-
     table.journal-threats-detected * {
         box-sizing: inherit;
         -moz-box-sizing: inherit;
     }
-
     thead.journal-threats-detected {
         display: flex;
         flex-direction: column;
         align-items: stretch;
     }
-
     tbody.journal-threats-detected {
         overflow-y: scroll;
         display: inline-block;
     }
-
     thead.journal-threats-detected > tr.journal-threats-detected, tbody.journal-threats-detected > tr.journal-threats-detected, tfoot.journal-threats-detected > tr.journal-threats-detected {
         display: flex;
         flex-direction: row;
@@ -468,55 +433,47 @@
         font-weight: 500;
         font-size: 20px;
     }
-
     thead.journal-threats-detected, tfoot.journal-threats-detected {
         flex-shrink: 0;
     }
-
     th.journal-threats-detected, tbody.journal-threats-detected td.journal-threats-detected {
-        width: 100%; /* this can vary */
+        width: 100%;
         overflow-x: hidden;
         text-overflow: ellipsis;
         display: inline-block;
     }
-
     tfoot.journal-threats-detected {
         display: inline-block;
     }
-
     tfoot.journal-threats-detected td.journal-threats-detected {
         width: 100%;
         display: inline-block;
     }
-    /*journal-threats-detected view*/
-    /*quarantine view*/
+
+
     table.quarantine {
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        max-height: 250px; /* this can vary */
+        max-height: 250px;
         font-size: 13px;
         color: #525659;
     }
-
     table.quarantine * {
         box-sizing: inherit;
         -moz-box-sizing: inherit;
     }
-
     thead.quarantine {
         display: flex;
         flex-direction: column;
         align-items: stretch;
     }
-
     tbody.quarantine {
         overflow-y: scroll;
         display: inline-block;
     }
-
     thead.quarantine > tr.quarantine, tbody.quarantine > tr.quarantine, tfoot.quarantine > tr.quarantine {
         display: flex;
         flex-direction: row;
@@ -526,28 +483,23 @@
         font-weight: 500;
         font-size: 20px;
     }
-
     thead.quarantine, tfoot.quarantine {
         flex-shrink: 0;
     }
-
     th.quarantine, tbody.quarantine td.quarantine {
         width: 100%; /* this can vary */
         overflow-x: hidden;
         text-overflow: ellipsis;
         display: inline-block;
     }
-
     tfoot.quarantine {
         display: inline-block;
     }
-
     tfoot.quarantine td.quarantine {
         width: 100%;
         display: inline-block;
     }
-    /*quarantine view*/
-    /*ScrollBar trick*/
+
     #ex3::-webkit-scrollbar{
       width:10px;
       background-color: #F2F2F2;
@@ -556,7 +508,6 @@
       background-color:#CCCCCC;
       border-radius:10px;
     }
-    /*ScrollBar trick 2*/
     #ex4::-webkit-scrollbar{
       width:10px;
       background-color: white;
@@ -565,7 +516,6 @@
       background-color:#CCCCCC;
       border-radius:10px;
     }
-    /*ScrollBar trick*/
     .informationBackground{
       background-color: #F2F2F2 !important;
     }
@@ -576,10 +526,11 @@
       list-style-type: none;
       padding-left: 0px !important;
     }
+
+    /* Checkbox */
     .checkIcon{
       color: #0AC99E !important;
     }
-    /*Toggle button*/
     .ios-toggle,
     .ios-toggle:active {
       position: absolute;
@@ -590,7 +541,6 @@
       border: none;
       outline: none;
     }
-
     .checkbox-label {
       display: block;
       position: relative;
@@ -600,14 +550,12 @@
       line-height: 16px;
       width: 45px;
       height: 22px;
-      /*border-radius*/
       -webkit-border-radius: 18px;
       -moz-border-radius: 18px;
       border-radius: 18px;
       background: #f8f8f8;
       cursor: pointer;
     }
-
     .checkbox-label:before {
       content: '';
       display: block;
@@ -617,7 +565,6 @@
       text-indent: 40px;
       height: 18px;
       width: 18px;
-      /*border-radius*/
       -webkit-border-radius: 100%;
       -moz-border-radius: 100%;
       border-radius: 100%;
@@ -625,12 +572,10 @@
       left: 0px;
       right: auto;
       background: white;
-      /*box-shadow*/
       -webkit-box-shadow: 0 3px 3px rgba(0,0,0,.2), 0 0 0 2px #dddddd;
       -moz-box-shadow: 0 3px 3px rgba(0,0,0,.2), 0 0 0 2px #dddddd;
       box-shadow: 0 3px 3px rgba(0,0,0,.2), 0 0 0 2px #dddddd;
     }
-
     .checkbox-label:after {
       content: attr(data-off);
       display: block;
@@ -645,45 +590,35 @@
       color: #bfbfbf;
       white-space: nowrap;
     }
-
     .ios-toggle:checked + .checkbox-label {
-      /*box-shadow*/
       -webkit-box-shadow: inset 0 0 0 20px rgba(19,191,17,1), 0 0 0 2px rgba(19,191,17,1);
       -moz-box-shadow: inset 0 0 0 20px rgba(19,191,17,1), 0 0 0 2px rgba(19,191,17,1);
       box-shadow: inset 0 0 0 20px rgba(19,191,17,1), 0 0 0 2px rgba(19,191,17,1);
     }
-
     .ios-toggle:checked + .checkbox-label:before {
       left: calc(100% - 19px);
-      /*box-shadow*/
       -webkit-box-shadow: 0 0 0 2px transparent, 0 3px 3px rgba(0,0,0,.3);
       -moz-box-shadow: 0 0 0 2px transparent, 0 3px 3px rgba(0,0,0,.3);
       box-shadow: 0 0 0 2px transparent, 0 3px 3px rgba(0,0,0,.3);
     }
-
     .ios-toggle:checked + .checkbox-label:after {
       content: attr(data-on);
       left: 60px;
       width: 36px;
     }
-
     #checkbox1 + .checkbox-label {
-      /*box-shadow*/
       -webkit-box-shadow: inset 0 0 0 0px rgba(10, 201, 158, 1), 0 0 0 2px #dddddd;
       -moz-box-shadow: inset 0 0 0 0px rgba(10, 201, 158, 1), 0 0 0 2px #dddddd;
       box-shadow: inset 0 0 0 0px rgba(10, 201, 158, 1), 0 0 0 2px #dddddd;
     }
-
     #checkbox1:checked + .checkbox-label {
-      /*box-shadow*/
       -webkit-box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
       -moz-box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
       box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
     }
-
-    #checkbox1:checked + .checkbox-label:after { color: rgba(10, 201, 158, 1); }
-      /*Second toggle button*/
-    /*Toggle button*/
+    #checkbox1:checked + .checkbox-label:after { 
+      color: rgba(10, 201, 158, 1); 
+    }
     .checkbox-label-parameters {
       display: block;
       position: relative;
@@ -693,14 +628,12 @@
       line-height: 16px;
       width: 45px;
       height: 22px;
-      /*border-radius*/
       -webkit-border-radius: 18px;
       -moz-border-radius: 18px;
       border-radius: 18px;
       background: #D94A3A;
       cursor: pointer;
     }
-
     .checkbox-label-parameters:before {
       content: '';
       display: block;
@@ -710,7 +643,6 @@
       text-indent: 40px;
       height: 18px;
       width: 18px;
-      /*border-radius*/
       -webkit-border-radius: 100%;
       -moz-border-radius: 100%;
       border-radius: 100%;
@@ -718,12 +650,10 @@
       left: 0px;
       right: auto;
       background: white;
-      /*box-shadow*/
       -webkit-box-shadow: 0 3px 3px rgba(0,0,0,.2), 0 0 0 2px #dddddd;
       -moz-box-shadow: 0 3px 3px rgba(0,0,0,.2), 0 0 0 2px #dddddd;
       box-shadow: 0 3px 3px rgba(0,0,0,.2), 0 0 0 2px #dddddd;
     }
-
     .checkbox-label-parameters:after {
       content: attr(data-off);
       display: block;
@@ -738,47 +668,35 @@
       color: #bfbfbf;
       white-space: nowrap;
     }
-
     .ios-toggle:checked + .checkbox-label-parameters {
-      /*box-shadow*/
       -webkit-box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
       -moz-box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
       box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1)
     }
-
     .ios-toggle:checked + .checkbox-label-parameters:before {
       left: calc(100% - 19px);
-      /*box-shadow*/
       -webkit-box-shadow: 0 0 0 2px transparent, 0 3px 3px rgba(0,0,0,.3);
       -moz-box-shadow: 0 0 0 2px transparent, 0 3px 3px rgba(0,0,0,.3);
       box-shadow: 0 0 0 2px transparent, 0 3px 3px rgba(0,0,0,.3);
     }
-
     .ios-toggle:checked + .checkbox-label-parameters:after {
       content: attr(data-on);
       left: 60px;
       width: 36px;
     }
-
     #checkbox1 + .checkbox-label-parameters {
-      /*box-shadow*/
       -webkit-box-shadow: inset 0 0 0 0px rgba(10, 201, 158, 1), 0 0 0 2px #dddddd;
       -moz-box-shadow: inset 0 0 0 0px rgba(10, 201, 158, 1), 0 0 0 2px #dddddd;
       box-shadow: inset 0 0 0 0px rgba(10, 201, 158, 1), 0 0 0 2px #dddddd;
     }
-
     #checkbox1:checked + .checkbox-label-parameters {
-      /*box-shadow*/
       -webkit-box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
       -moz-box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
       box-shadow: inset 0 0 0 18px rgba(10, 201, 158, 1), 0 0 0 2px rgba(10, 201, 158, 1);
     }
-
     #checkbox1:checked + .checkbox-label-parameters:after { color: rgba(10, 201, 158, 1); }
-    /*Toggle button*/  
 
-      /*Second toggle button*/
-    /*Toggle button*/
+
     li.information {
       margin: 20px 0;
     }
@@ -799,7 +717,6 @@
       right: 28px;
       padding-top: 10px;
     }
-
     .reduceLetter {
       color: #5C5C5C !important;
       font-size: 12px !important;
@@ -917,8 +834,6 @@
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
         background-color: #CCCCCC !important;
-        /*-o-transition: width 0.6s ease !important;
-        transition: width 0.6s ease !important;*/
     }
     .progressBarPercent {
       color:#525659;
@@ -962,7 +877,6 @@
       font-weight: 600;
       color : #999999;
     }
-    /* Modal*/
     .modal-dialog {
       width: 600px !important;
       margin: 130px 30px 50px 195px !important;
@@ -984,7 +898,6 @@
       border-top: 1px solid #FFFFFF !important;
       padding: 5px 40px 20px 0px !important;
     }
-    /* Modal*/
     .form-control-modal {
       color: #020202 !important;
       background-color: #F2F2F2 !important;
@@ -1007,7 +920,6 @@
     .formOptionScan {
       padding: 10px 10px 0px 10px !important;
     }
-    /*nav-tabs*/
     .nav-tabs {
       border-bottom: 0px solid #E7E7E7 !important;
       height: 35px !important;
@@ -1026,8 +938,7 @@
       font-size: 14px !important;
       font-weight: 600 !important;
     }
-    /*nav-tabs*/
-    /*input search*/
+
     .formSearch:focus {
       border-color: #000000 !important;
       -webkit-box-shadow: none !important;
@@ -1049,8 +960,6 @@
       border: 1px solid white !important;
       cursor: pointer;
     }
-    /*input search*/
-    /*Accordion panel*/
     .panel {
       background-color: #F2F2F2 !important;
       border: 0px solid transparent !important;
@@ -1064,14 +973,12 @@
       color: black !important;
       font-weight: 500 !important;
     }
-    /*Accordion panel*/
     .scanReport{
       color: black !important;
       font-weight: 600 !important;
       background-color: #E6E6E6 !important;
       border-radius: 25px !important;
     }
-
     div.parameters .nav-tabs > li.active > a, 
     div.parameters .nav-tabs > li.active > a:hover, 
     div.parameters .nav-tabs > li.active > a:focus {
@@ -1081,7 +988,6 @@
       font-size: 14px !important;
       font-weight: 600 !important;
     }
-
     .buttonParameters {
       color: black  !important;
         font-size: 15px !important;
@@ -1104,7 +1010,6 @@
         border-radius: 24px !important;
         background: linear-gradient(to bottom,#f0f9ff 0,#FFFFFF 47%,#FFFFFF 100%) !important;
     }
-
     .numberOfScannedFiles{
       top: -30px !important;
     }
