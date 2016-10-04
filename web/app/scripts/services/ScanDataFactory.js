@@ -29,7 +29,7 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * Controller of the armaditoApp
  */
 angular.module('armaditoApp')
-  .factory('ScanDataFactory', 
+  .factory('ScanDataFactory',
     function ()
     {
 	    return {
