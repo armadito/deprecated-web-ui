@@ -1,10 +1,25 @@
+div.journal {
+    height: 90%;
+}
+div.journal .ng-isolate-scope {
+    height: 100%;
+}
+div.journal .nav-tabs > li {
+    width: 33.3333%;
+    -webkit-app-region: no-drag;
+}
+div.journal .tab-content {
+    height: 90%;
+}
+div.journal .tab-pane {
+    height: 100%;
+}
 table.journal {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    max-height: 250px;
     font-size: 13px;
     color: #525659;
 }
@@ -52,7 +67,6 @@ table.journal-threats-detected {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    max-height: 300px;
     font-size: 13px;
     color: #525659;
 }
@@ -122,7 +136,6 @@ table.quarantine {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    max-height: 250px;
     font-size: 13px;
     color: #525659;
 }
@@ -165,11 +178,6 @@ tfoot.quarantine td.quarantine {
     display: inline-block;
 }
 .journalTabHeader {
-    -webkit-app-region: no-drag;
-}
-
-div.journal .nav-tabs > li {
-    width: 33.3333%;
     -webkit-app-region: no-drag;
 }
 
