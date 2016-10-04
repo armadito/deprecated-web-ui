@@ -11,7 +11,7 @@
     "Scan_in_progress" : "Un scan est en cours. Souhaitez-vous tout de même quitter Armadito ?"
   },
   "information_view" : {
-  	"Status" : "STATUT",
+  	"ButtonTitle" : "STATUT",
   	"Real_time_analyse" : "Analyse temps réel",
   	"Analyse_service" : "Service d'analyse",
   	"Update_bases" : "Mise à jour des bases",
@@ -25,7 +25,7 @@
 	  "Status_unavailable" : "indisponible"
   },
   "analyse_view" : {
-    "Scan" : "ANALYSE",
+    "ButtonTitle" : "ANALYSE",
     "Scan_title" : "Analyse",
     "Start" : "Analyser",
     "Scanning_file" : "Fichier analysé",
@@ -49,7 +49,7 @@
     "Excluded_files" : "Fichiers exclus"
   },
   "history_view" : {
-    "History" : "JOURNAL",
+    "ButtonTitle" : "JOURNAL",
     "history_tab" : {
       "History" : "JOURNAL",
       "Search" : "Rechercher...",

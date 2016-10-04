@@ -40,7 +40,7 @@ angular.module('armaditoApp')
   			{
   				button : {
 		  			isActive : true,
-		  			tittle : 'information_view.Status',
+		  			tittle : 'information_view.ButtonTitle',
 		  			icon : "fa fa-tachometer fa-2x",
 		  			view : 'Main.Information',
 		  			backgroundColor: 'generalActive'
@@ -49,7 +49,7 @@ angular.module('armaditoApp')
 	  		{
 	  			button : {
 		  			isActive : false,
-		  			tittle : 'analyse_view.Scan',
+		  			tittle : 'analyse_view.ButtonTitle',
 		  			icon : 'fa fa-search fa-2x',
 		  			view : 'Main.Scan',
 		  			backgroundColor: 'analyseActive'
@@ -58,7 +58,7 @@ angular.module('armaditoApp')
 	  		{
 	  			button : {
 		  			isActive : false,
-		  			tittle : 'history_view.History',
+		  			tittle : 'history_view.ButtonTitle',
 		  			icon : 'fa fa-newspaper-o fa-2x',
 		  			view : 'Main.Journal',
 		  			backgroundColor:  'journalActive'
