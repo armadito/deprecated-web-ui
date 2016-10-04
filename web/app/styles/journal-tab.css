@@ -152,7 +152,7 @@ thead.quarantine, tfoot.quarantine {
     flex-shrink: 0;
 }
 th.quarantine, tbody.quarantine td.quarantine {
-    width: 100%; /* this can vary */
+    width: 100%;
     overflow-x: hidden;
     text-overflow: ellipsis;
     display: inline-block;
