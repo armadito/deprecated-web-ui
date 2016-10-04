@@ -19,7 +19,7 @@
       text-align: center;
     }
     div.ahuru-tab-menu div.list-group>a{
-      height: 99.9%;
+      height: 100%;
     }
     div.ahuru-tab-menu div.list-group>a:first-child{
       border-top-right-radius: 0;
