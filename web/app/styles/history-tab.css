@@ -1,0 +1,166 @@
+table.journal {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 250px;
+    font-size: 13px;
+    color: #525659;
+}
+table.journal * {
+    box-sizing: inherit;
+    -moz-box-sizing: inherit;
+}
+thead.journal {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+tbody.journal {
+    overflow-y: scroll;
+    display: inline-block;
+}
+thead.journal > tr.journal, tbody.journal > tr.journal, tfoot.journal > tr.journal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.journalTitle {
+    font-weight: 500;
+    font-size: 20px;
+}
+thead.journal, tfoot.journal {
+    flex-shrink: 0;
+}
+th.journal, tbody.journal td.journal {
+    width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+tfoot.journal {
+    display: inline-block;
+}
+tfoot.journal td.journal {
+    width: 100%;
+    display: inline-block;
+}
+table.journal-threats-detected {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 300px;
+    font-size: 13px;
+    color: #525659;
+}
+table.journal-threats-detected * {
+    box-sizing: inherit;
+    -moz-box-sizing: inherit;
+}
+thead.journal-threats-detected {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+tbody.journal-threats-detected {
+    overflow-y: scroll;
+    display: inline-block;
+}
+thead.journal-threats-detected > tr.journal-threats-detected, tbody.journal-threats-detected > tr.journal-threats-detected, tfoot.journal-threats-detected > tr.journal-threats-detected {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.journal-threats-detectedTitle {
+    font-weight: 500;
+    font-size: 20px;
+}
+thead.journal-threats-detected, tfoot.journal-threats-detected {
+    flex-shrink: 0;
+}
+th.journal-threats-detected, tbody.journal-threats-detected td.journal-threats-detected {
+    width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+tfoot.journal-threats-detected {
+    display: inline-block;
+}
+tfoot.journal-threats-detected td.journal-threats-detected {
+    width: 100%;
+    display: inline-block;
+}
+.input-group-addon-searchJournal {
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1;
+  color: #FFFFFF  !important;
+  text-align: center;
+  background-color: #333333  !important;
+  border: 1px solid #333333  !important;
+  border-radius: 0;
+}
+
+div.journal .nav-tabs > li.active > a,
+div.journal .nav-tabs > li.active > a:hover,
+div.journal .nav-tabs > li.active > a:focus {
+  color: #FFFFFF !important;
+  background-color: #32BEF0 !important;
+  border: 0px solid #32BEF0 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+table.quarantine {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 250px;
+    font-size: 13px;
+    color: #525659;
+}
+table.quarantine * {
+    box-sizing: inherit;
+    -moz-box-sizing: inherit;
+}
+thead.quarantine {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+tbody.quarantine {
+    overflow-y: scroll;
+    display: inline-block;
+}
+thead.quarantine > tr.quarantine, tbody.quarantine > tr.quarantine, tfoot.quarantine > tr.quarantine {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.quarantineTitle {
+    font-weight: 500;
+    font-size: 20px;
+}
+thead.quarantine, tfoot.quarantine {
+    flex-shrink: 0;
+}
+th.quarantine, tbody.quarantine td.quarantine {
+    width: 100%; /* this can vary */
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+tfoot.quarantine {
+    display: inline-block;
+}
+tfoot.quarantine td.quarantine {
+    width: 100%;
+    display: inline-block;
+}

@@ -1,0 +1,50 @@
+table.analyse {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 90%;
+    font-size: 12px;
+    color: #525659;
+    margin-top: -25px !important;
+}
+table.analyse * {
+    box-sizing: inherit;
+    -moz-box-sizing: inherit;
+}
+thead.analyse {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+tbody.analyse {
+    overflow-y: scroll;
+    display: inline-block;
+}
+thead.analyse > tr.analyse, tbody.analyse > tr.analyse, tfoot.analyse > tr.analyse {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.analyseTitle {
+    font-weight: 500;
+    font-size: 20px;
+}
+thead.analyse, tfoot.analyse {
+    flex-shrink: 0;
+}
+th.analyse, tbody.analyse td.analyse {
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+tfoot.analyse {
+    display: inline-block;
+}
+tfoot.analyse td.analyse {
+    width: 100%;
+    display: inline-block;
+}

@@ -1,0 +1,48 @@
+table.information {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 230px;
+    font-size: 13px;
+    color: #525659;
+}
+table.information * {
+    box-sizing: inherit;
+    -moz-box-sizing: inherit;
+}
+thead.information {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+tbody.information {
+    overflow-y: scroll;
+    display: inline-block;
+}
+thead.information > tr.information, tbody.information > tr.information, tfoot.information > tr.information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.informationTitle {
+    font-weight: 500;
+}
+thead.information, tfoot.information {
+    flex-shrink: 0;
+}
+th.information, tbody.information td.information {
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+tfoot.information {
+    display: inline-block;
+}
+tfoot.information td.information {
+    width: 100%;
+    display: inline-block;
+}
