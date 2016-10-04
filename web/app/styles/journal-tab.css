@@ -61,7 +61,7 @@ tfoot.journal td.journal {
     width: 100%;
     display: inline-block;
 }
-table.journal-threats-detected {
+table.alerts {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     display: flex;
@@ -70,41 +70,41 @@ table.journal-threats-detected {
     font-size: 13px;
     color: #525659;
 }
-table.journal-threats-detected * {
+table.alerts * {
     box-sizing: inherit;
     -moz-box-sizing: inherit;
 }
-thead.journal-threats-detected {
+thead.alerts {
     display: flex;
     flex-direction: column;
     align-items: stretch;
 }
-tbody.journal-threats-detected {
+tbody.alerts {
     overflow-y: scroll;
     display: inline-block;
 }
-thead.journal-threats-detected > tr.journal-threats-detected, tbody.journal-threats-detected > tr.journal-threats-detected, tfoot.journal-threats-detected > tr.journal-threats-detected {
+thead.alerts > tr.alerts, tbody.alerts > tr.alerts, tfoot.alerts > tr.alerts {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.journal-threats-detectedTitle {
+.alertsTitle {
     font-weight: 500;
     font-size: 20px;
 }
-thead.journal-threats-detected, tfoot.journal-threats-detected {
+thead.alerts, tfoot.alerts {
     flex-shrink: 0;
 }
-th.journal-threats-detected, tbody.journal-threats-detected td.journal-threats-detected {
+th.alerts, tbody.alerts td.alerts {
     width: 100%;
     overflow-x: hidden;
     text-overflow: ellipsis;
     display: inline-block;
 }
-tfoot.journal-threats-detected {
+tfoot.alerts {
     display: inline-block;
 }
-tfoot.journal-threats-detected td.journal-threats-detected {
+tfoot.alerts td.alerts {
     width: 100%;
     display: inline-block;
 }
