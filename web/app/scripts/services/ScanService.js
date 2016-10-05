@@ -88,7 +88,6 @@ angular.module('armaditoApp')
 
         factory.apiRegister = function ()
         {
-            factory.xmlhttp = new XMLHttpRequest();
             factory.xmlhttp.onreadystatechange = function ()
             {
                 if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
@@ -107,6 +106,7 @@ angular.module('armaditoApp')
         factory.newScan = function (path_to_scan)
         {
             factory.path_to_scan = path_to_scan;
+            factory.xmlhttp = new XMLHttpRequest();
             factory.apiRegister();
         };
 
