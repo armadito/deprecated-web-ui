@@ -22,16 +22,16 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 'use strict';
 
 angular.module('armaditoApp')
-    .filter('strLimit', ['$filter', 
+    .filter('strLimit', ['$filter',
     function($filter)
     {
        return function(input, beginlimit, endlimit) {
           if (! input) return;
-          if (input.length <= beginlimit) {
+          if (input.length <= beginlimit + endlimit) {
               return input;
           }
 
-          return $filter('limitTo')(input, beginlimit) + '...' + $filter('limitTo')(input, endlimit) ;
+          return $filter('limitTo')(input, beginlimit) + '...' + $filter('limitTo')(input, -endlimit) ;
        };
      }
 ]);

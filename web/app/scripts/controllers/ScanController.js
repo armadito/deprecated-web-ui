@@ -35,7 +35,7 @@ angular.module('armaditoApp')
     function ($rootScope,   $scope,   $uibModal,   ScanService,   ScanData)
     {
         $scope.filePathBeginLimit = 10;
-        $scope.filePathEndLimit = -40;
+        $scope.filePathEndLimit = 40;
 
         $scope.synchronizeScopeWithFactory = function ()
         {
