@@ -1,4 +1,4 @@
-table.analyse {
+table.scan {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     display: flex;
@@ -9,42 +9,42 @@ table.analyse {
     color: #525659;
     margin-top: -25px !important;
 }
-table.analyse * {
+table.scan * {
     box-sizing: inherit;
     -moz-box-sizing: inherit;
 }
-thead.analyse {
+thead.scan {
     display: flex;
     flex-direction: column;
     align-items: stretch;
 }
-tbody.analyse {
+tbody.scan {
     overflow-y: scroll;
     display: inline-block;
 }
-thead.analyse > tr.analyse, tbody.analyse > tr.analyse, tfoot.analyse > tr.analyse {
+thead.scan > tr.scan, tbody.scan > tr.scan, tfoot.scan > tr.scan {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.analyseTitle {
+.scanTitle {
     font-weight: 500;
     font-size: 20px;
 }
-thead.analyse, tfoot.analyse {
+thead.scan, tfoot.scan {
     flex-shrink: 0;
 }
-th.analyse, tbody.analyse td.analyse {
+th.scan, tbody.scan td.scan {
     text-align: center;
     width: 100%;
     overflow-x: hidden;
     text-overflow: ellipsis;
     display: inline-block;
 }
-tfoot.analyse {
+tfoot.scan {
     display: inline-block;
 }
-tfoot.analyse td.analyse {
+tfoot.scan td.scan {
     width: 100%;
     display: inline-block;
 }
@@ -58,10 +58,10 @@ tfoot.analyse td.analyse {
   width: 100% !important;
   height: 100% !important;
 }
-.modal-body-analyse {
+.modal-body-scan {
   padding: 5px 30px !important;
 }
-.modal-header-analyse {
+.modal-header-scan {
   padding: 15px 30px !important;
   border-bottom: 1px solid #FFFFFF !important;
   margin-bottom: -20px !important;
@@ -99,25 +99,25 @@ tfoot.analyse td.analyse {
 .formOptionScan {
   padding: 10px 10px 0px 10px !important;
 }
-.analyseChoice {
+.scanChoice {
   color: #000000;
   background-color: #FFFFFF;
   border-color: #FFFFFF;
   font-weight: 500;
   font-size: 15px;
 }
-.analyseChoice:hover {
+.scanChoice:hover {
   color: #000000;
   background-color: #FFFFFF;
   border-color: #FFFFFF;
   font-weight: 500;
   font-size: 15px;
 }
-.analyseTitle {
+.scanTitle {
   font-weight: 500 !important;
   line-height: 19px !important;
 }
-.typeAnalyse {
+.typeScan {
   font-weight: 600;
   font-size: 22px;
 }
@@ -150,7 +150,7 @@ tfoot.analyse td.analyse {
   margin-left: -35px;
   top : 5px;
 }
-.fileAnalyse {
+.fileScan {
   color: #32BEF0;
 }
 .fileMalicious {
@@ -168,7 +168,7 @@ tfoot.analyse td.analyse {
 .yellowCircle {
   color : #F8AA00;
 }
-.numberOfAnalyseFile {
+.numberOfScanFile {
   font-weight: 600;
   color : #999999;
 }

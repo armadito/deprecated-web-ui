@@ -43,7 +43,7 @@ angular.module('armaditoApp')
                 canceled: 0,
                 path_to_scan: "",
                 displayed_file: "",
-                type: "scan_view.Choose_analyse_type",
+                type: "scan_view.Choose_scan_type",
                 files: []
 	        },
 
@@ -96,7 +96,7 @@ angular.module('armaditoApp')
                     canceled : 0,
                     path_to_scan: "",
                     displayed_file: "",
-                    type: "scan_view.Choose_analyse_type",
+                    type: "scan_view.Choose_scan_type",
                     files: []
                 };
 	        }

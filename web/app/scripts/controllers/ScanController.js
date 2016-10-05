@@ -159,8 +159,8 @@ angular.module('armaditoApp')
             var size = 'sm';
             var modalInstance = $uibModal.open({
               animation: $scope.animationsEnabled,
-              templateUrl: 'views/CustomAnalyse.html',
-              controller: 'CustomAnalyseController',
+              templateUrl: 'views/CustomScan.html',
+              controller: 'CustomScanController',
               size: size,
               resolve:
               {

@@ -12,8 +12,7 @@
   },
   "information_view" : {
   	"ButtonTitle" : "STATUT",
-  	"Real_time_analyse" : "Analyse temps réel",
-  	"Analyse_service" : "Service d'analyse",
+  	"OnAccessScan" : "Analyse temps réel",
   	"Update_bases" : "Mise à jour des bases",
   	"Last_update" : "Dernière mise à jour",
   	"Modules" : "Module",
@@ -30,7 +29,7 @@
     "Start" : "Analyser",
     "Scanning_file" : "Fichier analysé",
     "Stop" : "Annuler",
-    "Choose_analyse_type" : "Choisissez le type d'analyse",
+    "Choose_scan_type" : "Choisissez le type d'analyse",
     "Full_scan" : "COMPLÈTE",
     "Quick_scan" : "RAPIDE",
     "Custom_scan" : "PERSONNALISÉE",

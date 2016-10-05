@@ -52,7 +52,7 @@ angular.module('armaditoApp')
 		  			tittle : 'scan_view.ButtonTitle',
 		  			icon : 'fa fa-search fa-2x',
 		  			view : 'Main.Scan',
-		  			backgroundColor: 'analyseActive'
+		  			backgroundColor: 'scanActive'
 		  		}
 	  		},
 	  		{
