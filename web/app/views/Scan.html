@@ -55,7 +55,7 @@
 	  	<div class="col-sm-offset-1 col-md-offset-1 col-xs-10 col-sm-10 col-md-10" >
 		    <h6 ng-if="displayed_file" > &nbsp;&nbsp;&nbsp;&nbsp;{{ 'scan_view.Scanning_file' | translate}} : <b>{{truncate(displayed_file,50)}}</b></h6>
 		    <uib-progressbar max="max" class="progressBar" value="scan_progress"><span class="progressBarPercent"><span ng-if="scan_progress > 0 || scan_progress === 0">{{scan_progress}}%</span></span>
-	    	</uib-progressbar>   
+	    	</uib-progressbar>
 	  	</div>
 	</div>
 	<div class="row pullBottom" style="height: 60%">
