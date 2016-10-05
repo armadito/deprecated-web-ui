@@ -46,66 +46,62 @@ angular.module('armaditoApp')
 
         factory.pollEvents = function ()
         {
-	     	var xmlhttp = new XMLHttpRequest();
-
-	      	xmlhttp.onreadystatechange = function ()
+	      	factory.xmlhttp.onreadystatechange = function ()
 	      	{
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
                 {
-	                var jobj = parseJson(xmlhttp.responseText);
+	                var jobj = parseJson(factory.xmlhttp.responseText);
 	                factory.handleEvent(jobj);
                  }
 	      	};
 
-	      	xmlhttp.open("GET", "/api/event", true);
-	      	xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-	      	xmlhttp.send(null);
+	      	factory.xmlhttp.open("GET", "/api/event", true);
+	      	factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+	      	factory.xmlhttp.send(null);
 	  	};
 
 	  	factory.AskForNewScan = function ()
 	  	{
-            var data = {path: factory.path_to_scan},
-                xmlhttp = new XMLHttpRequest();
+            var data = {path: factory.path_to_scan};
 
-            xmlhttp.onreadystatechange = function ()
+            factory.xmlhttp.onreadystatechange = function ()
             {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
                 {
                     factory.pollEvents();
 	            }
             };
 
-            xmlhttp.open("POST", "/api/scan", true);
-            xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-            xmlhttp.setRequestHeader("Content-Type", "application/json");
-            xmlhttp.send(JSON.stringify(data));
+            factory.xmlhttp.open("POST", "/api/scan", true);
+            factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+            factory.xmlhttp.setRequestHeader("Content-Type", "application/json");
+            factory.xmlhttp.send(JSON.stringify(data));
 	  	}
 
 	  	factory.apiUnregister = function ()
         {
-            var xmlhttp = new XMLHttpRequest();
-	  		xmlhttp.open("GET", "/api/unregister", true);
-	  		xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-	  		xmlhttp.send(null);
+	  		factory.xmlhttp.open("GET", "/api/unregister", true);
+	  		factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+	  		factory.xmlhttp.send(null);
 	  		factory.token = null;
 	  	};
 
         factory.apiRegister = function ()
         {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function ()
+            factory.xmlhttp = new XMLHttpRequest();
+            factory.xmlhttp.onreadystatechange = function ()
             {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
                 {
-                    var jobj = parseJson(xmlhttp.responseText);
+                    var jobj = parseJson(factory.xmlhttp.responseText);
                     factory.token = jobj.token;
                     console.log("[+] Registred with token : " + factory.token);
                     factory.AskForNewScan();
 	            }
             };
 
-	  		xmlhttp.open("GET", "/api/register", true);
-	  		xmlhttp.send(null);
+	  		factory.xmlhttp.open("GET", "/api/register", true);
+	  		factory.xmlhttp.send(null);
 	  	};
 
         factory.newScan = function (path_to_scan)
