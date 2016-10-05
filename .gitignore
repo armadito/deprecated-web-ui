@@ -13,3 +13,9 @@ install-sh
 missing
 config.guess
 config.sub
+config.log
+config.status
+compile
+depcomp
+libtool
+ltmain.sh

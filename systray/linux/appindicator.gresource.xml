@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/armadito/systray">
+    <file compressed="yes" preprocess="xml-stripblanks">icons/armadito-systray.svg</file>
+    <file compressed="yes" preprocess="xml-stripblanks">icons/armadito-systray-warning.svg</file>
+    <file compressed="yes" preprocess="xml-stripblanks">linux/systray.ui</file>
+  </gresource>
+</gresources>

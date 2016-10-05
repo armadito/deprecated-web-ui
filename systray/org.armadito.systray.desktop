@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Armadito Systray
+Comment=Armadito Antivirus Systray
+Type=Application
+Exec=armadito-systray
+StartupNotify=true
+Icon=armadito-systray
+Terminal=false
+Categories=GTK;System;Security;
+X-GNOME-Autostart-enabled=true
+X-GNOME-UsesNotifications=true
+X-Desktop-File-Install-Version=0.1
