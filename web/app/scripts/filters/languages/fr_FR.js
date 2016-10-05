@@ -59,17 +59,6 @@
       "Clear" : "NETTOYER",
       "Refresh" : "RAFRAICHIR"
     },
-    "Scan_on_demand_tab" : {
-      "Scan_on_demand" : "ANALYSE À LA DEMANDE",
-      "Today": "Aujourd'hui",
-      "This_week" : "Cette semaine",
-      "This_month": "Ce mois-ci",
-      "This_year" : "Cette année",
-      "details" : {
-        "Scan_repport_details" : "Détails du rapport d'analyse"
-      }
-
-    },
     "Threat_detected_tab" : {
       "Threat_detected" : "MENACES DÉTECTÉES",
       "Search" : "Rechercher...",

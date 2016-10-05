@@ -59,17 +59,6 @@
       "Clear" : "CLEAR",
       "Refresh" : "REFRESH"
     },
-    "Scan_on_demand_tab" : {
-      "Title" : "ON DEMAND SCAN",
-      "Today": "Today",
-      "This_week" : "This week",
-      "This_month": "This month",
-      "This_year" : "This year",
-      "details" : {
-        "Scan_repport_details" : "Scan report details"
-      }
-
-    },
     "Threat_detected_tab" : {
       "Title" : "ALERTS",
       "Search" : "Search...",
