@@ -24,7 +24,7 @@
 	  "Status_late" : "tardif",
 	  "Status_unavailable" : "indisponible"
   },
-  "analyse_view" : {
+  "scan_view" : {
     "ButtonTitle" : "ANALYSE",
     "Scan_title" : "Analyse",
     "Start" : "Analyser",

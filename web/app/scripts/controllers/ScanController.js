@@ -144,17 +144,17 @@ angular.module('armaditoApp')
 
         $scope.fullScan = function ()
         {
-            $scope.type = "analyse_view.Full_scan";
+            $scope.type = "scan_view.Full_scan";
         };
 
         $scope.quickScan = function ()
         {
-            $scope.type = "analyse_view.Quick_scan";
+            $scope.type = "scan_view.Quick_scan";
         };
 
         $scope.customScan = function ()
         {
-            $scope.type = "analyse_view.Custom_scan";
+            $scope.type = "scan_view.Custom_scan";
 
             var size = 'sm';
             var modalInstance = $uibModal.open({

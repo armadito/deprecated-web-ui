@@ -49,7 +49,7 @@ angular.module('armaditoApp')
 	  		{
 	  			button : {
 		  			isActive : false,
-		  			tittle : 'analyse_view.ButtonTitle',
+		  			tittle : 'scan_view.ButtonTitle',
 		  			icon : 'fa fa-search fa-2x',
 		  			view : 'Main.Scan',
 		  			backgroundColor: 'analyseActive'
