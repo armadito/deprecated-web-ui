@@ -58,7 +58,7 @@ angular.module('armaditoApp')
 	  		{
 	  			button : {
 		  			isActive : false,
-		  			tittle : 'history_view.ButtonTitle',
+		  			tittle : 'journal_view.ButtonTitle',
 		  			icon : 'fa fa-newspaper-o fa-2x',
 		  			view : 'Main.Journal',
 		  			backgroundColor:  'journalActive'

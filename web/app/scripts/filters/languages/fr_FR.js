@@ -48,9 +48,9 @@
     "Add_file_to_exclude" : "Selectionnez fichier à exclure",
     "Excluded_files" : "Fichiers exclus"
   },
-  "history_view" : {
+  "journal_view" : {
     "ButtonTitle" : "JOURNAL",
-    "history_tab" : {
+    "journal_tab" : {
       "Title" : "JOURNAL",
       "Search" : "Rechercher...",
       "Date" : "Date",
