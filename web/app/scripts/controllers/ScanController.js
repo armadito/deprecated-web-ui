@@ -147,11 +147,13 @@ angular.module('armaditoApp')
         $scope.fullScan = function ()
         {
             $scope.type = "scan_view.Full_scan";
+            $scope.path_to_scan = "/"
         };
 
         $scope.quickScan = function ()
         {
             $scope.type = "scan_view.Quick_scan";
+            $scope.path_to_scan = "/home";
         };
 
         $scope.customScan = function ()
