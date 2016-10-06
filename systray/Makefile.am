@@ -26,10 +26,10 @@ armadito_systray_SOURCES = \
 	$(COMMON_SOURCES)
 
 UI_RESOURCES = \
-	linux/appindicator.gresource.xml \
-	linux/systray.ui \
-	icons/armadito-systray.svg \
-	icons/armadito-systray-warning.svg
+	$(srcdir)/linux/appindicator.gresource.xml \
+	$(srcdir)/linux/systray.ui \
+	$(srcdir)/icons/armadito-systray.svg \
+	$(srcdir)/icons/armadito-systray-warning.svg
 
 desktopdir = $(datadir)/applications
 desktop_DATA = org.armadito.systray.desktop
