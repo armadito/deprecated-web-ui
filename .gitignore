@@ -6,10 +6,11 @@ web/node_modules
 /test
 Makefile
 Makefile.in
-autom4te.cache/*
-configure
 aclocal.m4
-install-sh
-missing
+autom4te.cache
 config.guess
 config.sub
+configure
+install-sh
+missing
+*~
