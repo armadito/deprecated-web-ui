@@ -11,6 +11,7 @@ addons:
     - libcurl4-openssl-dev
     - gnome-common
     - libnotify-dev
+    - libgtk-3-dev
   coverity_scan:
     project:
       name: "armadito/armadito-gui"
