@@ -14,18 +14,16 @@ addons:
     - libappindicator3-dev
   coverity_scan:
     project:
-      name: armadito/armadito-gui
+      name: armadito/armadito-web-ui
       description: Build submitted via Travis CI
     notification_email: vhamon@teclib.com
     build_command_prepend: "./configure; make clean"
     build_command: make -j 4
     branch_pattern: coverity_scan
-  sonarqube: true
 
 env:
   global:
   - secure: EcUTaTyUuLHxfOgaaNTN7jJp+duf3kM/+oBnFE2qg/MFgFADVdIV0mNQc+o14NBYjFwC2bmVD1xFqmptU6Ve194qudxtTEZXTUtenuYqOP7U7XHQFpGI9B7Ab1uzfzqscNc2quqfAFC7RVeg2dIOg2eg24hiM/IK7SVVoIdyvl3vYNGzs1tB8EqbAiEyixAITch+5KUjcdMaKxeN7aSAtNAKzMSWXin0Rfc3PeA/HxCIhO0JUulD6FiC78X6UnR2Bf3dW2hMEnzuLD6CRV0ZkSo9AGA13CfnqBjByUm9/1NFyCQLgUp+yjSJdyClrHPmTzcKVS+SxAtXTMu9H71apStHxUZbe2ySDkNn8paYrHwCF+WZrBAjV3XiLm6009XW4XKBZuX4ZOwCjdSAGHoHjsgmPCXgvfa259zw9ttYK3DKZG5UdOY9Fy3DRqbaG6v/SPR/11/jKGLx4XI+ACdRqZXRQF6u5hfRL8DDyl47Ywy53qwvESPJTcdOA++c2Q4fqSzrZRhAnQB5RhrZ3SPReERftE2j0M+gvZkHcmaf8pGoF/a8Z2ye1/P23OSvMRtrXo/kJxVWb7AK21GbQMw6MIuwx0mNdrwCliQiMEXI45CFCgFUmZZtt5MAsBwzAp4wBJUY3x5gMU/RnDbRjNForAzqOTNK8KTOZs42XihIR9g=
-  - secure: r1PBSML/BKMRbZeYP/7lzUH+P1sRuliyhmNHaoZa1H8crdGlrEvJRTmeBKWNW4Sxt/kCoYgFd2X9QjlAMzMgfwfl8amBYk1BKu0eni3QUqjvwYxrwFNS3rWipbpKKlC57T5Mnz7Iw+2r8hE3KT/hORYzRH6YRsSCmiln3B07cbXj766LoKBev4dZt1D3KkEMcsjLcPIO1xp2KELZfM0bCl/lC0zfSx8wBsazOYFM/+ZG0ir1tmNlyCx/kHtB08BdIXywJmTxMDzijlyYpRCoHBIfovKiypuDjXPdXHLTvJrxCwSUjPlx809VV7EBkS7r39GeUlHpnOD6d26ChEfQjVbRtm7fTq1NHwz0VSRRlgR84b2j/cPSv1tyqEwzI+3Vaa4RleVxWDbSlYBS8lYl79liU5b6mDBaa6HSnOtTJgXrJJFOOAoeu/OTJiipF5OSib865+ymS6jThu3BZroGbVvXOroNTIan08ECM7xqnXFWT8LnUUrX7vgbZ0BzqdCfbr4OZWHs5Ba+YAwp8B6OXrz3ehzZssd7BQl7BaKMvPFBWEIPSYI8ZDPwRiFJpdd43S9f3c8t7T23idLon8dsE8KwDsc8nX6RCRaMTQqd+TBgFMgkaIiJqQSYT2ygGPLxMcMlYO804mZA6tgxPRnuHsb9JZjwQ09N0hz47qS202I=
 
 before_install:
 - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END
@@ -39,7 +37,4 @@ before_script:
 - "./autogen.sh"
 
 script:
-- ./configure
-- make clean all
-- cd ../../
 - sonar-scanner -e -X -Dsonar.host.url=https://sonarqube.com -Dsonar.login=$SONAR_TOKEN
