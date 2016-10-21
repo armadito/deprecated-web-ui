@@ -1,9 +1,0 @@
-compile
-ltmain.sh
-depcomp
-m4/
-intltool-extract.in
-intltool-merge.in
-intltool-update.in
-po/Makefile.in.in
-po/*.mo
