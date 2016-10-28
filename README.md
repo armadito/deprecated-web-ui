@@ -5,6 +5,7 @@ Armadito web UI
   <img alt="Coverity Scan Build Status"
        src="https://scan.coverity.com/projects/10497/badge.svg"/>
 </a>
+[![Quality Gate](http://sonarqube.com/api/badges/gate?key=armadito:web-ui)](http://sonarqube.com/dashboard/index/armadito:web-ui)
 
 Armadito web UI rely on recent web technologies to provide a multi-plateform graphical user interface for Armadito antivirus.
 
