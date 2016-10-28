@@ -8,7 +8,7 @@
  * Service in the armaditoApp.
  */
 angular.module('armaditoApp')
-	.service('StatusService', ['$rootScope', '$interval', function ($rootScope, $interval) {
+	.service('StatusService', ['$rootScope', function ($rootScope) {
 
 	  	var factory = {};
 
@@ -82,7 +82,7 @@ angular.module('armaditoApp')
                 {
                     var jobj = parseJson(factory.xmlhttp.responseText);
                     factory.token = jobj.token;
-                    
+
                     factory.AskForStatus();
 	            }
             };

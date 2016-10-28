@@ -55,13 +55,13 @@ angular.module('armaditoApp')
         $scope.chooseFile = function ()
         {
             var chooser = document.querySelector('#pathToScan');
-            chooser.addEventListener("change", function(evt)
+            chooser.addEventListener("change", function()
             {
                 var path = this.value;
                 $scope.$apply(function()
                 {
                    $scope.optionScan.pathToScan = path;
-                   
+
                 })
             }, false);
         };
@@ -71,9 +71,8 @@ angular.module('armaditoApp')
         {
             var name = '#fileToExclude';
             var chooser = document.querySelector(name);
-            chooser.addEventListener("change", function(evt)
+            chooser.addEventListener("change", function()
             {
-                
                 var path = this.value;
                 $scope.$apply(function()
                 {
@@ -82,7 +81,7 @@ angular.module('armaditoApp')
                         pathToScan : $scope.pathToExclude
                     };
                     $scope.excludedFolders.push(optionScan);
-                    
+
                 })
             }, false);
         };

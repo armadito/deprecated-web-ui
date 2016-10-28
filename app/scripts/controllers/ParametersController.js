@@ -30,7 +30,7 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  */
 angular.module('armaditoApp')
   .controller('ParametersController',['$scope', function ($scope) {
-    
-    
+
+
 
   }]);
