@@ -1,7 +1,7 @@
 <div class="" style="-webkit-app-region: no-drag;" >
 	<div class="modal-header modal-header-scan ">
 		<button type="button" ng-click="cancel()" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	    <span class="modal-title"><i><h3 class="scanTitle">{{ 'scan_view.Custom_scan_title' | translate}}</h3></span>
+	    <span class="modal-title"><em><h3 class="scanTitle">{{ 'scan_view.Custom_scan_title' | translate}}</h3></span>
 	    <hr>
 	</div>
 	<div class="modal-body modal-body-scan">
@@ -9,7 +9,7 @@
 			<li><a href=""> /root </a></li>
 		    <li ng-repeat="bread in breadcrums"ng-class="{active: $last}">
 		    	<a ng-if="!$last" href="">{{bread}}</a>
-		    	<b ng-if="$last">{{bread}}</b>
+		    	<strong ng-if="$last">{{bread}}</strong>
 		    </li>
 		</ol>
 		<p ng-show="showError" class="text-danger" ng-bind-html="error"></p>

@@ -2,7 +2,7 @@
 	<br>
 	<div class="row">
 	  <div class="col-xs-4 col-sm-4 col-md-4">
-	  <img src="images/screenOk.png" class="img-responsive">
+	  <emmg alt="screenOk" src="images/screenOk.png" class="img-responsive">
 	  </div>
 	  <div class="col-xs-4 col-sm-4 col-md-4">
 	  	<ul class="information">
@@ -14,12 +14,12 @@
 	  <div class="col-xs-4 col-sm-4 col-md-4">
 	  	<ul class="information">
 		  <li class="information2" style="-webkit-app-region: no-drag;">
-		  	<input type="checkbox"  ng-model="state.realtime" disabled ng-change="testfunc()" name="checkbox1" id="checkbox1" class="ios-toggle" checked/>
+		  	<emnput type="checkbox"  ng-model="state.realtime" disabled ng-change="testfunc()" name="checkbox1" id="checkbox1" class="ios-toggle" checked/>
 			<label for="checkbox1" class="checkbox-label"></label>
 		  </li>
-		  <li class="information2"><h5><i ng-class="service === 'ok' ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></i></h5></li>
-		  
-		  <li class="information2"><h5><i ng-class="databases_update === 'up-to-date' ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></i>&nbsp;&nbsp;&nbsp;<i style="-webkit-app-region: no-drag;" ng-click="update_db()" class="fa fa-refresh"></i></li></h5></li>
+		  <li class="information2"><h5><em ng-class="service === 'ok' ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></em></h5></li>
+
+		  <li class="information2"><h5><em ng-class="databases_update === 'up-to-date' ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></em>&nbsp;&nbsp;&nbsp;<em style="-webkit-app-region: no-drag;" ng-click="update_db()" class="fa fa-refresh"></em></li></h5></li>
 		  <li class="information2"><h5>{{last_update | amFromUnix | amCalendar}}</h5></li>
 		</ul>
 	  </div>
@@ -29,9 +29,9 @@
 			<table class="table information">
 			    <thead class="information">
 			      <tr class="information">
-			        <th class="information" style="width:40%"><h4><i class="informationTitle">{{ 'information_view.Modules' | translate}}</i></h4></th>
-			        <th class="information" style="width:60%"><h4><i class="informationTitle">{{ 'information_view.Date' | translate}}</i></h4></th>
-			        <th class="information" style="width:60%"><h4><i class="informationTitle">{{ 'information_view.Status' | translate}}</i></h4></th>
+			        <th class="information" style="width:40%"><h4><em class="informationTitle">{{ 'information_view.Modules' | translate}}</em></h4></th>
+			        <th class="information" style="width:60%"><h4><em class="informationTitle">{{ 'information_view.Date' | translate}}</em></h4></th>
+			        <th class="information" style="width:60%"><h4><em class="informationTitle">{{ 'information_view.Status' | translate}}</em></h4></th>
 			      </tr>
 			    </thead>
 			    <tbody class="information" id="ex3" >

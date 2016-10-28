@@ -3,7 +3,7 @@
 	<div class="row pullTop" style="height: 10%">
 		<form class="form-horizontal">
 	        <div class="col-xs-12 col-sm-12 col-md-12 form-group">
-	            <label class="control-label col-xs-3 col-sm-3 col-md-3"><i class="scanTitle">{{ 'scan_view.Scan_title' | translate}} </i></label>
+	            <label class="control-label col-xs-3 col-sm-3 col-md-3"><em class="scanTitle">{{ 'scan_view.Scan_title' | translate}} </em></label>
 	            <div class="col-xs-6 col-sm-6 col-md-6">
 	               <div class="btn-group btn-block" uib-dropdown>
 				      <button id="split-button" type="button" class="btn scanChoice" ng-model="type">{{type | translate}}</button>
@@ -11,10 +11,10 @@
 				        <span class="fa fa-angle-down fa-lg"></span>
 				      </button>
 				      <ul uib-dropdown-menu role="menu" aria-labelledby="split-button">
-				        <li style="-webkit-app-region: no-drag;" role="menuitem" ng-model="type"><a href="" ng-click="fullScan()"><i class="fa fa-hdd-o"></i>&nbsp;&nbsp;{{ 'scan_view.Full_scan' | translate}}</a></li>
-				        <li style="-webkit-app-region: no-drag;" role="menuitem" ng-model="type"><a href="" ng-click="quickScan()"><i class="fa fa-bolt"></i>&nbsp;&nbsp;{{ 'scan_view.Quick_scan' | translate}} </a></li>
+				        <li style="-webkit-app-region: no-drag;" role="menuitem" ng-model="type"><a href="" ng-click="fullScan()"><em class="fa fa-hdd-o"></em>&nbsp;&nbsp;{{ 'scan_view.Full_scan' | translate}}</a></li>
+				        <li style="-webkit-app-region: no-drag;" role="menuitem" ng-model="type"><a href="" ng-click="quickScan()"><em class="fa fa-bolt"></em>&nbsp;&nbsp;{{ 'scan_view.Quick_scan' | translate}} </a></li>
 				        <li class="divider" ></li>
-				        <li style="-webkit-app-region: no-drag;" role="menuitem" ng-model="type"><a href="" ng-click="customScan()"><i class="fa fa-plus"></i>&nbsp;&nbsp;{{ 'scan_view.Custom_scan' | translate}}</a></li>
+				        <li style="-webkit-app-region: no-drag;" role="menuitem" ng-model="type"><a href="" ng-click="customScan()"><em class="fa fa-plus"></em>&nbsp;&nbsp;{{ 'scan_view.Custom_scan' | translate}}</a></li>
 				      </ul>
 				    </div>
 	            </div>
@@ -28,13 +28,13 @@
 	<div class="row pullTop" style="height: 10%">
 		<div class="col-sm-offset-1 col-md-offset-1 col-xs-12 col-sm-10 col-md-10 text-center ">
 			<div class="col-xs-4 col-sm-4 col-md-4">
-				<h1><b class="fileScan" ng-bind="scanned_count" ></b></h1>
+				<h1><strong class="fileScan" ng-bind="scanned_count" ></strong></h1>
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-4">
-				<h1><b class="fileMalicious" ng-bind="malware_count" ></b></h1>
+				<h1><strong class="fileMalicious" ng-bind="malware_count" ></strong></h1>
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-4">
-				<h1><b class="fileSuspect" ng-bind="suspicious_count"></b></h1>
+				<h1><strong class="fileSuspect" ng-bind="suspicious_count"></strong></h1>
 			</div>
 		</div>
 	</div>
@@ -53,7 +53,7 @@
 	</div>
 	<div class="row pullTop" style="height: 10%">
 	  	<div class="col-sm-offset-1 col-md-offset-1 col-xs-10 col-sm-10 col-md-10" >
-		    <h6 ng-if="displayed_file" > &nbsp;&nbsp;&nbsp;&nbsp;{{ 'scan_view.Scanning_file' | translate}} : <b>{{truncate(displayed_file,50)}}</b></h6>
+		    <h6 ng-if="displayed_file" > &nbsp;&nbsp;&nbsp;&nbsp;{{ 'scan_view.Scanning_file' | translate}} : <strong>{{truncate(displayed_file,50)}}</strong></h6>
 		    <uib-progressbar max="max" class="progressBar" value="scan_progress"><span class="progressBarPercent"><span ng-if="scan_progress > 0 || scan_progress === 0">{{scan_progress}}%</span></span>
 	    	</uib-progressbar>
 	  	</div>
@@ -64,14 +64,14 @@
 				<thead class="scan">
 				  <tr class="scan">
 				     <th class="scan" style="width:10%"></th>
-				     <th class="scan" style="width:30%"><h5><i class="scanTitle">{{ 'scan_view.Threat' | translate}}</i></h5></th>
-				     <th class="scan" style="width:60%"><h5><i class="scanTitle">{{ 'scan_view.Files' | translate}}</i></h5></th>
+				     <th class="scan" style="width:30%"><h5><em class="scanTitle">{{ 'scan_view.Threat' | translate}}</em></h5></th>
+				     <th class="scan" style="width:60%"><h5><em class="scanTitle">{{ 'scan_view.Files' | translate}}</em></h5></th>
 				  </tr>
 				 </thead>
 			    <tbody class="scan" id="ex3" style="-webkit-user-select: text;">
 			      <tr class="scan" ng-repeat="file in scan_files">
-			      	<td style="width:10%" ng-if="file.scan_status === 'malware'" class="scan redCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>
-			      	<td style="width:10%" ng-if="file.scan_status === 'suspicious'" class="scan orangeCircle"><h7><i class="fa fa-circle fa-lg"></i></h7></td>
+			      	<td style="width:10%" ng-if="file.scan_status === 'malware'" class="scan redCircle"><h7><em class="fa fa-circle fa-lg"></em></h7></td>
+			      	<td style="width:10%" ng-if="file.scan_status === 'suspicious'" class="scan orangeCircle"><h7><em class="fa fa-circle fa-lg"></em></h7></td>
 			        <td style="width:30%" title="{{file.module_report}}" class="scan" ><h7>{{file.module_report | characters: 30}}</h7></td>
 			        <td style="width:60%" title="{{file.path}}" class="scan"><h7>{{ file.path | strLimit : filePathBeginLimit : filePathEndLimit }}</h7></td>
 			      </tr>
