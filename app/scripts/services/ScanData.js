@@ -71,7 +71,6 @@ angular.module('armaditoApp')
                 };
 
                 this.data.files.push(file);
-                file = null;
             },
 
             setScanConf: function (path_to_scan, type)
