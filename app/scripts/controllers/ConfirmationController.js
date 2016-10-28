@@ -38,11 +38,11 @@ angular.module('armaditoApp')
 
 		json_object = JSON.parse(data);
 
-		console.log("[+] Debug :: Data received from av :: ", json_object);
+		
 
 		// Handle the cancel scan response of the av.
 		if(json_object.av_response == "scan_cancel" && json_object.status == 0 ){
-		  console.log("[+] Debug :: Scan successfully cancelled !\n");      
+		  
 		  global.scan_in_progress = 0;    
 		  return;
 		}

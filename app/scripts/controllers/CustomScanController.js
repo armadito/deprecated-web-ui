@@ -61,7 +61,7 @@ angular.module('armaditoApp')
                 $scope.$apply(function()
                 {
                    $scope.optionScan.pathToScan = path;
-                   console.log("pathToScan" + $scope.optionScan.pathToScan);
+                   
                 })
             }, false);
         };
@@ -73,7 +73,7 @@ angular.module('armaditoApp')
             var chooser = document.querySelector(name);
             chooser.addEventListener("change", function(evt)
             {
-                console.log(evt);
+                
                 var path = this.value;
                 $scope.$apply(function()
                 {
@@ -82,7 +82,7 @@ angular.module('armaditoApp')
                         pathToScan : $scope.pathToExclude
                     };
                     $scope.excludedFolders.push(optionScan);
-                    console.log($scope.excludedFolders);
+                    
                 })
             }, false);
         };

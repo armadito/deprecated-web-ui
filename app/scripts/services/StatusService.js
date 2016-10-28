@@ -82,7 +82,7 @@ angular.module('armaditoApp')
                 {
                     var jobj = parseJson(factory.xmlhttp.responseText);
                     factory.token = jobj.token;
-                    console.log("[+] Registred with token : " + factory.token);
+                    
                     factory.AskForStatus();
 	            }
             };

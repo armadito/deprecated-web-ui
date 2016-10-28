@@ -136,7 +136,7 @@ angular.module('armaditoApp')
 
         $scope.startScan = function ()
         {
-            console.log("[+] New Scan - " + $scope.path_to_scan);
+            
 
             $scope.prepareFactoryForScan();
             $scope.removeEventListeners();
@@ -184,7 +184,7 @@ angular.module('armaditoApp')
                 },
                 function ()
                 {
-                    console.log('Modal dismissed at: ' + new Date());
+                    
                 }
             );
         };

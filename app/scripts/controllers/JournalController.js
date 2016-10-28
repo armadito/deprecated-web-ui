@@ -61,12 +61,12 @@ angular.module('armaditoApp')
 
 	$scope.refreshQuatantineObject = function (index){
 		$scope.quarantineObjects.splice(index, 1);
-		console.log("refreshed !");
+		
 	};
 
 	$scope.deleteQuatantineObject = function (index){
 		$scope.quarantineObjects.splice(index, 1);
-		console.log("deleted !");
+		
 	};
 
 	$scope.clearQuarantine = function (){
@@ -91,7 +91,7 @@ angular.module('armaditoApp')
 	        $scope.quarantineObjects = [];
 	        toastr.success('Suppression d\'objets en quarantaine effectuée avec succès.');
 	    }, function () {
-        	console.log('Modal dismissed at: ' + new Date());
+        	
       	});
 	};
 
@@ -107,22 +107,22 @@ angular.module('armaditoApp')
 		
 		var json_obj;
 		
-		console.log('[+] Debug :: threatDataFromAv :: '+data);
+		
 		
 		try{
 			
 			json_obj = JSON.parse(data);
-			//console.log('[+] Debug :: threatDataFromAv :: jobj :: ',json_obj);
+			//
 			//onsole.log('[+] Debug :: threatDataFromAv :: jobj :: ',json_obj.info.files[0].date);
 			
 			$scope.quarantine.files = json_obj.info.files;
-			//console.log('[+] Debug :: threatDataFromAv :: date :: ',json_obj.info.files[0].date);
+			//
 			
 			/*for (var i = 0; i< $scope.quarantine.files.length ; i++){
 				
-				console.log('[+] Debug :: threatDataFromAv :: date :: ',$scope.quarantine.files[i].date);
-				console.log('[+] Debug :: threatDataFromAv :: path :: ',$scope.quarantine.files[i].path);
-				console.log('[+] Debug :: threatDataFromAv :: desc :: ',$scope.quarantine.files[i].desc);				
+				
+				
+				
 			}*/
 			
 		}
@@ -139,17 +139,17 @@ angular.module('armaditoApp')
 
 	$scope.query_quarantine = function(){
 			
-			console.log('[+] Debug :: Refreshing antivirus quarantine...');
+			
 			// send quarantine request to av.			
 			ArmaditoSVC.requestAVquarantine($scope.threatDataFromAv);			
-			console.log('[+] Debug :: Refreshing antivirus status ::' + ArmaditoIPC.client_socket);
+			
 			
 			return;
 	}
 	
 	$scope.restore_quarantine_file = function(filename){
 		
-		console.log('[+] Debug :: Restore quarantine file : '+filename);
+		
 		ArmaditoSVC.requestAVrestore(filename,$scope.threatDataFromAv);
 		
 		return;
@@ -158,7 +158,7 @@ angular.module('armaditoApp')
 
 	$scope.delete_quarantine_file = function(filename){
 		
-		console.log('[+] Debug :: Delete quarantine file : '+filename);
+		
 		ArmaditoSVC.requestAVdelete(filename,$scope.threatDataFromAv);
 		
 		return;
@@ -222,7 +222,7 @@ angular.module('armaditoApp')
         modalInstance.result.then(function (selectedItem) {
           $scope.selected = selectedItem;
         }, function () {
-          console.log('Modal dismissed at: ' + new Date());
+          
         });
       };
 
@@ -247,7 +247,7 @@ angular.module('armaditoApp')
 		    modalInstance.result.then(function (selectedItem) {
 		      $scope.selected = selectedItem;
 		    }, function () {
-		      console.log('Modal dismissed at: ' + new Date());
+		      
 		    });
 		  };
 
