@@ -103,67 +103,6 @@ angular.module('armaditoApp')
 	$scope.status.openWeek = false;
 	$scope.status.openMonth = false;
 	$scope.status.openYear = false;
-	$scope.threatDataFromAv = function(data){
-
-		var json_obj;
-
-
-
-		try{
-
-			json_obj = JSON.parse(data);
-			//
-			//onsole.log('[+] Debug :: threatDataFromAv :: jobj :: ',json_obj.info.files[0].date);
-
-			$scope.quarantine.files = json_obj.info.files;
-			//
-
-			/*for (var i = 0; i< $scope.quarantine.files.length ; i++){
-
-
-
-
-			}*/
-
-		}
-		catch(e){
-			console.error("Parsing error:", e);
-			return null;
-		}
-
-		$scope.$apply();
-
-		return;
-	}
-
-
-	$scope.query_quarantine = function(){
-
-
-			// send quarantine request to av.
-			ArmaditoSVC.requestAVquarantine($scope.threatDataFromAv);
-
-
-			return;
-	}
-
-	$scope.restore_quarantine_file = function(filename){
-
-
-		ArmaditoSVC.requestAVrestore(filename,$scope.threatDataFromAv);
-
-		return;
-
-	}
-
-	$scope.delete_quarantine_file = function(filename){
-
-
-		ArmaditoSVC.requestAVdelete(filename,$scope.threatDataFromAv);
-
-		return;
-
-	}
 
     function generateRandomItem(id) {
 
@@ -250,6 +189,4 @@ angular.module('armaditoApp')
 
 		    });
 		  };
-
-
   }]);

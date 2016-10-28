@@ -29,8 +29,6 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * Controller of the armaditoApp
  */
 
-//global.scan_in_progress = 0;
-
 angular.module('armaditoApp')
   .controller('MainController',
   			[ '$rootScope', '$scope', '$state','$uibModal', '$translate', 'toastr',
