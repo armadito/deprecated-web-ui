@@ -32,9 +32,9 @@ angular.module('armaditoApp')
   .factory('ScanData',
     function ()
     {
-	    return {
-	        data:
-	        {
+        return {
+            data:
+            {
                 suspicious_count: 0,
                 scanned_count: 0,
                 malware_count: 0,
@@ -45,48 +45,48 @@ angular.module('armaditoApp')
                 displayed_file: "",
                 type: "scan_view.Choose_scan_type",
                 files: []
-	        },
+            },
 
-	        updateCounters: function (scanned_count, suspicious_count, malware_count, progress )
-	        {
+            updateCounters: function (scanned_count, suspicious_count, malware_count, progress )
+            {
                 this.data.suspicious_count = suspicious_count;
                 this.data.scanned_count = scanned_count;
                 this.data.malware_count = malware_count;
                 this.data.progress = progress;
-	        },
+            },
 
-	        setDisplayedFile: function (_displayed_file)
-	        {
+            setDisplayedFile: function (_displayed_file)
+            {
                 this.data.displayed_file = _displayed_file;
-	        },
+            },
 
-	        addScannedFile: function (file_path, file_scan_status, file_scan_action, file_mod_name, file_mod_report)
-	        {
+            addScannedFile: function (file_path, file_scan_status, file_scan_action, file_mod_name, file_mod_report)
+            {
                 var file = {
-		            path: file_path,
-		            scan_status: file_scan_status,
-		            scan_action: file_scan_action,
+                    path: file_path,
+                    scan_status: file_scan_status,
+                    scan_action: file_scan_action,
                     module_name: file_mod_name,
                     module_report: file_mod_report
-	            };
+                };
 
                 this.data.files.push(file);
                 file = null;
-	        },
+            },
 
-	        setScanConf: function (path_to_scan, type)
-	        {
+            setScanConf: function (path_to_scan, type)
+            {
                 this.data.path_to_scan =  path_to_scan;
                 this.data.type = type;
-	        },
+            },
 
             setCanceled: function ()
             {
                 this.data.canceled = 1;
-	        },
+            },
 
-	        reset: function ()
-	        {
+            reset: function ()
+            {
                 this.data =
                 {
                     suspicious_count: 0,
@@ -99,7 +99,7 @@ angular.module('armaditoApp')
                     type: "scan_view.Choose_scan_type",
                     files: []
                 };
-	        }
-	    };
+            }
+        };
     }
 );

@@ -30,18 +30,18 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  */
 angular.module('armaditoApp')
   .controller('JournalController', ['$scope', '$uibModal','toastr', function ($scope, $uibModal, toastr) {
-	  
+
     var Noms = ['Malware1', 'Malware2', 'Malware3', 'Malware4'];
     var Emplacements = ['/home/userName/...', '/home/Desktop/folder/...', '/home/userName/...', '/home/userName/...'];
     var Dates = ['05/11/2015', '18/11/2015', '13/12/2015', '15/12/2015'];
     var id = 1;
-	
+
 	$scope.quarantine = {
 		count : 0,
 		last_update : "1970",
 		files: []
 	};
-	
+
 	$scope.quarantineObjects = [
 		{
 			name: 'malware',
@@ -61,12 +61,12 @@ angular.module('armaditoApp')
 
 	$scope.refreshQuatantineObject = function (index){
 		$scope.quarantineObjects.splice(index, 1);
-		
+
 	};
 
 	$scope.deleteQuatantineObject = function (index){
 		$scope.quarantineObjects.splice(index, 1);
-		
+
 	};
 
 	$scope.clearQuarantine = function (){
@@ -91,80 +91,80 @@ angular.module('armaditoApp')
 	        $scope.quarantineObjects = [];
 	        toastr.success('Suppression d\'objets en quarantaine effectuée avec succès.');
 	    }, function () {
-        	
+
       	});
 	};
 
 	//$scope.quarantine.count = 0;
 	$scope.quarantine.files = [];
-	
-	$scope.status = {}; 
+
+	$scope.status = {};
 	$scope.status.openDay = true;
 	$scope.status.openWeek = false;
 	$scope.status.openMonth = false;
 	$scope.status.openYear = false;
 	$scope.threatDataFromAv = function(data){
-		
+
 		var json_obj;
-		
-		
-		
+
+
+
 		try{
-			
+
 			json_obj = JSON.parse(data);
 			//
 			//onsole.log('[+] Debug :: threatDataFromAv :: jobj :: ',json_obj.info.files[0].date);
-			
+
 			$scope.quarantine.files = json_obj.info.files;
 			//
-			
+
 			/*for (var i = 0; i< $scope.quarantine.files.length ; i++){
-				
-				
-				
-				
+
+
+
+
 			}*/
-			
+
 		}
 		catch(e){
-			console.error("Parsing error:", e); 
+			console.error("Parsing error:", e);
 			return null;
 		}
-		
+
 		$scope.$apply();
-			
+
 		return;
 	}
-	
+
 
 	$scope.query_quarantine = function(){
-			
-			
-			// send quarantine request to av.			
-			ArmaditoSVC.requestAVquarantine($scope.threatDataFromAv);			
-			
-			
+
+
+			// send quarantine request to av.
+			ArmaditoSVC.requestAVquarantine($scope.threatDataFromAv);
+
+
 			return;
 	}
-	
+
 	$scope.restore_quarantine_file = function(filename){
-		
-		
+
+
 		ArmaditoSVC.requestAVrestore(filename,$scope.threatDataFromAv);
-		
+
 		return;
-		
+
 	}
 
 	$scope.delete_quarantine_file = function(filename){
-		
-		
+
+
 		ArmaditoSVC.requestAVdelete(filename,$scope.threatDataFromAv);
-		
+
 		return;
-		
+
 	}
-	
+
     function generateRandomItem(id) {
 
         var Nom = Noms[Math.floor(Math.random() * 3)];
@@ -189,13 +189,13 @@ angular.module('armaditoApp')
     $scope.displayedCollection = [].concat($scope.rowCollection);
 
     //add to the real data holder
-    $scope.addRandomItem = function addRandomItem() {
+    $scope.addRandomItem = function () {
         $scope.rowCollection.push(generateRandomItem(id));
         id++;
     };
 
     //remove to the real data holder
-    $scope.removeItem = function removeItem(row) {
+    $scope.removeItem = function (row) {
         var index = $scope.rowCollection.indexOf(row);
         $scope.rowCollection.splice(index, 1);
     };
@@ -222,7 +222,7 @@ angular.module('armaditoApp')
         modalInstance.result.then(function (selectedItem) {
           $scope.selected = selectedItem;
         }, function () {
-          
+
         });
       };
 
@@ -247,7 +247,7 @@ angular.module('armaditoApp')
 		    modalInstance.result.then(function (selectedItem) {
 		      $scope.selected = selectedItem;
 		    }, function () {
-		      
+
 		    });
 		  };
 
