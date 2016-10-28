@@ -26,7 +26,10 @@ angular.module('armaditoApp')
     function($filter)
     {
        return function(input, beginlimit, endlimit) {
-          if (! input) return;
+          if (! input) {
+              return;
+          }
+
           if (input.length <= beginlimit + endlimit) {
               return input;
           }

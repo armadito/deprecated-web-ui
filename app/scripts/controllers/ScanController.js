@@ -88,6 +88,7 @@ angular.module('armaditoApp')
             }
             else if (data.event_type === "OnDemandCompletedEvent")
             {
+                // TODO
             }
 
             $scope.synchronizeScopeWithFactory();
@@ -136,7 +137,7 @@ angular.module('armaditoApp')
 
         $scope.startScan = function ()
         {
-            
+
 
             $scope.prepareFactoryForScan();
             $scope.removeEventListeners();
@@ -184,7 +185,7 @@ angular.module('armaditoApp')
                 },
                 function ()
                 {
-                    
+
                 }
             );
         };

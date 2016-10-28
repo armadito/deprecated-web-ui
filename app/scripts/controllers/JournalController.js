@@ -95,7 +95,6 @@ angular.module('armaditoApp')
       	});
 	};
 
-	//$scope.quarantine.count = 0;
 	$scope.quarantine.files = [];
 
 	$scope.status = {};
