@@ -133,16 +133,15 @@
 
     /*  Top navigation bar */
     .navbar-brand {
-        float: left;
-        padding: 0px 27px !important;
-        line-height: 80px !important;
+      height: 20%;
+      width: 100%;
     }
     .navbar-brand > img {
       display: block;
-      margin-top: -27px !important;
+      margin: auto;
     }
     .navbar-default {
-        background-color: white !important;
+      background-color: white !important;
     }
     .align-text-information {
       text-align: center;
@@ -150,7 +149,7 @@
       width: 100%;
       left: 0;
       margin: auto;
-      color : balck !important;
+      color : black !important;
     }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
         color: #ffffff;
@@ -169,7 +168,7 @@
       border: 0px solid white !important;
     }
     .navbar {
-      height : 45px !important;
+      height : 100%;
     }
     .panel-overflow {
       max-height: 100px !important;
