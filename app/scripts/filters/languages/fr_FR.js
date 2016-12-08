@@ -60,14 +60,14 @@
       "Refresh" : "RAFRAICHIR"
     },
     "Threat_detected_tab" : {
-      "Threat_detected" : "MENACES DÉTECTÉES",
+      "Title" : "MENACES DÉTECTÉES",
       "Search" : "Rechercher...",
       "Name" : "Nom",
       "Path" : "Emplacement",
       "Date" : "Date"
     },
     "Quarantine_tab" : {
-      "Quarantine" : "QUARANTAINE",
+      "Title" : "QUARANTAINE",
       "Search" : "Rechercher",
       "Name" : "Nom",
       "Path" : "Emplacement",
