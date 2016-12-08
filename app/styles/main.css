@@ -170,6 +170,13 @@
     .navbar {
       height : 100%;
     }
+    .navbar-nav {
+      height : 100%;
+    }
+    .navbar-nav > li {
+      height : 100%;
+      margin-top : 10%;
+    }
     .panel-overflow {
       max-height: 100px !important;
       overflow-y: auto !important;
@@ -562,7 +569,7 @@
       margin-top: -30px !important;
     }
     .paddingApp {
-      padding-top: 30px !important;
+      padding-top: 1% !important;
     }
     .inputPathScan {
       width: 100% !important;
