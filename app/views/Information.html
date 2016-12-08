@@ -20,7 +20,7 @@
           <li class="information2"><h5><em ng-class="service === 'ok' ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></em></h5></li>
 
           <li class="information2"><h5><em ng-class="databases_update === 'up-to-date' ? 'fa fa-check checkIcon' : 'fa fa-exclamation-triangle text-danger'"></em>&nbsp;&nbsp;&nbsp;<em style="-webkit-app-region: no-drag;" ng-click="update_db()" class="fa fa-refresh"></em></li></h5></li>
-          <li class="information2"><h5>{{last_update | amFromUnix | amCalendar}}</h5></li>
+          <li class="information2"><h5>{{last_update}}</h5></li>
         </ul>
       </div>
     </div>
@@ -37,7 +37,7 @@
                 <tbody class="information" id="ex3" >
                   <tr class="information" ng-repeat="module in modules">
                     <td style="width:40%" class="information"><h7>{{module.name | uppercase}}</h7></td>
-                    <td style="width:60%" class="information"><h7>{{module.mod_update_timestamp | amFromUnix | amCalendar}}</h7></td>
+                    <td style="width:60%" class="information"><h7>{{module.mod_update_timestamp}}</h7></td>
                     <td style="width:60%" class="information">
                       <h7 ng-if="module.mod_status ==='up-to-date'" >{{'information_view.Status_up_to_date' | translate}}</h7>
                       <h7 ng-if="module.mod_status ==='critical'" >{{'information_view.Status_critical' | translate}}</h7>

@@ -32,39 +32,33 @@ angular.module('armaditoApp')
   .controller('InformationController', ['$rootScope', '$scope', 'StatusService', 
     function ($rootScope, $scope, StatusService)
     {
-		$scope.state = {
-			status : 0,
-			service : false,
-			realtime : false,
-			upToDate : false,
-			update : "critical",
-			last_update : "Not determined",
-			last_update_timestamp : 0,
-			version : "Not determined"
-		};
 
 		$scope.timeConverter = function(timestamp)
         {
-            var a = new Date(timestamp * 1000);
-            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-            var year = a.getFullYear();
-            var month = months[a.getMonth()];
-            var date = a.getDate();
-            var hour = a.getHours();
-            var min = a.getMinutes();
-            var sec = a.getSeconds();
+            var date = new Date(timestamp * 1000);
+            var datevalues = ('0' + date.getDate()).slice(-2) + '-'
+                           + ('0' + (date.getMonth() + 1)).slice(-2) + '-'
+                           + date.getFullYear() + ' '
+                           + date.getHours() + ':'
+                           + date.getMinutes();
 
-            return sprintf("%02d %s %d %02d:%02d:%02d", date, month, year, hour, min, sec);
+            return datevalues;
 		};
 
-		$scope.state.modules = [];
 	    StatusService.getStatus();
 
 	    $rootScope.$on('StatusEvent', function(event, data)
         {
             $scope.databases_update = data.global_status;
-            $scope.last_update = data.global_update_timestamp;
+            $scope.last_update = $scope.timeConverter(data.global_update_timestamp);
             $scope.modules = data.modules;
+
+            console.log(data);
+
+            for (var i = 0; i< $scope.modules.length ; i++){
+					$scope.modules[i].mod_update_timestamp = $scope.timeConverter($scope.modules[i].mod_update_timestamp);
+			}
+
             $scope.$apply();
 	    });
     }
