@@ -50,16 +50,16 @@ tfoot.scan td.scan {
 }
 
 .modal-dialog {
-  width: 70% !important;
-  margin: 15% 5% 7% 20% !important;
+    width: 70% !important;
+    margin: 15% 5% 7% 20% !important;
 }
 .modal-content {
-  border-radius: 5px !important;
-  width: 100% !important;
-  height: 100% !important;
+    border-radius: 5px !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 .modal-body-scan {
-  padding: 5px 30px !important;
+    padding: 5px 30px !important;
 }
 .modal-header-scan {
   padding: 15px 30px !important;

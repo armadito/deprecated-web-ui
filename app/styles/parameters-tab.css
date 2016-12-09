@@ -31,11 +31,11 @@ div.parameters > li.active > a:focus {
     cursor: pointer;
 }
 .panel {
-  background-color: #F2F2F2 !important;
-  border: 0px solid transparent !important;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.0) !important;
+    background-color: #F2F2F2 !important;
+    border: 0px solid transparent !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.0) !important;
 }
 .panel-default > .panel-heading {
-  background-color: #F2F2F2 !important;
-  border-color: #F2F2F2 !important;
+    background-color: #F2F2F2 !important;
+    border-color: #F2F2F2 !important;
 }
