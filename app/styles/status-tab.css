@@ -46,10 +46,12 @@ tfoot.information td.information {
     width: 100%;
     display: inline-block;
 }
-
 .informationBackground{
     background-color: #F2F2F2 !important;
 }
 ul.information{
     list-style-type: none;
+}
+.checkIcon{
+    color: #0AC99E !important;
 }
