@@ -4,8 +4,8 @@
     }
     .container {
       height: 100%;
+      padding-top: 1% !important;
     }
-
     /*  Left panel menus */
     div.a6o-tab-menu{
       height: 100%;
@@ -552,9 +552,6 @@
     }
     .pullBottom {
       margin-top: -30px !important;
-    }
-    .paddingApp {
-      padding-top: 1% !important;
     }
     .inputPathScan {
       width: 100% !important;
