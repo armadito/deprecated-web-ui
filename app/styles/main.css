@@ -130,6 +130,9 @@ div.a6o-tab div.a6o-tab-content:not(.active){
   height : 100%;
   margin-top : 10%;
 }
+.navbar-nav > li > a {
+  color: #808080;
+}
 .av-protection-status-title {
   font-family: Arial;
   letter-spacing: 1px;
