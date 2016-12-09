@@ -201,3 +201,14 @@ tfoot.scan td.scan {
   color : black !important;
   font-weight: 600 !important;
 }
+
+.pullTop {
+  margin-top: -10px !important;
+}
+.pullBottom {
+  margin-top: -30px !important;
+}
+.treeScroll {
+  max-height: 360px !important;
+  overflow-y:scroll !important;
+}
