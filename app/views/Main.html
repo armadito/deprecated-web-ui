@@ -28,12 +28,12 @@
   </div>
   <div class="row" style="height: 80%;">
   	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 100%">
-  	    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 a6o-tab-menu" >
+  	    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 a6o-left-menu" >
   	      <div class="list-group" ng-repeat="item in buttons" style="-webkit-app-region: no-drag;">
   	        <a  ui-sref="{{item.button.view}}"
                 ng-click="activeButton(item.button)"
-                class="a6o-tab-menu-item text-center {{item.button.backgroundColor}}"
-                ng-class="{'active': item.button.isActive,  'a6o-tab-menu-item-firstChild' : $first, 'a6o-tab-menu-item-lastChild' : $last}">
+                class="a6o-left-menu-item text-center {{item.button.backgroundColor}}"
+                ng-class="{'active': item.button.isActive,  'a6o-left-menu-item-firstChild' : $first, 'a6o-left-menu-item-lastChild' : $last}">
               <br>
   	          <h4 ng-class="item.button.icon"></h4>
               <br>

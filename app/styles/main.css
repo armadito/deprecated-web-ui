@@ -8,29 +8,29 @@
     }
 
     /*  Left panel menus */
-    div.a6o-tab-menu{
+    div.a6o-left-menu{
       height: 100%;
       padding-right: 0;
       padding-left: 0;
       padding-bottom: 0;
     }
-    div.a6o-tab-menu div.list-group{
+    div.a6o-left-menu div.list-group{
       height: 33.3333%;
       margin: 0 auto;
       text-align: center;
     }
-    div.a6o-tab-menu div.list-group>a{
+    div.a6o-left-menu div.list-group>a{
       height: 100%;
     }
-    div.a6o-tab-menu div.list-group>a:first-child{
+    div.a6o-left-menu div.list-group>a:first-child{
       border-top-right-radius: 0;
       -moz-border-top-right-radius: 0;
     }
-    div.a6o-tab-menu div.list-group>a:last-child{
+    div.a6o-left-menu div.list-group>a:last-child{
       border-bottom-right-radius: 0;
       -moz-border-bottom-right-radius: 0;
     }
-    div.a6o-tab-menu div.list-group> a.active:after{
+    div.a6o-left-menu div.list-group> a.active:after{
       content: '';
       position: absolute;
       left: 100%;
@@ -40,16 +40,16 @@
       border-bottom: 13px solid transparent;
       border-top: 13px solid transparent;
     }
-    div.a6o-tab-menu div.list-group> a.generalActive.active:after{
+    div.a6o-left-menu div.list-group> a.generalActive.active:after{
       border-left: 10px solid #0AC99E ;
     }
-    div.a6o-tab-menu div.list-group> a.scanActive.active:after{
+    div.a6o-left-menu div.list-group> a.scanActive.active:after{
       border-left: 10px solid #F8AA00;
     }
-    div.a6o-tab-menu div.list-group> a.journalActive.active:after{
+    div.a6o-left-menu div.list-group> a.journalActive.active:after{
       border-left: 10px solid #32BEF0;
     }
-    a.a6o-tab-menu-item{
+    a.a6o-left-menu-item{
       color: #CCCCCC !important;
       position: relative;
       display: block;
@@ -58,10 +58,10 @@
       background-color: #333333 !important;
       border: 0px solid #dddddd !important;
     }
-    .a6o-tab-menu-item-firstChild {
+    .a6o-left-menu-item-firstChild {
       border-top-left-radius : 4px !important;
     }
-    .a6o-tab-menu-item-lastChild {
+    .a6o-left-menu-item-lastChild {
       border-bottom-left-radius : 4px !important;
     }
     .generalActive.active, .generalActive:hover, .generalActive:focus {
@@ -88,7 +88,7 @@
     .arrow-journalActive {
       color: #32BEF0 !important;
     }
-    div.a6o-tab div.ahuru-tab-content:not(.active){
+    div.a6o-tab {
       display: none;
     }
     .a6o-tab {
