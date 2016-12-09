@@ -145,7 +145,6 @@
     .switch-button,
     .switch-button:active {
       position: absolute;
-      top: -5000px;
       height: 0;
       width: 0;
       opacity: 0;
@@ -307,26 +306,6 @@
     }
     #checkbox1:checked + .checkbox-label-parameters:after { color: rgba(10, 201, 158, 1); }
 
-    li.information {
-      margin: 20px 0;
-    }
-    li.parameters {
-      margin: 24px 0;
-    }
-     li.parametersColumnTwo {
-      margin: 0px 0;
-    }
-    li.information2 {
-      margin: 18px 0;
-    }
-    .informationLi {
-      font-weight: 500;
-    }
-    .topcorner{
-      float: right !important;
-      right: 28px;
-      padding-top: 10px;
-    }
     .btn-default {
       background-color: #F2F2F2 !important;
       border-color: #F2F2F2 !important;

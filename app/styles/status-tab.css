@@ -55,3 +55,12 @@ ul.information{
 .checkIcon{
     color: #0AC99E !important;
 }
+li.information {
+    margin: 20px 0;
+}
+li.information2 {
+    margin: 18px 0;
+}
+.informationLi {
+    font-weight: 500;
+}
