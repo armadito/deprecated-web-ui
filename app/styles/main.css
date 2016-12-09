@@ -7,29 +7,29 @@
     }
 
     /*  Left panel menus */
-    div.ahuru-tab-menu{
+    div.a6o-tab-menu{
       height: 100%;
       padding-right: 0;
       padding-left: 0;
       padding-bottom: 0;
     }
-    div.ahuru-tab-menu div.list-group{
+    div.a6o-tab-menu div.list-group{
       height: 33.3333%;
       margin: 0 auto;
       text-align: center;
     }
-    div.ahuru-tab-menu div.list-group>a{
+    div.a6o-tab-menu div.list-group>a{
       height: 100%;
     }
-    div.ahuru-tab-menu div.list-group>a:first-child{
+    div.a6o-tab-menu div.list-group>a:first-child{
       border-top-right-radius: 0;
       -moz-border-top-right-radius: 0;
     }
-    div.ahuru-tab-menu div.list-group>a:last-child{
+    div.a6o-tab-menu div.list-group>a:last-child{
       border-bottom-right-radius: 0;
       -moz-border-bottom-right-radius: 0;
     }
-    div.ahuru-tab-menu div.list-group>a.generalActive.active:after{
+    div.a6o-tab-menu div.list-group>a.generalActive.active:after{
       content: '';
       position: absolute;
       left: 100%;
@@ -40,7 +40,7 @@
       border-top: 13px solid transparent;
       border-left: 10px solid #0AC99E ;
     }
-    div.ahuru-tab-menu div.list-group>a.scanActive.active:after{
+    div.a6o-tab-menu div.list-group>a.scanActive.active:after{
       content: '';
       position: absolute;
       left: 100%;
@@ -51,7 +51,7 @@
       border-top: 13px solid transparent;
       border-left: 10px solid #F8AA00;
     }
-    div.ahuru-tab-menu div.list-group>a.journalActive.active:after{
+    div.a6o-tab-menu div.list-group>a.journalActive.active:after{
       content: '';
       position: absolute;
       left: 100%;
@@ -80,15 +80,15 @@
       background-color: #32BEF0 !important;
       border-color: #32BEF0 !important;
     }
-    div.ahuru-tab-content{
+    div.a6o-tab-content{
       background-color: #ffffff;
       padding-left: 220px;
       padding-top: 10px;
     }
-    div.ahuru-tab div.ahuru-tab-content:not(.active){
+    div.a6o-tab div.ahuru-tab-content:not(.active){
       display: none;
     }
-    .ahuru-tab {
+    .a6o-tab {
       background-color: #F2F2F2 !important;
       height: 100%;
     }
