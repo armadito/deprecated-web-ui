@@ -32,8 +32,8 @@
   	      <div class="list-group" ng-repeat="item in buttons" style="-webkit-app-region: no-drag;">
   	        <a  ui-sref="{{item.button.view}}"
                 ng-click="activeButton(item.button)"
-                class="list-group-item backgroundColumn text-center {{item.button.backgroundColor}}"
-                ng-class="{'active': item.button.isActive,  'list-group-item-firstChild' : $first, 'list-group-item-lastChild' : $last}">
+                class="a6o-tab-menu-item text-center {{item.button.backgroundColor}}"
+                ng-class="{'active': item.button.isActive,  'a6o-tab-menu-item-firstChild' : $first, 'a6o-tab-menu-item-lastChild' : $last}">
               <br>
   	          <h4 ng-class="item.button.icon"></h4>
               <br>

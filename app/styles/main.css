@@ -49,8 +49,20 @@
     div.a6o-tab-menu div.list-group> a.journalActive.active:after{
       border-left: 10px solid #32BEF0;
     }
-    a.list-group-item, button.list-group-item {
-        color: #CCCCCC !important;
+    a.a6o-tab-menu-item{
+      color: #CCCCCC !important;
+      position: relative;
+      display: block;
+      padding: 20% 15% 15% 20%;
+      margin-bottom: -1px;
+      background-color: #333333 !important;
+      border: 0px solid #dddddd !important;
+    }
+    .a6o-tab-menu-item-firstChild {
+      border-top-left-radius : 4px !important;
+    }
+    .a6o-tab-menu-item-lastChild {
+      border-bottom-left-radius : 4px !important;
     }
     .generalActive.active, .generalActive:hover, .generalActive:focus {
       color: #FFFFFF !important;
@@ -79,24 +91,9 @@
     div.a6o-tab div.ahuru-tab-content:not(.active){
       display: none;
     }
-
     .a6o-tab {
       background-color: #F2F2F2 !important;
       height: 100%;
-    }
-    .backgroundColumn {
-      position: relative;
-      display: block;
-      padding: 20% 15% 15% 20%;
-      margin-bottom: -1px;
-      background-color: #333333 !important;
-      border: 0px solid #dddddd !important;
-    }
-    .list-group-item-firstChild {
-      border-top-left-radius : 4px !important;
-    }
-    .list-group-item-lastChild {
-      border-bottom-left-radius : 4px !important;
     }
     .generalActive {
       background-color: #0AC99E;
