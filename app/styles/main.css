@@ -64,6 +64,9 @@
     .a6o-left-menu-item-lastChild {
       border-bottom-left-radius : 4px !important;
     }
+    .a6o-left-menu-item-title {
+      font-size: 16px;
+    }
     .generalActive.active, .generalActive:hover, .generalActive:focus {
       color: #FFFFFF !important;
       background-color: #0AC99E !important;
@@ -106,9 +109,6 @@
     .journalActive {
       background-color: #32BEF0;
       border-color: #32BEF0 !important;
-    }
-    .titleGroupItem{
-      font-size: 16px;
     }
 
     /*  Top navigation bar */
