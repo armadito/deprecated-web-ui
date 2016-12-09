@@ -310,19 +310,6 @@
       background-color: #F2F2F2 !important;
       border-color: #F2F2F2 !important;
     }
-    .panel {
-      background-color: #F2F2F2 !important;
-      border: 0px solid transparent !important;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.0) !important;
-    }
-    .panel-default > .panel-heading {
-      background-color: #F2F2F2 !important;
-      border-color: #F2F2F2 !important;
-    }
-    .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {
-      color: black !important;
-      font-weight: 500 !important;
-    }
     .scanReport{
       color: black !important;
       font-weight: 600 !important;
