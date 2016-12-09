@@ -6,6 +6,7 @@
       height: 100%;
       padding-top: 1% !important;
     }
+
     /*  Left panel menus */
     div.a6o-tab-menu{
       height: 100%;
@@ -66,18 +67,6 @@
       background-color: #32BEF0 !important;
       border-color: #32BEF0 !important;
     }
-    div.a6o-tab-content{
-      background-color: #ffffff;
-      padding-left: 220px;
-      padding-top: 10px;
-    }
-    div.a6o-tab div.ahuru-tab-content:not(.active){
-      display: none;
-    }
-    .a6o-tab {
-      background-color: #F2F2F2 !important;
-      height: 100%;
-    }
     .arrow-generalActive {
       color: #0AC99E !important;
     }
@@ -86,6 +75,14 @@
     }
     .arrow-journalActive {
       color: #32BEF0 !important;
+    }
+    div.a6o-tab div.ahuru-tab-content:not(.active){
+      display: none;
+    }
+
+    .a6o-tab {
+      background-color: #F2F2F2 !important;
+      height: 100%;
     }
     .backgroundColumn {
       position: relative;
