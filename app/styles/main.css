@@ -29,7 +29,7 @@
       border-bottom-right-radius: 0;
       -moz-border-bottom-right-radius: 0;
     }
-    div.a6o-tab-menu div.list-group>a.generalActive.active:after{
+    div.a6o-tab-menu div.list-group> a.active:after{
       content: '';
       position: absolute;
       left: 100%;
@@ -38,28 +38,14 @@
       border-left: 0;
       border-bottom: 13px solid transparent;
       border-top: 13px solid transparent;
+    }
+    div.a6o-tab-menu div.list-group> a.generalActive.active:after{
       border-left: 10px solid #0AC99E ;
     }
-    div.a6o-tab-menu div.list-group>a.scanActive.active:after{
-      content: '';
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      margin-top: -13px;
-      border-left: 0;
-      border-bottom: 13px solid transparent;
-      border-top: 13px solid transparent;
+    div.a6o-tab-menu div.list-group> a.scanActive.active:after{
       border-left: 10px solid #F8AA00;
     }
-    div.a6o-tab-menu div.list-group>a.journalActive.active:after{
-      content: '';
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      margin-top: -13px;
-      border-left: 0;
-      border-bottom: 13px solid transparent;
-      border-top: 13px solid transparent;
+    div.a6o-tab-menu div.list-group> a.journalActive.active:after{
       border-left: 10px solid #32BEF0;
     }
     a.list-group-item, button.list-group-item {
