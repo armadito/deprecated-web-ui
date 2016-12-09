@@ -140,22 +140,6 @@
     .circleInterrogation {
       color: #F2F2F2 !important;
     }
-    #ex3::-webkit-scrollbar{
-      width:10px;
-      background-color: #F2F2F2;
-    }
-    #ex3::-webkit-scrollbar-thumb{
-      background-color:#CCCCCC;
-      border-radius:10px;
-    }
-    #ex4::-webkit-scrollbar{
-      width:10px;
-      background-color: white;
-    }
-    #ex4::-webkit-scrollbar-thumb{
-      background-color:#CCCCCC;
-      border-radius:10px;
-    }
     .informationBackground{
       background-color: #F2F2F2 !important;
     }
