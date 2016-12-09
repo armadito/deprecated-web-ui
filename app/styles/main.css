@@ -310,34 +310,6 @@
       background-color: #F2F2F2 !important;
       border-color: #F2F2F2 !important;
     }
-    .cancelButton {
-      background-color: #E6E6E6 !important;
-      border: 1px solid #E6E6E6 !important;
-      border-radius: 24px !important;
-      color : black !important;
-      font-weight: 600 !important;
-    }
-    .submitButton {
-      background-color: #0AC99E !important;
-      border: 1px solid #0AC99E !important;
-      border-radius: 24px !important;
-      color : black !important;
-      font-weight: 600 !important;
-    }
-
-    .nav-tabs {
-      border-bottom: 0px solid #E7E7E7 !important;
-      height: 35px !important;
-    }
-    .nav-tabs > li > a {
-      color: #999999 !important;
-    }
-    tags-input .tags .tag-item {
-        font: 12px "Helvetica Neue",Helvetica,Arial,sans-serif !important;
-        border: 1px solid #acacac !important;
-        border-radius: 24px !important;
-        background: linear-gradient(to bottom,#f0f9ff 0,#FFFFFF 47%,#FFFFFF 100%) !important;
-    }
     .formSearch:focus {
       border-color: #000000 !important;
       -webkit-box-shadow: none !important;
@@ -377,15 +349,6 @@
       font-weight: 600 !important;
       background-color: #E6E6E6 !important;
       border-radius: 25px !important;
-    }
-    div.parameters .nav-tabs > li.active > a,
-    div.parameters .nav-tabs > li.active > a:hover,
-    div.parameters .nav-tabs > li.active > a:focus {
-      color: #FFFFFF !important;
-      background-color: #F8AA00 !important;
-      border: 0px solid #F8AA00 !important;
-      font-size: 14px !important;
-      font-weight: 600 !important;
     }
     .buttonParameters {
       color: black  !important;

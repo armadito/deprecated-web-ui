@@ -43,7 +43,6 @@ var a6oApp = angular
     'ui.bootstrap',
     'timer',
     'toastr',
-    'ngTagsInput',
     'pascalprecht.translate',
     'truncate',
     'angularMoment',
