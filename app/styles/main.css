@@ -140,9 +140,6 @@
       display: block;
       margin: auto;
     }
-    .navbar-default {
-      background-color: white !important;
-    }
     .align-text-information {
       text-align: center;
       position: absolute;
@@ -150,16 +147,6 @@
       left: 0;
       margin: auto;
       color : black !important;
-    }
-    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-        color: #ffffff;
-        background-color: #FFFFFF !important;
-    }
-    .navbar-default .navbar-nav > li > a {
-        color: #808080 !important;
-    }
-    .navbar-default .navbar-nav > li > a {
-        color: #808080 !important;
     }
     .navbar-text {
       color : black !important;
