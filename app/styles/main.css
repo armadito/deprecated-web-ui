@@ -306,7 +306,7 @@
     }
     #checkbox1:checked + .checkbox-label-parameters:after { color: rgba(10, 201, 158, 1); }
 
-    .btn-default {
+    .btn {
       background-color: #F2F2F2 !important;
       border-color: #F2F2F2 !important;
     }
