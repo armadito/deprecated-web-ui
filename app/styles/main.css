@@ -140,12 +140,6 @@
     .circleInterrogation {
       color: #F2F2F2 !important;
     }
-    .informationBackground{
-      background-color: #F2F2F2 !important;
-    }
-    ul.information{
-      list-style-type: none;
-    }
     ul.parameters{
       list-style-type: none;
       padding-left: 0px !important;
