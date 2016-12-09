@@ -180,18 +180,26 @@ tfoot.quarantine td.quarantine {
 .journalTabHeader {
     -webkit-app-region: no-drag;
 }
-
 .refreshButton {
-  background-color: #32BEF0 !important;
-  border: 1px solid #32BEF0 !important;
-  border-radius: 24px !important;
-  color : black !important;
-  font-weight: 600 !important;
+    background-color: #32BEF0 !important;
+    border: 1px solid #32BEF0 !important;
+    border-radius: 24px !important;
+    color : black !important;
+    font-weight: 600 !important;
 }
 .clearButton {
-  background-color: #F8AA00 !important;
-  border: 1px solid #F8AA00 !important;
-  border-radius: 24px !important;
-  color : black !important;
-  font-weight: 600 !important;
+    background-color: #F8AA00 !important;
+    border: 1px solid #F8AA00 !important;
+    border-radius: 24px !important;
+    color : black !important;
+    font-weight: 600 !important;
+}
+.formSearch:focus {
+    border-color: #000000 !important;
+    -webkit-box-shadow: none !important;
+}
+.formSearch {
+    color: #FFFFFF !important;
+    background-color: #333333 !important;
+    border: 0px solid #000000 !important;
 }
