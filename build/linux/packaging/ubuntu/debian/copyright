@@ -1,5 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: armadito-gui
+Upstream-Name: armadito-web-ui
 Source: http://www.teclib-edition.com/teclib-products/armadito-antivirus/
 
 Files: *
