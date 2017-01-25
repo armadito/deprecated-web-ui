@@ -1,5 +1,5 @@
 AC_INIT(armadito-web-ui,0.12.7,fdechelle@teclib.com)
-AM_INIT_AUTOMAKE([tar-ustar])
+AM_INIT_AUTOMAKE([tar-ustar foreign])
 
 # checks for programs.
 AC_PATH_PROG(NPM, npm)
