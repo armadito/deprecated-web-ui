@@ -1,4 +1,4 @@
-AC_INIT(armadito-web-ui,0.12.7,fdechelle@teclib.com)
+AC_INIT(armadito-web-ui,0.12.8,fdechelle@teclib.com)
 AM_INIT_AUTOMAKE([tar-ustar foreign])
 
 # checks for programs.
