@@ -37,7 +37,7 @@ install-data-hook:
 	cp -r $(srcdir)/app $(DESTDIR)$(webguidir)
 
 install-bower:
-    cp -r bower_components $(DESTDIR)$(webguidir)
+	cp -r bower_components $(DESTDIR)$(webguidir)
 
 EXTRA_DIST=\
 bower.json \
