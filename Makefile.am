@@ -35,6 +35,7 @@ webguidir=$(datadir)/armadito
 install-data-hook:
 	-mkdir -p $(DESTDIR)$(webguidir)
 	cp -r $(srcdir)/app $(DESTDIR)$(webguidir)
+	cp -r bower_components $(DESTDIR)$(webguidir)
 
 install-bower:
 	cp -r bower_components $(DESTDIR)$(webguidir)
