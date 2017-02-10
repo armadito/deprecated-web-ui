@@ -48,8 +48,8 @@ var a6oApp = angular
     'angularMoment',
     'TreeWidget'
   ])
-  .config(function ($stateProvider, $urlRouterProvider, toastrConfig, $translateProvider) {
-	  
+  .config(['$stateProvider', '$urlRouterProvider', 'toastrConfig', '$translateProvider', function ($stateProvider, $urlRouterProvider, toastrConfig, $translateProvider) {
+
       angular.extend(toastrConfig, {
 		    progressBar: false,
 		    tapToDismiss: true,
@@ -94,4 +94,4 @@ var a6oApp = angular
           templateUrl: 'views/Parameters.html',
           controller: 'ParametersController'
         });
-});
+}]);
