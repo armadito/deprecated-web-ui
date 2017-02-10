@@ -52,47 +52,32 @@ angular.module('armaditoApp')
 
         $scope.updateProgress = function (data)
         {
-            if(data.path)
+            if(data.u.ev_on_demand_progress.path)
             {
-                ScanData.setDisplayedFile(data.path);
+                ScanData.setDisplayedFile(data.u.ev_on_demand_progress.path);
             }
 
-            ScanData.updateCounters(data.scanned_count,
-                           data.suspicious_count,
-                           data.malware_count,
-                           data.progress);
+            ScanData.updateCounters(data.u.ev_on_demand_progress.scanned_count,
+                           data.u.ev_on_demand_progress.suspicious_count,
+                           data.u.ev_on_demand_progress.malware_count,
+                           data.u.ev_on_demand_progress.progress);
+
+	    $scope.updateScanData(data);
         }
 
         $scope.addScannedFile = function (data)
         {
-            if(data.scan_status === 'malware'
-            || data.scan_status === 'suspicious')
+            if(data.u.ev_detection.scan_status === 'A6O_FILE_MALWARE'
+            || data.u.ev_detection.scan_status === 'A6O_FILE_SUSPICIOUS')
             {
-                ScanData.addScannedFile(data.path,
-                                               data.scan_status,
-                                               data.scan_action,
-                                               data.module_name,
-                                               data.module_report);
-            }
-        }
-
-        $scope.updateScanData = function (data)
-        {
-            if(data.event_type === "DetectionEvent")
-            {
-                $scope.addScannedFile(data);
-            }
-            else if (data.event_type === "OnDemandProgressEvent")
-            {
-                $scope.updateProgress(data);
-            }
-            else if (data.event_type === "OnDemandCompletedEvent")
-            {
-                // TODO
+                ScanData.addScannedFile(data.u.ev_detection.path,
+                                               data.u.ev_detection.scan_status,
+                                               data.u.ev_detection.scan_action,
+                                               data.u.ev_detection.module_name,
+                                               data.u.ev_detection.module_report);
             }
 
-            $scope.synchronizeScopeWithFactory();
-            $scope.$apply();
+	    $scope.updateScanData(data);
         }
 
         $scope.cancelScan = function ()
@@ -110,16 +95,22 @@ angular.module('armaditoApp')
             $rootScope.$$listeners.OnDemandCompletedEvent=[];
         }
 
+        $scope.updateScanData = function (data)
+        {
+            $scope.synchronizeScopeWithFactory();
+            $scope.$apply();
+        }
+
         $scope.addEventListeners = function()
         {
             $rootScope.$on('OnDemandProgressEvent', function(event, data)
             {
-                $scope.updateScanData(data);
+		$scope.updateProgress(data);
             });
 
             $rootScope.$on('DetectionEvent', function(event, data)
             {
-                $scope.updateScanData(data);
+		$scope.addScannedFile(data);
             });
 
             $rootScope.$on('OnDemandCompletedEvent', function(event, data)
@@ -137,8 +128,6 @@ angular.module('armaditoApp')
 
         $scope.startScan = function ()
         {
-
-
             $scope.prepareFactoryForScan();
             $scope.removeEventListeners();
             $scope.addEventListeners();
