@@ -20,15 +20,8 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 ***/
 'use strict';
 
-/**
- * @ngdoc function
- * @name armaditoApp.controller:InformationController
- * @description
- * # InformationController
- * Controller of the armaditoApp
- */
 angular.module('armaditoApp')
-    .controller('InformationController', ['$rootScope', '$scope', 'StatusService',
+    .controller('StatusController', ['$rootScope', '$scope', 'StatusService',
         function($rootScope, $scope, StatusService) {
 
             $scope.timeConverter = function(timestamp) {
