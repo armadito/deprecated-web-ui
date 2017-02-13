@@ -8,95 +8,78 @@
  * Service in the armaditoApp.
  */
 angular.module('armaditoApp')
-	.service('StatusService', ['$rootScope', function ($rootScope) {
+    .service('StatusService', ['$rootScope', function($rootScope) {
 
-	  	var factory = {};
+        var factory = {};
 
-        function parseJson(json)
-        {
+        function parseJson(json) {
             var parsed;
             try {
                 parsed = JSON.parse(json);
-            }
-            catch(e)
-            {
-                console.error("Error when parsing JSON : "+e);
+            } catch (e) {
+                console.error("Error when parsing JSON : " + e);
             }
             return parsed;
         };
 
-        factory.handleEvent = function (receivedEvent)
-        {
-            if (receivedEvent.event_type === "StatusEvent")
-        	{
-        		$rootScope.$broadcast( "StatusEvent", receivedEvent );
+        factory.handleEvent = function(receivedEvent) {
+            if (receivedEvent.event_type === "StatusEvent") {
+                $rootScope.$broadcast("StatusEvent", receivedEvent);
                 factory.apiUnregister();
-        	}
+            }
         };
 
-        factory.pollEvents = function ()
-        {
-	      	factory.xmlhttp.onreadystatechange = function ()
-	      	{
-                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
-                {
-	                var jobj = parseJson(factory.xmlhttp.responseText);
-	                factory.handleEvent(jobj);
-                 }
-	      	};
-
-	      	factory.xmlhttp.open("GET", "/api/event", true);
-	      	factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-	      	factory.xmlhttp.send(null);
-	  	};
-
-	  	factory.apiUnregister = function ()
-        {
-	  		factory.xmlhttp.open("GET", "/api/unregister", true);
-	  		factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-	  		factory.xmlhttp.send(null);
-	  		factory.token = null;
-	  	};
-
-        factory.AskForStatus = function()
-        {
-            factory.xmlhttp.onreadystatechange = function ()
-            {
-                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
-                {
-                    factory.pollEvents();
-	            }
+        factory.pollEvents = function() {
+            factory.xmlhttp.onreadystatechange = function() {
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
+                    var jobj = parseJson(factory.xmlhttp.responseText);
+                    factory.handleEvent(jobj);
+                }
             };
 
-		  	factory.xmlhttp.open("GET", "/api/status", true);
-		  	factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-		  	factory.xmlhttp.setRequestHeader("Content-Type", "application/json");
-	  		factory.xmlhttp.send(null);
+            factory.xmlhttp.open("GET", "/api/event", true);
+            factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+            factory.xmlhttp.send(null);
+        };
+
+        factory.apiUnregister = function() {
+            factory.xmlhttp.open("GET", "/api/unregister", true);
+            factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+            factory.xmlhttp.send(null);
+            factory.token = null;
+        };
+
+        factory.AskForStatus = function() {
+            factory.xmlhttp.onreadystatechange = function() {
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
+                    factory.pollEvents();
+                }
+            };
+
+            factory.xmlhttp.open("GET", "/api/status", true);
+            factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+            factory.xmlhttp.setRequestHeader("Content-Type", "application/json");
+            factory.xmlhttp.send(null);
         }
 
-        factory.apiRegister = function ()
-        {
-            factory.xmlhttp.onreadystatechange = function ()
-            {
-                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
-                {
+        factory.apiRegister = function() {
+            factory.xmlhttp.onreadystatechange = function() {
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
                     var jobj = parseJson(factory.xmlhttp.responseText);
                     factory.token = jobj.token;
 
                     factory.AskForStatus();
-	            }
+                }
             };
 
-	  		factory.xmlhttp.open("GET", "/api/register", true);
-	  		factory.xmlhttp.send(null);
-	  	};
+            factory.xmlhttp.open("GET", "/api/register", true);
+            factory.xmlhttp.send(null);
+        };
 
-	  	factory.getStatus = function()
-        {
+        factory.getStatus = function() {
             factory.xmlhttp = new XMLHttpRequest();
             factory.apiRegister();
-	  	};
+        };
 
-	  	return factory;
-	}
-]);
+        return factory;
+    }]);

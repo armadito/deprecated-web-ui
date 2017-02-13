@@ -18,7 +18,6 @@ You should have received a copy of the GNU General Public License
 along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 
 ***/
-
 'use strict';
 
 /**
@@ -29,37 +28,34 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * Controller of the armaditoApp
  */
 angular.module('armaditoApp')
-  .controller('InformationController', ['$rootScope', '$scope', 'StatusService', 
-    function ($rootScope, $scope, StatusService)
-    {
+    .controller('InformationController', ['$rootScope', '$scope', 'StatusService',
+        function($rootScope, $scope, StatusService) {
 
-		$scope.timeConverter = function(timestamp)
-        {
-            var date = new Date(timestamp * 1000);
-            var datevalues = ('0' + date.getDate()).slice(-2) + '-'
-                           + ('0' + (date.getMonth() + 1)).slice(-2) + '-'
-                           + date.getFullYear() + ' '
-                           + date.getHours() + ':'
-                           + date.getMinutes();
+            $scope.timeConverter = function(timestamp) {
+                var date = new Date(timestamp * 1000);
+                var datevalues = ('0' + date.getDate()).slice(-2) + '-' +
+                    ('0' + (date.getMonth() + 1)).slice(-2) + '-' +
+                    date.getFullYear() + ' ' +
+                    date.getHours() + ':' +
+                    date.getMinutes();
 
-            return datevalues;
-		};
+                return datevalues;
+            };
 
-	    StatusService.getStatus();
+            StatusService.getStatus();
 
-	    $rootScope.$on('StatusEvent', function(event, data)
-        {
-            $scope.databases_update = data.global_status;
-            $scope.last_update = $scope.timeConverter(data.global_update_timestamp);
-            $scope.modules = data.modules;
+            $rootScope.$on('StatusEvent', function(event, data) {
+                $scope.databases_update = data.global_status;
+                $scope.last_update = $scope.timeConverter(data.global_update_timestamp);
+                $scope.modules = data.modules;
 
-            console.log(data);
+                console.log(data);
 
-            for (var i = 0; i< $scope.modules.length ; i++){
-					$scope.modules[i].mod_update_timestamp = $scope.timeConverter($scope.modules[i].mod_update_timestamp);
-			}
+                for (var i = 0; i < $scope.modules.length; i++) {
+                    $scope.modules[i].mod_update_timestamp = $scope.timeConverter($scope.modules[i].mod_update_timestamp);
+                }
 
-            $scope.$apply();
-	    });
-    }
-]);
+                $scope.$apply();
+            });
+        }
+    ]);

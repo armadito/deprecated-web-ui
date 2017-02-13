@@ -8,66 +8,53 @@
  * Service in the armaditoApp.
  */
 angular.module('armaditoApp')
-    .service('ScanService', ['$rootScope', function ($rootScope) {
+    .service('ScanService', ['$rootScope', function($rootScope) {
 
         var factory = {};
 
-        function parseJson(json)
-        {
+        function parseJson(json) {
             var parsed;
             try {
                 parsed = JSON.parse(json);
-            }
-            catch(e)
-            {
-                console.error("Error when parsing JSON : "+e);
+            } catch (e) {
+                console.error("Error when parsing JSON : " + e);
             }
             return parsed;
         };
 
-        factory.handleEvent = function (jobj)
-        {
-            if (jobj.type === "EVENT_ON_DEMAND_PROGRESS")
-            {
-                $rootScope.$broadcast( "OnDemandProgressEvent", jobj );
+        factory.handleEvent = function(jobj) {
+            if (jobj.type === "EVENT_ON_DEMAND_PROGRESS") {
+                $rootScope.$broadcast("OnDemandProgressEvent", jobj);
                 factory.pollEvents();
-            }
-            else if (jobj.type === "EVENT_DETECTION")
-            {
-                $rootScope.$broadcast( "DetectionEvent", jobj );
+            } else if (jobj.type === "EVENT_DETECTION") {
+                $rootScope.$broadcast("DetectionEvent", jobj);
                 factory.pollEvents();
-            }
-            else if (jobj.type === "EVENT_ON_DEMAND_COMPLETED")
-            {
+            } else if (jobj.type === "EVENT_ON_DEMAND_COMPLETED") {
                 factory.apiUnregister();
-                $rootScope.$broadcast( "OnDemandCompletedEvent", jobj );
+                $rootScope.$broadcast("OnDemandCompletedEvent", jobj);
             }
         };
 
-        factory.pollEvents = function ()
-        {
-              factory.xmlhttp.onreadystatechange = function ()
-              {
-                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
-                {
+        factory.pollEvents = function() {
+            factory.xmlhttp.onreadystatechange = function() {
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
                     var jobj = parseJson(factory.xmlhttp.responseText);
                     factory.handleEvent(jobj);
-                 }
-              };
+                }
+            };
 
-              factory.xmlhttp.open("GET", "/api/event", true);
-              factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-              factory.xmlhttp.send(null);
-          };
+            factory.xmlhttp.open("GET", "/api/event", true);
+            factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+            factory.xmlhttp.send(null);
+        };
 
-        factory.AskForNewScan = function ()
-        {
-            var data = {path: factory.path_to_scan};
+        factory.AskForNewScan = function() {
+            var data = {
+                path: factory.path_to_scan
+            };
 
-            factory.xmlhttp.onreadystatechange = function ()
-            {
-                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
-                {
+            factory.xmlhttp.onreadystatechange = function() {
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
                     factory.pollEvents();
                 }
             };
@@ -78,38 +65,32 @@ angular.module('armaditoApp')
             factory.xmlhttp.send(JSON.stringify(data));
         }
 
-        factory.apiUnregister = function ()
-        {
-              factory.xmlhttp.open("GET", "/api/unregister", true);
-              factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-              factory.xmlhttp.send(null);
-              factory.token = null;
+        factory.apiUnregister = function() {
+            factory.xmlhttp.open("GET", "/api/unregister", true);
+            factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
+            factory.xmlhttp.send(null);
+            factory.token = null;
         };
 
-        factory.apiRegister = function ()
-        {
-            factory.xmlhttp.onreadystatechange = function ()
-            {
-                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200)
-                {
+        factory.apiRegister = function() {
+            factory.xmlhttp.onreadystatechange = function() {
+                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
                     var jobj = parseJson(factory.xmlhttp.responseText);
                     factory.token = jobj.token;
-                    
+
                     factory.AskForNewScan();
                 }
             };
 
-              factory.xmlhttp.open("GET", "/api/register", true);
-              factory.xmlhttp.send(null);
+            factory.xmlhttp.open("GET", "/api/register", true);
+            factory.xmlhttp.send(null);
         };
 
-        factory.newScan = function (path_to_scan)
-        {
+        factory.newScan = function(path_to_scan) {
             factory.path_to_scan = path_to_scan;
             factory.xmlhttp = new XMLHttpRequest();
             factory.apiRegister();
         };
 
         return factory;
-    }
-]);
+    }]);

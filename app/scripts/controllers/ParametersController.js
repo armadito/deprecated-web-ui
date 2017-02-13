@@ -18,7 +18,6 @@ You should have received a copy of the GNU General Public License
 along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 
 ***/
-
 'use strict';
 
 /**
@@ -29,8 +28,8 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
  * Controller of the armaditoApp
  */
 angular.module('armaditoApp')
-  .controller('ParametersController',['$scope', function ($scope) {
+    .controller('ParametersController', ['$scope', function($scope) {
 
 
 
-  }]);
+    }]);
