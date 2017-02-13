@@ -65,10 +65,10 @@ var a6oApp = angular
                 templateUrl: 'views/Main.html',
                 controller: 'MainController'
             })
-            .state('Main.Information', {
-                url: '/Information',
-                templateUrl: 'views/Information.html',
-                controller: 'InformationController'
+            .state('Main.Status', {
+                url: '/Status',
+                templateUrl: 'views/Status.html',
+                controller: 'StatusController'
             })
             .state('Main.Scan', {
                 url: '/Scan',

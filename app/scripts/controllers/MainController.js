@@ -29,7 +29,7 @@ angular.module('armaditoApp')
                         isActive: true,
                         title: 'information_view.ButtonTitle',
                         icon: "fa fa-tachometer fa-2x",
-                        view: 'Main.Information',
+                        view: 'Main.Status',
                         backgroundColor: 'generalActive'
                     }
                 },
@@ -74,7 +74,7 @@ angular.module('armaditoApp')
             };
 
             $scope.refresh = function() {
-                $state.go('Main.Information');
+                $state.go('Main.Status');
             };
 
             $scope.refresh();
