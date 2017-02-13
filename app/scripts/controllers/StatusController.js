@@ -39,13 +39,11 @@ angular.module('armaditoApp')
 
             $rootScope.$on('StatusEvent', function(event, data) {
                 $scope.databases_update = data.global_status;
-                $scope.last_update = $scope.timeConverter(data.global_update_timestamp);
-                $scope.modules = data.modules;
+                $scope.last_update = $scope.timeConverter(data.global_update_ts);
+                $scope.module_infos = data.module_infos;
 
-                console.log(data);
-
-                for (var i = 0; i < $scope.modules.length; i++) {
-                    $scope.modules[i].mod_update_timestamp = $scope.timeConverter($scope.modules[i].mod_update_timestamp);
+                for (var i = 0; i < $scope.module_infos.length; i++) {
+                    $scope.module_infos[i].mod_update_ts = $scope.timeConverter($scope.module_infos[i].mod_update_ts);
                 }
 
                 $scope.$apply();

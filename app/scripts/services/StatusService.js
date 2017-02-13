@@ -35,9 +35,9 @@ angular.module('armaditoApp')
             return parsed;
         };
 
-        factory.handleEvent = function(receivedEvent) {
-            if (receivedEvent.event_type === "StatusEvent") {
-                $rootScope.$broadcast("StatusEvent", receivedEvent);
+        factory.handleEvent = function(jobj) {
+            if (typeof jobj.global_status != "undefined") {
+                $rootScope.$broadcast("StatusEvent", jobj);
                 factory.apiUnregister();
             }
         };

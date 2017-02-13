@@ -35,14 +35,14 @@
                   </tr>
                 </thead>
                 <tbody class="information" id="ex3" >
-                  <tr class="information" ng-repeat="module in modules">
+                  <tr class="information" ng-repeat="module in module_infos">
                     <td style="width:40%" class="information"><h7>{{module.name | uppercase}}</h7></td>
-                    <td style="width:60%" class="information"><h7>{{module.mod_update_timestamp}}</h7></td>
+                    <td style="width:60%" class="information"><h7>{{module.mod_update_ts}}</h7></td>
                     <td style="width:60%" class="information">
-                      <h7 ng-if="module.mod_status ==='up-to-date'" >{{'information_view.Status_up_to_date' | translate}}</h7>
-                      <h7 ng-if="module.mod_status ==='critical'" >{{'information_view.Status_critical' | translate}}</h7>
-                      <h7 ng-if="module.mod_status ==='late'" >{{'information_view.Status_late' | translate}}</h7>
-                      <h7 ng-if="module.mod_status ==='unavailable'" >{{'information_view.Status_unavailable' | translate}}</h7>
+                      <h7 ng-if="module.mod_status ==='A6O_UPDATE_OK'" >{{'information_view.Status_up_to_date' | translate}}</h7>
+                      <h7 ng-if="module.mod_status ==='A6O_UPDATE_CRITICAL'" >{{'information_view.Status_critical' | translate}}</h7>
+                      <h7 ng-if="module.mod_status ==='A6O_UPDATE_LATE'" >{{'information_view.Status_late' | translate}}</h7>
+                      <h7 ng-if="module.mod_status ==='A6O_UPDATE_NON_AVAILABLE'" >{{'information_view.Status_unavailable' | translate}}</h7>
                     </td>
                   </tr>
                 </tbody>
