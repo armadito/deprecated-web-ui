@@ -20,14 +20,6 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 ***/
 'use strict';
 
-/**
- * @ngdoc function
- * @name armaditoApp.controller:MainController
- * @description
- * # MainController
- * Controller of the armaditoApp
- */
-
 angular.module('armaditoApp')
     .controller('MainController', ['$rootScope', '$scope', '$state',
         function($rootScope, $scope, $state) {

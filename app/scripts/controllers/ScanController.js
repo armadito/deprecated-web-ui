@@ -20,14 +20,6 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 ***/
 'use strict';
 
-/**
- * @ngdoc function
- * @name armaditoApp.controller:ScanController
- * @description
- * # ScanController
- * Controller of the Armadito-av
- */
-
 angular.module('armaditoApp')
     .controller('ScanController', ['$rootScope', '$scope', '$uibModal', 'ScanService', 'ScanData',
         function($rootScope, $scope, $uibModal, ScanService, ScanData) {

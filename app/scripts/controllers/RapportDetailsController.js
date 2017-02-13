@@ -20,13 +20,6 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 ***/
 'use strict';
 
-/**
- * @ngdoc function
- * @name armaditoApp.controller:RapportDetailsController
- * @description
- * # RapportDetailsController
- * Controller of the armaditoApp
- */
 angular.module('armaditoApp')
     .controller('RapportDetailsController', ['$scope', '$uibModalInstance', 'items',
         function($scope, $uibModalInstance, items) {

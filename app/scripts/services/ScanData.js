@@ -20,13 +20,6 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 ***/
 'use strict';
 
-/**
- * @ngdoc function
- * @name armaditoApp.controller:InformationController
- * @description
- * # InformationController
- * Controller of the armaditoApp
- */
 angular.module('armaditoApp')
     .factory('ScanData',
         function() {

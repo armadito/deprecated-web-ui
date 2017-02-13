@@ -20,14 +20,6 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 ***/
 'use strict';
 
-/**
- * @ngdoc overview
- * @name armaditoApp
- * @description
- * # armaditoApp
- *
- * Main module of the application.
- */
 var a6oApp = angular
     .module('armaditoApp', [
         'ngAnimate',

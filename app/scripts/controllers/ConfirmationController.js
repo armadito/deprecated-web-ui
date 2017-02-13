@@ -20,13 +20,6 @@ along with Armadito gui.  If not, see <http://www.gnu.org/licenses/>.
 ***/
 'use strict';
 
-/**
- * @ngdoc function
- * @name armaditoApp.controller:ConfirmationController
- * @description
- * # ConfirmationController
- * Controller of the armaditoApp
- */
 angular.module('armaditoApp')
     .controller('ConfirmationController', ['$scope', '$uibModalInstance', 'data', function($scope, $uibModalInstance, data) {
 
