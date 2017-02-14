@@ -24,10 +24,32 @@ angular.module('armaditoApp')
     .controller('StatusController', ['$rootScope', '$scope', 'StatusService',
         function($rootScope, $scope, StatusService) {
 
+            $scope.removeEventListeners = function() {
+                $rootScope.$$listeners.StatusEvent = [];
+            }
+
+            $scope.updateStatusData = function(data) {
+                $scope.databases_update = data.global_status;
+                $scope.last_update = $scope.timeConverter(data.global_update_ts);
+                $scope.module_infos = data.module_infos;
+
+                for (var i = 0; i < $scope.module_infos.length; i++) {
+                    $scope.module_infos[i].mod_update_ts = $scope.timeConverter(data.module_infos[i].mod_update_ts);
+                }
+
+                $scope.$apply();
+            }
+
+            $scope.addEventListeners = function() {
+                $rootScope.$on('StatusEvent', function(event, data) {
+                    $scope.updateStatusData(data);
+                });
+            }
+
             $scope.timeConverter = function(timestamp) {
                 var date = new Date(timestamp * 1000);
-                var datevalues = ('0' + date.getDate()).slice(-2) + '-' +
-                    ('0' + (date.getMonth() + 1)).slice(-2) + '-' +
+                var datevalues = ('0' + date.getDate()).slice(-2) + '/' +
+                    ('0' + (date.getMonth() + 1)).slice(-2) + '/' +
                     date.getFullYear() + ' ' +
                     date.getHours() + ':' +
                     date.getMinutes();
@@ -35,18 +57,9 @@ angular.module('armaditoApp')
                 return datevalues;
             };
 
+            $scope.removeEventListeners();
+            $scope.addEventListeners();
+
             StatusService.getStatus();
-
-            $rootScope.$on('StatusEvent', function(event, data) {
-                $scope.databases_update = data.global_status;
-                $scope.last_update = $scope.timeConverter(data.global_update_ts);
-                $scope.module_infos = data.module_infos;
-
-                for (var i = 0; i < $scope.module_infos.length; i++) {
-                    $scope.module_infos[i].mod_update_ts = $scope.timeConverter($scope.module_infos[i].mod_update_ts);
-                }
-
-                $scope.$apply();
-            });
         }
     ]);

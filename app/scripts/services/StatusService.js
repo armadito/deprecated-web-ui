@@ -35,37 +35,18 @@ angular.module('armaditoApp')
             return parsed;
         };
 
-        factory.handleEvent = function(jobj) {
+        factory.handleStatus = function(jobj) {
             if (typeof jobj.global_status != "undefined") {
                 $rootScope.$broadcast("StatusEvent", jobj);
-                factory.apiUnregister();
             }
-        };
-
-        factory.pollEvents = function() {
-            factory.xmlhttp.onreadystatechange = function() {
-                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
-                    var jobj = parseJson(factory.xmlhttp.responseText);
-                    factory.handleEvent(jobj);
-                }
-            };
-
-            factory.xmlhttp.open("GET", "/api/event", true);
-            factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-            factory.xmlhttp.send(null);
-        };
-
-        factory.apiUnregister = function() {
-            factory.xmlhttp.open("GET", "/api/unregister", true);
-            factory.xmlhttp.setRequestHeader("X-Armadito-Token", factory.token);
-            factory.xmlhttp.send(null);
-            factory.token = null;
         };
 
         factory.AskForStatus = function() {
             factory.xmlhttp.onreadystatechange = function() {
                 if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
-                    factory.pollEvents();
+                    console.log(factory.xmlhttp.responseText);
+                    var jobj = parseJson(factory.xmlhttp.responseText);
+                    factory.handleStatus(jobj);
                 }
             };
 
@@ -75,23 +56,9 @@ angular.module('armaditoApp')
             factory.xmlhttp.send(null);
         }
 
-        factory.apiRegister = function() {
-            factory.xmlhttp.onreadystatechange = function() {
-                if (factory.xmlhttp.readyState == 4 && factory.xmlhttp.status == 200) {
-                    var jobj = parseJson(factory.xmlhttp.responseText);
-                    factory.token = jobj.token;
-
-                    factory.AskForStatus();
-                }
-            };
-
-            factory.xmlhttp.open("GET", "/api/register", true);
-            factory.xmlhttp.send(null);
-        };
-
         factory.getStatus = function() {
             factory.xmlhttp = new XMLHttpRequest();
-            factory.apiRegister();
+            factory.AskForStatus();
         };
 
         return factory;
