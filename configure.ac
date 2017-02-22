@@ -1,5 +1,5 @@
 AC_INIT(armadito-web-ui,0.12.8,fdechelle@teclib.com)
-AM_INIT_AUTOMAKE([tar-ustar foreign])
+AM_INIT_AUTOMAKE([subdir-objects tar-ustar foreign])
 
 # collect arguments
 # debug

@@ -1,3 +1,5 @@
+SUBDIRS=httpd
+
 # problems:
 # - avoid at all cost the execution of npm or bower on launchpad
 #   because there is no network access on build farm
