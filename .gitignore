@@ -11,3 +11,6 @@ config.guess
 config.sub
 config.status
 config.log
+compile
+depcomp
+ltmain.sh
